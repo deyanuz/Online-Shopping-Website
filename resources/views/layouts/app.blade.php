@@ -214,7 +214,7 @@
                                                     </li>
                                                     <li class="mega-menu-col col-lg-5">
                                                         <div class="header-banner2">
-                                                            <img src="assets/imgs/banner/menu-banner-2.jpg"
+                                                            <img src="{{asset('assets/imgs/banner/menu-banner-2.jpg')}}"
                                                                 alt="menu_banner1">
                                                             <div class="banne_info">
                                                                 <h6>10% Off</h6>
@@ -223,7 +223,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="header-banner2">
-                                                            <img src="assets/imgs/banner/menu-banner-3.jpg"
+                                                            <img src="{{asset('assets/imgs/banner/menu-banner-3.jpg')}}"
                                                                 alt="menu_banner2">
                                                             <div class="banne_info">
                                                                 <h6>15% Off</h6>
@@ -236,8 +236,7 @@
                                             </div>
                                         </li>
                                         <li class="has-children">
-                                            <a href={{ route('frontend.shop') }}><i
-                                                    class="surfsidemedia-font-tshirt"></i>Men's Clothing</a>
+                                            <a href={{ route('frontend.shop') }}>Men's Clothing</a>
                                             <div class="dropdown-menu">
                                                 <ul class="mega-menu d-lg-flex">
                                                     <li class="mega-menu-col col-lg-7">
@@ -288,7 +287,7 @@
                                                     </li>
                                                     <li class="mega-menu-col col-lg-5">
                                                         <div class="header-banner2">
-                                                            <img src="assets/imgs/banner/menu-banner-4.jpg"
+                                                            <img src="{{asset('assets/imgs/banner/menu-banner-4.jpg')}}"
                                                                 alt="menu_banner1">
                                                             <div class="banne_info">
                                                                 <h6>10% Off</h6>
@@ -355,7 +354,7 @@
                                                     </li>
                                                     <li class="mega-menu-col col-lg-5">
                                                         <div class="header-banner2">
-                                                            <img src="assets/imgs/banner/menu-banner-5.jpg"
+                                                            <img src="{{asset('assets/imgs/banner/menu-banner-5.jpg')}}"
                                                                 alt="menu_banner1">
                                                             <div class="banne_info">
                                                                 <h6>10% Off</h6>
@@ -364,7 +363,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="header-banner2">
-                                                            <img src="assets/imgs/banner/menu-banner-6.jpg"
+                                                            <img src="{{asset('assets/imgs/banner/menu-banner-6.jpg')}}"
                                                                 alt="menu_banner2">
                                                             <div class="banne_info">
                                                                 <h6>15% Off</h6>
@@ -376,31 +375,20 @@
                                                 </ul>
                                             </div>
                                         </li>
-                                        <li><a href={{ route('frontend.shop') }}><i
-                                                    class="surfsidemedia-font-desktop"></i>Computer & Office</a></li>
-                                        <li><a href={{ route('frontend.shop') }}><i
-                                                    class="surfsidemedia-font-cpu"></i>Consumer Electronics</a></li>
-                                        <li><a href={{ route('frontend.shop') }}><i
-                                                    class="surfsidemedia-font-diamond"></i>Jewelry & Accessories</a></li>
-                                        <li><a href={{ route('frontend.shop') }}><i
-                                                    class="surfsidemedia-font-home"></i>Home & Garden</a></li>
-                                        <li><a href={{ route('frontend.shop') }}><i
-                                                    class="surfsidemedia-font-high-heels"></i>Shoes</a></li>
-                                        <li><a href={{ route('frontend.shop') }}><i
-                                                    class="surfsidemedia-font-teddy-bear"></i>Mother & Kids</a></li>
-                                        <li><a href={{ route('frontend.shop') }}><i
-                                                    class="surfsidemedia-font-kite"></i>Outdoor fun</a></li>
+                                        <li><a href={{ route('frontend.shop') }}>Computer & Office</a></li>
+                                        <li><a href={{ route('frontend.shop') }}>Consumer Electronics</a></li>
+                                        <li><a href={{ route('frontend.shop') }}>Jewelry & Accessories</a></li>
+                                        <li><a href={{ route('frontend.shop') }}>Home & Garden</a></li>
+                                        <li><a href={{ route('frontend.shop') }}>Shoes</a></li>
+                                        <li><a href={{ route('frontend.shop') }}>Mother & Kids</a></li>
+                                        <li><a href={{ route('frontend.shop') }}>Outdoor fun</a></li>
                                         <li>
                                             <ul class="more_slide_open" style="display: none;">
-                                                <li><a href={{ route('frontend.shop') }}><i
-                                                            class="surfsidemedia-font-desktop"></i>Beauty, Health</a></li>
-                                                <li><a href={{ route('frontend.shop') }}><i
-                                                            class="surfsidemedia-font-cpu"></i>Bags and Shoes</a></li>
-                                                <li><a href={{ route('frontend.shop') }}><i
-                                                            class="surfsidemedia-font-diamond"></i>Consumer Electronics</a>
+                                                <li><a href={{ route('frontend.shop') }}>Beauty, Health</a></li>
+                                                <li><a href={{ route('frontend.shop') }}>Bags and Shoes</a></li>
+                                                <li><a href={{ route('frontend.shop') }}>Consumer Electronics</a>
                                                 </li>
-                                                <li><a href={{ route('frontend.shop') }}><i
-                                                            class="surfsidemedia-font-home"></i>Automobiles &
+                                                <li><a href={{ route('frontend.shop') }}>Automobiles &
                                                         Motorcycles</a></li>
                                             </ul>
                                         </li>
@@ -452,7 +440,7 @@
                                                 <li class="sub-mega-menu sub-mega-menu-width-34">
                                                     <div class="menu-banner-wrap">
                                                         <a href="product-details.html"><img
-                                                                src="assets/imgs/banner/menu-banner.jpg"
+                                                                src="{{asset('assets/imgs/banner/menu-banner.jpg')}}"
                                                                 alt="Surfside Media"></a>
                                                         <div class="menu-banner-content">
                                                             <h4>Hot deals</h4>
@@ -507,13 +495,13 @@
                             <div class="header-action-2">
                                 <div class="header-action-icon-2">
                                     <a href="shop-wishlist.php">
-                                        <img alt="Surfside Media" src="assets/imgs/theme/icons/icon-heart.svg">
+                                        <img alt="Surfside Media" src="{{asset('assets/imgs/theme/icons/icon-heart.svg')}}">
                                         <span class="pro-count white">4</span>
                                     </a>
                                 </div>
                                 <div class="header-action-icon-2">
                                     <a class="mini-cart-icon" href={{ route('frontend.cart') }}>
-                                        <img alt="Surfside Media" src="assets/imgs/theme/icons/icon-cart.svg">
+                                        <img alt="Surfside Media" src="{{asset('assets/imgs/theme/icons/icon-cart.svg')}}">
                                         <span class="pro-count white">2</span>
                                     </a>
                                     <div class="cart-dropdown-wrap cart-dropdown-hm2">
@@ -521,7 +509,7 @@
                                             <li>
                                                 <div class="shopping-cart-img">
                                                     <a href="product-details.html"><img alt="Surfside Media"
-                                                            src="assets/imgs/shop/thumbnail-3.jpg"></a>
+                                                            src="{{asset('assets/imgs/shop/thumbnail-3.jpg')}}"></a>
                                                 </div>
                                                 <div class="shopping-cart-title">
                                                     <h4><a href="product-details.html">Plain Striola Shirts</a></h4>
@@ -534,7 +522,7 @@
                                             <li>
                                                 <div class="shopping-cart-img">
                                                     <a href="product-details.html"><img alt="Surfside Media"
-                                                            src="assets/imgs/shop/thumbnail-4.jpg"></a>
+                                                            src="{{asset('assets/imgs/shop/thumbnail-4.jpg')}}"></a>
                                                 </div>
                                                 <div class="shopping-cart-title">
                                                     <h4><a href="product-details.html">Macbook Pro 2022</a></h4>
@@ -573,7 +561,7 @@
             <div class="mobile-header-wrapper-inner">
                 <div class="mobile-header-top">
                     <div class="mobile-header-logo">
-                        <a href={{ route('frontend.home') }}><img src="assets/imgs/logo/logo.png" alt="logo"></a>
+                        <a href={{ route('frontend.home') }}><img src="{{asset('assets/imgs/logo/logo.png')}}" alt="logo"></a>
                     </div>
                     <div class="mobile-menu-close close-style-wrap close-style-position-inherit">
                         <button class="close-style search-close">
@@ -596,24 +584,15 @@
                             </a>
                             <div class="categori-dropdown-wrap categori-dropdown-active-small">
                                 <ul>
-                                    <li><a href={{ route('frontend.shop') }}><i
-                                                class="surfsidemedia-font-dress"></i>Women's Clothing</a></li>
-                                    <li><a href={{ route('frontend.shop') }}><i
-                                                class="surfsidemedia-font-tshirt"></i>Men's Clothing</a></li>
-                                    <li> <a href={{ route('frontend.shop') }}><i
-                                                class="surfsidemedia-font-smartphone"></i> Cellphones</a></li>
-                                    <li><a href={{ route('frontend.shop') }}><i
-                                                class="surfsidemedia-font-desktop"></i>Computer & Office</a></li>
-                                    <li><a href={{ route('frontend.shop') }}><i
-                                                class="surfsidemedia-font-cpu"></i>Consumer Electronics</a></li>
-                                    <li><a href={{ route('frontend.shop') }}><i class="surfsidemedia-font-home"></i>Home &
-                                            Garden</a></li>
-                                    <li><a href={{ route('frontend.shop') }}><i
-                                                class="surfsidemedia-font-high-heels"></i>Shoes</a></li>
-                                    <li><a href={{ route('frontend.shop') }}><i
-                                                class="surfsidemedia-font-teddy-bear"></i>Mother & Kids</a></li>
-                                    <li><a href={{ route('frontend.shop') }}><i
-                                                class="surfsidemedia-font-kite"></i>Outdoor fun</a></li>
+                                    <li><a href={{ route('frontend.shop') }}>Women's Clothing</a></li>
+                                    <li><a href={{ route('frontend.shop') }}>Men's Clothing</a></li>
+                                    <li> <a href={{ route('frontend.shop') }}>Cellphones</a></li>
+                                    <li><a href={{ route('frontend.shop') }}>Computer & Office</a></li>
+                                    <li><a href={{ route('frontend.shop') }}>Consumer Electronics</a></li>
+                                    <li><a href={{ route('frontend.shop') }}>Home & Garden</a></li>
+                                    <li><a href={{ route('frontend.shop') }}>Shoes</a></li>
+                                    <li><a href={{ route('frontend.shop') }}>Mother & Kids</a></li>
+                                    <li><a href={{ route('frontend.shop') }}>Outdoor fun</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -687,11 +666,11 @@
                     </div>
                     <div class="mobile-social-icon">
                         <h5 class="mb-15 text-grey-4">Follow Us</h5>
-                        <a href="#"><img src="assets/imgs/theme/icons/icon-facebook.svg" alt=""></a>
-                        <a href="#"><img src="assets/imgs/theme/icons/icon-twitter.svg" alt=""></a>
-                        <a href="#"><img src="assets/imgs/theme/icons/icon-instagram.svg" alt=""></a>
-                        <a href="#"><img src="assets/imgs/theme/icons/icon-pinterest.svg" alt=""></a>
-                        <a href="#"><img src="assets/imgs/theme/icons/icon-youtube.svg" alt=""></a>
+                        <a href="#"><img src="{{asset('assets/imgs/theme/icons/icon-facebook.svg')}}" alt=""></a>
+                        <a href="#"><img src="{{asset('assets/imgs/theme/icons/icon-twitter.svg')}}" alt=""></a>
+                        <a href="#"><img src="{{asset('assets/imgs/theme/icons/icon-instagram.svg')}}" alt=""></a>
+                        <a href="#"><img src="{{asset('assets/imgs/theme/icons/icon-pinterest.svg')}}" alt=""></a>
+                        <a href="#"><img src="{{asset('assets/imgs/theme/icons/icon-youtube.svg')}}" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -706,7 +685,7 @@
                         <div class="col-lg-7 mb-md-3 mb-lg-0">
                             <div class="row align-items-center">
                                 <div class="col flex-horizontal-center">
-                                    <img class="icon-email" src="assets/imgs/theme/icons/icon-email.svg" alt="">
+                                    <img class="icon-email" src="{{asset('assets/imgs/theme/icons/icon-email.svg')}}" alt="">
                                     <h4 class="font-size-20 mb-0 ml-3">Sign up to Newsletter</h4>
                                 </div>
                                 <div class="col my-4 my-md-0 des">
@@ -733,7 +712,7 @@
                         <div class="col-lg-4 col-md-6">
                             <div class="widget-about font-md mb-md-5 mb-lg-0">
                                 <div class="logo logo-width-1 wow fadeIn animated">
-                                    <a href={{ route('frontend.home') }}><img src="assets/imgs/logo/logo.png"
+                                    <a href={{ route('frontend.home') }}><img src="{{asset('assets/imgs/logo/logo.png')}}"
                                             alt="logo"></a>
                                 </div>
                                 <h5 class="mt-20 mb-10 fw-600 text-grey-4 wow fadeIn animated">Contact</h5>
@@ -748,15 +727,15 @@
                                 </p>
                                 <h5 class="mb-10 mt-30 fw-600 text-grey-4 wow fadeIn animated">Follow Us</h5>
                                 <div class="mobile-social-icon wow fadeIn animated mb-sm-5 mb-md-0">
-                                    <a href="#"><img src="assets/imgs/theme/icons/icon-facebook.svg"
+                                    <a href="#"><img src="{{asset('assets/imgs/theme/icons/icon-facebook.svg')}}"
                                             alt=""></a>
-                                    <a href="#"><img src="assets/imgs/theme/icons/icon-twitter.svg"
+                                    <a href="#"><img src="{{asset('assets/imgs/theme/icons/icon-twitter.svg')}}"
                                             alt=""></a>
-                                    <a href="#"><img src="assets/imgs/theme/icons/icon-instagram.svg"
+                                    <a href="#"><img src="{{asset('assets/imgs/theme/icons/icon-instagram.svg')}}"
                                             alt=""></a>
-                                    <a href="#"><img src="assets/imgs/theme/icons/icon-pinterest.svg"
+                                    <a href="#"><img src="{{asset('assets/imgs/theme/icons/icon-pinterest.svg')}}"
                                             alt=""></a>
-                                    <a href="#"><img src="assets/imgs/theme/icons/icon-youtube.svg"
+                                    <a href="#"><img src="{{asset('assets/imgs/theme/icons/icon-youtube.svg')}}"
                                             alt=""></a>
                                 </div>
                             </div>
@@ -788,14 +767,14 @@
                                     <p class="wow fadeIn animated">From App Store or Google Play</p>
                                     <div class="download-app wow fadeIn animated mob-app">
                                         <a href="#" class="hover-up mb-sm-4 mb-lg-0"><img class="active"
-                                                src="assets/imgs/theme/app-store.jpg" alt=""></a>
-                                        <a href="#" class="hover-up"><img src="assets/imgs/theme/google-play.jpg"
+                                                src="{{asset('assets/imgs/theme/app-store.jpg')}}" alt=""></a>
+                                        <a href="#" class="hover-up"><img src="{{asset('assets/imgs/theme/google-play.jpg')}}"
                                                 alt=""></a>
                                     </div>
                                 </div>
                                 <div class="col-md-4 col-lg-12 mt-md-3 mt-lg-0">
                                     <p class="mb-20 wow fadeIn animated">Secured Payment Gateways</p>
-                                    <img class="wow fadeIn animated" src="assets/imgs/theme/payment-method.png"
+                                    <img class="wow fadeIn animated" src="{{asset('assets/imgs/theme/payment-method.png')}}"
                                         alt="">
                                 </div>
                             </div>

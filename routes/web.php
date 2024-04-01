@@ -29,11 +29,9 @@ route::post('/register',[RegisterController::class,'registerUser'])->name('auth.
 route::post('/login',[LoginController::class,'loginUser'])->name('auth.login');
 route::delete('/logout',[LoginController::class,'logoutUser'])->name('auth.logout');
 
-
 route::middleware('auth')->group(function () {
-    Route::get('/user/dashboard',[UserAdminController::class,'user'])->name('user.dashboard');
+route::get('/user/dashboard',[UserAdminController::class,'user'])->name('user.dashboard');
 });
-
 route::middleware('auth')->group(function () {
     Route::get('/admin/dashboard',[UserAdminController::class,'admin'])->name('admin.dashboard');
 });
