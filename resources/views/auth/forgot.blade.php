@@ -8,7 +8,7 @@
             <div class="container">
                 <div class="breadcrumb">
                     <a href={{route('frontend.home')}} rel="nofollow">Home</a>
-                    <span></span> Login
+                    <span></span> Forgot Password
                 </div>
             </div>
         </div>

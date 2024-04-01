@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ShopController extends Controller
 {
     public function index(){
-        return view("frontend.shop");
+        $products=Product::paginate(12);
+        return view("frontend.shop",["products"=>$products]);
     }
 }
