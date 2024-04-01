@@ -28,11 +28,11 @@
                                     <a class="language-dropdown-active" href="#"> <i class="fi-rs-world"></i>
                                         English <i class="fi-rs-angle-small-down"></i></a>
                                     <ul class="language-dropdown">
-                                        <li><a href="#"><img src="assets/imgs/theme/flag-fr.png"
+                                        <li><a href="#"><img src="{{asset('assets/imgs/theme/flag-fr.png')}}"
                                                     alt="">Français</a></li>
-                                        <li><a href="#"><img src="assets/imgs/theme/flag-dt.png"
+                                        <li><a href="#"><img src="{{asset('assets/imgs/theme/flag-dt.png')}}"
                                                     alt="">Deutsch</a></li>
-                                        <li><a href="#"><img src="assets/imgs/theme/flag-ru.png"
+                                        <li><a href="#"><img src="{{asset('assets/imgs/theme/flag-ru.png')}}"
                                                     alt="">Pусский</a></li>
                                     </ul>
                                 </li>
@@ -79,7 +79,7 @@
                 <div class="container">
                     <div class="header-wrap">
                         <div class="logo logo-width-1">
-                            <a href={{ route('frontend.home') }}><img src="assets/imgs/logo/logo.png" alt="logo"></a>
+                            <a href={{ route('frontend.home') }}><img src="{{asset('assets/imgs/logo/logo.png')}}" alt="logo"></a>
                         </div>
                         <div class="header-right">
                             <div class="search-style-1">
@@ -92,13 +92,13 @@
                                     <div class="header-action-icon-2">
                                         <a href="shop-wishlist.php">
                                             <img class="svgInject" alt="Surfside Media"
-                                                src="assets/imgs/theme/icons/icon-heart.svg">
+                                                src="{{asset('assets/imgs/theme/icons/icon-heart.svg')}}">
                                             <span class="pro-count blue">4</span>
                                         </a>
                                     </div>
                                     <div class="header-action-icon-2">
                                         <a class="mini-cart-icon" href={{ route('frontend.cart') }}>
-                                            <img alt="Surfside Media" src="assets/imgs/theme/icons/icon-cart.svg">
+                                            <img alt="Surfside Media" src="{{asset('assets/imgs/theme/icons/icon-cart.svg')}}">
                                             <span class="pro-count blue">2</span>
                                         </a>
                                         <div class="cart-dropdown-wrap cart-dropdown-hm2">
@@ -106,7 +106,7 @@
                                                 <li>
                                                     <div class="shopping-cart-img">
                                                         <a href="product-details.html"><img alt="Surfside Media"
-                                                                src="assets/imgs/shop/thumbnail-3.jpg"></a>
+                                                                src="{{asset('assets/imgs/shop/thumbnail-3.jpg')}}"></a>
                                                     </div>
                                                     <div class="shopping-cart-title">
                                                         <h4><a href="product-details.html">Daisy Casual Bag</a></h4>
@@ -119,7 +119,7 @@
                                                 <li>
                                                     <div class="shopping-cart-img">
                                                         <a href="product-details.html"><img alt="Surfside Media"
-                                                                src="assets/imgs/shop/thumbnail-2.jpg"></a>
+                                                                src="{{asset('assets/imgs/shop/thumbnail-2.jpg')}}"></a>
                                                     </div>
                                                     <div class="shopping-cart-title">
                                                         <h4><a href="product-details.html">Corduroy Shirts</a></h4>
@@ -151,7 +151,7 @@
                 <div class="container">
                     <div class="header-wrap header-space-between position-relative">
                         <div class="logo logo-width-1 d-block d-lg-none">
-                            <a href={{ route('frontend.home') }}><img src="assets/imgs/logo/logo.png" alt="logo"></a>
+                            <a href={{ route('frontend.home') }}><img src="{{asset('assets/imgs/logo/logo.png')}}" alt="logo"></a>
                         </div>
                         <div class="header-nav d-none d-lg-flex">
                             <div class="main-categori-wrap d-none d-lg-block">
