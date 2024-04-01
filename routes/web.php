@@ -8,6 +8,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ResetController;
 use App\Http\Controllers\ShopController;
+use App\Http\Controllers\UserAdminController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -23,4 +24,16 @@ route::get('/register',[RegisterController::class,'index'])->name('auth.register
 route::get('/forgot',[ForgotController::class,'index'])->name('auth.forgot');
 route::get('/reset',[ResetController::class,'index'])->name('auth.reset');
 
+
 route::post('/register',[RegisterController::class,'registerUser'])->name('auth.register');
+route::post('/login',[LoginController::class,'loginUser'])->name('auth.login');
+route::delete('/logout',[LoginController::class,'logoutUser'])->name('auth.logout');
+
+
+route::middleware('auth')->group(function () {
+    Route::get('/user/dashboard',[UserAdminController::class,'user'])->name('user.dashboard');
+});
+
+route::middleware('auth')->group(function () {
+    Route::get('/admin/dashboard',[UserAdminController::class,'admin'])->name('admin.dashboard');
+});

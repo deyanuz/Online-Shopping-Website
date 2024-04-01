@@ -7,7 +7,7 @@
         <div class="page-header breadcrumb-wrap">
             <div class="container">
                 <div class="breadcrumb">
-                    <a href={{route('frontend.home')}} rel="nofollow">Home</a>
+                    <a href={{ route('frontend.home') }} rel="nofollow">Home</a>
                     <span></span> Login
                 </div>
             </div>
@@ -24,7 +24,13 @@
                                         <div class="heading_s1">
                                             <h3 class="mb-30">Login</h3>
                                         </div>
-                                        <form method="post">
+                                        @if (Session::has('error'))
+                                            <div class="alert alert-danger" role="alert">
+                                                {{ Session::get('error') }}
+                                            </div>
+                                        @endif
+                                        <form method="post" action="{{ route('auth.login') }}">
+                                            @csrf
                                             <div class="form-group">
                                                 <input type="text" required="" name="email"
                                                     placeholder="Your Email">
