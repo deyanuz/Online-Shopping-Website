@@ -14,6 +14,8 @@ class DetailsController extends Controller
     }
     public function index(){
         $product = Product::where("slug", $this->slug)->first();
-        return view("frontend.details", ["product" => $product]);
+        $rproduct=Product::where("category_id", $product->category_id)->inRandomOrder()->limit(4)->get();
+        $nproducts=Product::latest()->take(4)->get();
+        return view("frontend.details", ["product" => $product,"rproducts"=> $rproduct,"nproducts"=> $nproducts]);
     }
 }
