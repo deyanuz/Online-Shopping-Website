@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\DetailsController;
 use App\Http\Controllers\ForgotController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
@@ -23,6 +24,7 @@ route::get('/login',[LoginController::class,'index'])->name('auth.login');
 route::get('/register',[RegisterController::class,'index'])->name('auth.register');
 route::get('/forgot',[ForgotController::class,'index'])->name('auth.forgot');
 route::get('/reset',[ResetController::class,'index'])->name('auth.reset');
+route::get('/product/{slug}',[DetailsController::class,'index'])->name('product.details');
 
 
 route::post('/register',[RegisterController::class,'registerUser'])->name('auth.register');

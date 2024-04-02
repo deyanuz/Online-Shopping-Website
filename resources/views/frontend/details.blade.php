@@ -9,7 +9,7 @@
                 <div class="breadcrumb">
                     <a href="index.html" rel="nofollow">Home</a>
                     <span></span> Fashion
-                    <span></span> Abstract Print Patchwork Dress
+                    <span></span> {{$product->name}}
                 </div>
             </div>
         </div>
@@ -25,7 +25,7 @@
                                         <!-- MAIN SLIDES -->
                                         <div class="product-image-slider">
                                             <figure class="border-radius-10">
-                                                <img src="{{asset('assets/imgs/shop/product-16-2.jpg')}}" alt="product image">
+                                                <img src="{{asset('assets/imgs/shop/product-')}}{{$product->id}}-2.jpg" alt="product image">
                                             </figure>
                                             <figure class="border-radius-10">
                                                 <img src="{{asset('assets/imgs/shop/product-16-1.jpg')}}" alt="product image">
@@ -78,7 +78,7 @@
                                 </div>
                                 <div class="col-md-6 col-sm-12 col-xs-12">
                                     <div class="detail-info">
-                                        <h2 class="title-detail">Colorful Pattern Shirts HD450</h2>
+                                        <h2 class="title-detail">{{$product->name}}</h2>
                                         <div class="product-detail-rating">
                                             <div class="pro-details-brand">
                                                 <span> Brands: <a href="shop.html">Bootstrap</a></span>
@@ -93,19 +93,16 @@
                                         </div>
                                         <div class="clearfix product-price-cover">
                                             <div class="product-price primary-color float-left">
-                                                <ins><span class="text-brand">$120.00</span></ins>
-                                                <ins><span class="old-price font-md ml-15">$200.00</span></ins>
+                                                <ins><span class="text-brand">${{$product->regular_price}}</span></ins>
+                                                {{-- <ins><span class="old-price font-md ml-15">$200.00</span></ins> --}}
                                                 <span class="save-price  font-md color3 ml-15">25% Off</span>
                                             </div>
                                         </div>
                                         <div class="bt-1 border-color-1 mt-15 mb-15"></div>
                                         <div class="short-desc mb-30">
-                                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam rem
-                                                officia, corrupti reiciendis minima nisi modi, quasi, odio minus dolore
-                                                impedit fuga eum eligendi? Officia doloremque facere quia. Voluptatum,
-                                                accusantium!</p>
+                                            <p>{{$product->short_description}}</p>
                                         </div>
-                                        <div class="product_sort_info font-xs mb-30">
+                                        {{-- <div class="product_sort_info font-xs mb-30">
                                             <ul>
                                                 <li class="mb-10"><i class="fi-rs-crown mr-5"></i> 1 Year AL Jazeera Brand
                                                     Warranty</li>
@@ -113,7 +110,7 @@
                                                 </li>
                                                 <li><i class="fi-rs-credit-card mr-5"></i> Cash on Delivery available</li>
                                             </ul>
-                                        </div>
+                                        </div> --}}
                                         <div class="attr-detail attr-color mb-15">
                                             <strong class="mr-10">Color</strong>
                                             <ul class="list-filter color-filter">
@@ -190,7 +187,8 @@
                                 <div class="tab-content shop_info_tab entry-main-content">
                                     <div class="tab-pane fade show active" id="Description">
                                         <div class="">
-                                            <p>Uninhibited carnally hired played in whimpered dear gorilla koala depending
+                                            <p>{{$product->description}}</p>
+                                            {{-- <p>Uninhibited carnally hired played in whimpered dear gorilla koala depending
                                                 and much yikes off far quetzal goodness and from for grimaced goodness
                                                 unaccountably and meadowlark near unblushingly crucial scallop
                                                 tightly neurotic hungrily some and dear furiously this apart.</p>
@@ -229,7 +227,7 @@
                                                 across objectively fanciful grimaced wildly some wow and rose jeepers
                                                 outgrew lugubrious luridly irrationally attractively
                                                 dachshund.
-                                            </p>
+                                            </p> --}}
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="Additional-info">
