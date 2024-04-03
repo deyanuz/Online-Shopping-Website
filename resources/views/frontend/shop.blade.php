@@ -3,26 +3,28 @@
 
 @section('content')
 
-<style>
-    nav svg{
-        height: 20px;
-    }
-    nav .hidden{
-        display: block;
-    }
-    p{
-        font-size: 15px !important;
-        margin-bottom: 5px !important;
-        margin-top: 5px !important;
-        padding-left: 3px !important;
-    }
-</style>
+    <style>
+        nav svg {
+            height: 20px;
+        }
 
- <main class="main">
+        nav .hidden {
+            display: block;
+        }
+
+        p {
+            font-size: 15px !important;
+            margin-bottom: 5px !important;
+            margin-top: 5px !important;
+            padding-left: 3px !important;
+        }
+    </style>
+
+    <main class="main">
         <div class="page-header breadcrumb-wrap">
             <div class="container">
                 <div class="breadcrumb">
-                    <a href={{route('frontend.home')}} rel="nofollow">Home</a>
+                    <a href={{ route('frontend.home') }} rel="nofollow">Home</a>
                     <span></span> Shop
                 </div>
             </div>
@@ -78,60 +80,64 @@
                         </div>
                         <div class="row product-grid-3">
                             @foreach ($products as $product)
+                                <div class="col-lg-4 col-md-4 col-6 col-sm-6">
+                                    <div class="product-cart-wrap mb-30">
+                                        <div class="product-img-action-wrap">
+                                            <div class="product-img product-img-zoom">
+                                                <a href="{{ route('product.details', ['slug' => $product->slug]) }}">
+                                                    <img class="default-img"
+                                                        src="{{ asset('assets/imgs/shop/product-') }}{{ $product->id }}-1.jpg"
+                                                        alt="{{ $product->name }}">
+                                                    <img class="hover-img"
+                                                        src="{{ asset('assets/imgs/shop/product-') }}{{ $product->id }}-2.jpg"
+                                                        alt="{{ $product->name }}">
+                                                </a>
+                                            </div>
+                                            <div class="product-action-1">
+                                                <a aria-label="Quick view" class="action-btn hover-up"
+                                                    data-bs-toggle="modal" data-bs-target="#quickViewModal">
+                                                    <i class="fi-rs-search"></i></a>
+                                                <a aria-label="Add To Wishlist" class="action-btn hover-up"
+                                                    href="wishlist.php"><i class="fi-rs-heart"></i></a>
+                                                <a aria-label="Compare" class="action-btn hover-up" href="compare.php"><i
+                                                        class="fi-rs-shuffle"></i></a>
+                                            </div>
+                                            <div class="product-badges product-badges-position product-badges-mrg">
+                                                <span class="hot">Hot</span>
+                                            </div>
+                                        </div>
+                                        <div class="product-content-wrap">
+                                            <div class="product-category">
+                                                <a href={{ route('frontend.shop') }}>{{ $product->category->name }}</a>
+                                            </div>
+                                            <h2><a
+                                                    href="{{ route('product.details', ['slug' => $product->slug]) }}">{{ $product->name }}</a>
+                                            </h2>
+                                            <div class="rating-result" title="90%">
+                                                <span>
+                                                    <span>90%</span>
+                                                </span>
+                                            </div>
+                                            <div class="product-price">
+                                                <span>${{ $product->regular_price }} </span>
+                                                {{-- <span class="old-price">$245.8</span> --}}
+                                            </div>
+                                            <div class="product-action-1 show">
+                                                <a aria-label="Add To Cart" class="action-btn hover-up"
+                                                    href="{{ route('addToCart', ['id' => $product->id]) }}">
+                                                    <i class="fi-rs-shopping-bag-add"></i>
+                                                </a>
+                                            </div>
 
-                            <div class="col-lg-4 col-md-4 col-6 col-sm-6">
-                                <div class="product-cart-wrap mb-30">
-                                    <div class="product-img-action-wrap">
-                                        <div class="product-img product-img-zoom">
-                                            <a href="{{route('product.details',['slug'=>$product->slug])}}">
-                                                <img class="default-img" src="{{asset('assets/imgs/shop/product-')}}{{$product->id }}-1.jpg"
-                                                    alt="{{$product->name}}">
-                                                <img class="hover-img" src="{{asset('assets/imgs/shop/product-')}}{{$product->id }}-2.jpg"
-                                                    alt="{{$product->name}}">
-                                            </a>
-                                        </div>
-                                        <div class="product-action-1">
-                                            <a aria-label="Quick view" class="action-btn hover-up" data-bs-toggle="modal"
-                                                data-bs-target="#quickViewModal">
-                                                <i class="fi-rs-search"></i></a>
-                                            <a aria-label="Add To Wishlist" class="action-btn hover-up"
-                                                href="wishlist.php"><i class="fi-rs-heart"></i></a>
-                                            <a aria-label="Compare" class="action-btn hover-up" href="compare.php"><i
-                                                    class="fi-rs-shuffle"></i></a>
-                                        </div>
-                                        <div class="product-badges product-badges-position product-badges-mrg">
-                                            <span class="hot">Hot</span>
-                                        </div>
-                                    </div>
-                                    <div class="product-content-wrap">
-                                        <div class="product-category">
-                                            <a href={{ route('frontend.shop') }}>{{$product->category->name}}</a>
-                                        </div>
-                                        <h2><a href="{{route('product.details',['slug'=>$product->slug])}}">{{$product->name}}</a></h2>
-                                        <div class="rating-result" title="90%">
-                                            <span>
-                                                <span>90%</span>
-                                            </span>
-                                        </div>
-                                        <div class="product-price">
-                                            <span>${{$product->regular_price}} </span>
-                                            {{-- <span class="old-price">$245.8</span> --}}
-                                        </div>
-                                        <div class="product-action-1 show">
-                                            <a aria-label="Add To Cart" class="action-btn hover-up" href="{{ route('addToCart', ['product_id' => $product->id, 'product_name' => $product->name, 'product_price' => $product->regular_price]) }}" >
-                                                <i class="fi-rs-shopping-bag-add"></i>
-                                            </a>
-                                        </div>
 
-
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
                             @endforeach
                         </div>
                         <!--pagination-->
                         <div class="pagination-area mt-15 mb-sm-5 mb-lg-0">
-                            {{$products->links()}}
+                            {{ $products->links() }}
                             {{-- <nav aria-label="Page navigation example">
                                 <ul class="pagination justify-content-start">
                                     <li class="page-item active"><a class="page-link" href="#">01</a></li>
@@ -228,19 +234,21 @@
                                 <div class="bt-1 border-color-1"></div>
                             </div>
                             @foreach ($nproducts as $nproduct)
-                            <div class="single-post clearfix">
-                                <div class="image">
-                                    <img src="{{asset('assets/imgs/shop/thumbnail-') }}{{ $nproduct->id }}.jpg" alt="{{$nproduct->name}}">
-                                </div>
-                                <div class="content pt-10">
-                                    <h5><a href="{{route('product.details',['slug'=>$nproduct->slug])}}">{{$nproduct->name}}</a></h5>
-                                    <p class="price mb-0 mt-5">${{$nproduct->regular_price}}</p>
-                                    <div class="product-rate">
-                                        <div class="product-rating" style="width:90%"></div>
+                                <div class="single-post clearfix">
+                                    <div class="image">
+                                        <img src="{{ asset('assets/imgs/shop/thumbnail-') }}{{ $nproduct->id }}.jpg"
+                                            alt="{{ $nproduct->name }}">
+                                    </div>
+                                    <div class="content pt-10">
+                                        <h5><a
+                                                href="{{ route('product.details', ['slug' => $nproduct->slug]) }}">{{ $nproduct->name }}</a>
+                                        </h5>
+                                        <p class="price mb-0 mt-5">${{ $nproduct->regular_price }}</p>
+                                        <div class="product-rate">
+                                            <div class="product-rating" style="width:90%"></div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-
                             @endforeach
                         </div>
                         <div class="banner-img wow fadeIn mb-45 animated d-lg-block d-none">
@@ -255,7 +263,7 @@
                 </div>
             </div>
         </section>
- </main>
+    </main>
 
 @endsection
 @section('script')

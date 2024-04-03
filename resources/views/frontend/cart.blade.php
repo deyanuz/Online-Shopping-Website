@@ -30,18 +30,18 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @if (Cart::count()>0)
+                                    @if ($cartItems->Count()>0)
+                                    @foreach ($cartItems as $item)
 
                                         <tr>
-                                        <td class="image product-thumbnail"><img src="assets/imgs/shop/product-1-2.jpg"
+                                        <td class="image product-thumbnail"><img src="{{asset('assets/imgs/shop/product-')}}{{$item->model->id}}-2.jpg"
                                                 alt="#"></td>
                                         <td class="product-des product-name">
-                                            <h5 class="product-name"><a href="product-details.html">J.Crew Mercantile
-                                                    Women's Short-Sleeve</a></h5>
-                                            <p class="font-xs">Maboriosam in a tonto nesciung eget<br> distingy magndapibus.
-                                            </p>
+                                            <h5 class="product-name"><a href="product-details.html">{{$item->model->name}}</a></h5>
+                                            {{-- <p class="font-xs">Maboriosam in a tonto nesciung eget<br> distingy magndapibus.
+                                            </p> --}}
                                         </td>
-                                        <td class="price" data-title="Price"><span>$65.00 </span></td>
+                                        <td class="price" data-title="Price"><span>${{$item->model->regular_price}} </span></td>
                                         <td class="text-center" data-title="Stock">
                                             <div class="detail-qty border radius  m-auto">
                                                 <a href="#" class="qty-down"><i
@@ -51,13 +51,21 @@
                                             </div>
                                         </td>
                                         <td class="text-right" data-title="Cart">
-                                            <span>$65.00 </span>
+                                            <span>${{$item->subtotal}} </span>
                                         </td>
                                         <td class="action" data-title="Remove"><a href="#" class="text-muted"><i
                                                     class="fi-rs-trash"></i></a></td>
                                         </tr>
+
+                                    @endforeach
                                     @else
-                                        <p>No Items in Cart</p>
+                                        <div class="row">
+                                            <div class="col-md-12 text-center">
+                                                <h2>Your Cart is Empty!</h2>
+                                                <h5 class='mt-3'>Add items to it now!</h5>
+                                                <a href="{{route('frontend.shop')}}" class="btn btn-warning mt-5">Shop Now</a>
+                                            </div>
+                                        </div>
 
                                     @endif
 

@@ -16,25 +16,25 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-route::get('/home',[HomeController::class,'index'])->name('frontend.home');
-route::get('/shop',[ShopController::class,'index'])->name('frontend.shop');
-route::get('/cart',[CartController::class,'index'])->name('frontend.cart');
-route::get('/checkout',[CheckoutController::class,'index'])->name('frontend.checkout');
-route::get('/login',[LoginController::class,'index'])->name('auth.login');
-route::get('/register',[RegisterController::class,'index'])->name('auth.register');
-route::get('/forgot',[ForgotController::class,'index'])->name('auth.forgot');
-route::get('/reset',[ResetController::class,'index'])->name('auth.reset');
-route::get('/product/{slug}',[DetailsController::class,'index'])->name('product.details');
-Route::get('/add-to-cart/{product_id}/{product_name}/{product_price}', [ShopController::class,'store'])->name('addToCart');
+route::get('/home', [HomeController::class, 'index'])->name('frontend.home');
+route::get('/shop', [ShopController::class, 'index'])->name('frontend.shop');
+route::get('/cart', [CartController::class, 'index'])->name('frontend.cart');
+route::get('/checkout', [CheckoutController::class, 'index'])->name('frontend.checkout');
+route::get('/login', [LoginController::class, 'index'])->name('auth.login');
+route::get('/register', [RegisterController::class, 'index'])->name('auth.register');
+route::get('/forgot', [ForgotController::class, 'index'])->name('auth.forgot');
+route::get('/reset', [ResetController::class, 'index'])->name('auth.reset');
+route::get('/product/{slug}', [DetailsController::class, 'index'])->name('product.details');
+Route::get('/store/{id}', [CartController::class, 'store'])->name('addToCart');
 
-route::post('/register',[RegisterController::class,'registerUser'])->name('auth.register');
-route::post('/login',[LoginController::class,'loginUser'])->name('auth.login');
+route::post('/register', [RegisterController::class, 'registerUser'])->name('auth.register');
+route::post('/login', [LoginController::class, 'loginUser'])->name('auth.login');
 
-route::delete('/logout',[LoginController::class,'logoutUser'])->name('auth.logout');
+route::delete('/logout', [LoginController::class, 'logoutUser'])->name('auth.logout');
 
 route::middleware('auth')->group(function () {
-route::get('/user/dashboard',[UserAdminController::class,'user'])->name('user.dashboard');
+    route::get('/user/dashboard', [UserAdminController::class, 'user'])->name('user.dashboard');
 });
 route::middleware('auth')->group(function () {
-    Route::get('/admin/dashboard',[UserAdminController::class,'admin'])->name('admin.dashboard');
+    Route::get('/admin/dashboard', [UserAdminController::class, 'admin'])->name('admin.dashboard');
 });
