@@ -20,6 +20,12 @@
                         <div class="table-responsive">
                             <table class="table shopping-summery text-center clean">
                                 <thead>
+                                    @if(Session::has('success'))
+                                        <div class="alert alert-success">
+                                            <strong>Success! {{Session::get('success')}}</strong>
+                                        </div>
+                                    @endif
+                                    @if ($cartItems->Count()>0)
                                     <tr class="main-heading">
                                         <th scope="col">Image</th>
                                         <th scope="col">Name</th>
@@ -30,7 +36,6 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @if ($cartItems->Count()>0)
                                     @foreach ($cartItems as $item)
 
                                         <tr>
@@ -56,19 +61,7 @@
                                         <td class="action" data-title="Remove"><a href="#" class="text-muted"><i
                                                     class="fi-rs-trash"></i></a></td>
                                         </tr>
-
                                     @endforeach
-                                    @else
-                                        <div class="row">
-                                            <div class="col-md-12 text-center">
-                                                <h2>Your Cart is Empty!</h2>
-                                                <h5 class='mt-3'>Add items to it now!</h5>
-                                                <a href="{{route('frontend.shop')}}" class="btn btn-warning mt-5">Shop Now</a>
-                                            </div>
-                                        </div>
-
-                                    @endif
-
                                     <tr>
                                         <td colspan="6" class="text-end">
                                             <a href="#" class="text-muted"> <i class="fi-rs-cross-small"></i> Clear
@@ -394,7 +387,12 @@
                                                 <tr>
                                                     <td class="cart_total_label">Cart Subtotal</td>
                                                     <td class="cart_total_amount"><span
-                                                            class="font-lg fw-900 text-brand">$240.00</span></td>
+                                                            class="font-lg fw-900 text-brand">${{Cart::subtotal()}}</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="cart_total_label">Tax</td>
+                                                    <td class="cart_total_amount"><span
+                                                            class="font-lg fw-900 text-brand">${{Cart::tax()}}</span></td>
                                                 </tr>
                                                 <tr>
                                                     <td class="cart_total_label">Shipping</td>
@@ -404,7 +402,7 @@
                                                 <tr>
                                                     <td class="cart_total_label">Total</td>
                                                     <td class="cart_total_amount"><strong><span
-                                                                class="font-xl fw-900 text-brand">$240.00</span></strong>
+                                                                class="font-xl fw-900 text-brand">${{Cart::total()}}</span></strong>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -415,6 +413,16 @@
                                 </div>
                             </div>
                         </div>
+                        @else
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <h2>Your Cart is Empty!</h2>
+                                <h5 class='mt-3'>Add items to it now!</h5>
+                                <a href="{{route('frontend.shop')}}" class="btn btn-warning mt-5">Shop Now</a>
+                            </div>
+                        </div>
+
+                    @endif
                     </div>
                 </div>
             </div>

@@ -26,6 +26,10 @@ route::get('/forgot', [ForgotController::class, 'index'])->name('auth.forgot');
 route::get('/reset', [ResetController::class, 'index'])->name('auth.reset');
 route::get('/product/{slug}', [DetailsController::class, 'index'])->name('product.details');
 Route::get('/store/{id}', [CartController::class, 'store'])->name('addToCart');
+Route::get('/details/store/{id}', [DetailsController::class, 'store'])->name('fromDetails.addToCart');
+
+
+Route::put('/cart/update', [CartController::class, 'updateQuantity'])->name('update.cart');
 
 route::post('/register', [RegisterController::class, 'registerUser'])->name('auth.register');
 route::post('/login', [LoginController::class, 'loginUser'])->name('auth.login');

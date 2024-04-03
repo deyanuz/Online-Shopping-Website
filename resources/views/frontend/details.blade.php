@@ -167,12 +167,17 @@
                                                 <a href="#" class="qty-up"><i class="fi-rs-angle-small-up"></i></a>
                                             </div>
                                             <div class="product-extra-link2">
-                                                <button type="submit" class="button button-add-to-cart">Add to
-                                                    cart</button>
-                                                <a aria-label="Add To Wishlist" class="action-btn hover-up"
-                                                    href="wishlist.php"><i class="fi-rs-heart"></i></a>
-                                                <a aria-label="Compare" class="action-btn hover-up" href="compare.php"><i
-                                                        class="fi-rs-shuffle"></i></a>
+                                                <form action="{{ route('fromDetails.addToCart', ['id' => $product->id]) }}" method="get">
+                                                    @csrf
+                                                <input type="submit" value="Add to Cart" class="button button-add-to-cart"></input>
+                                                </form>
+
+                                                <div class="mt-5">
+                                                    <a aria-label="Add To Wishlist" class="action-btn hover-up mt-5"
+                                                        href="wishlist.php"><i class="fi-rs-heart"></i></a>
+                                                    <a aria-label="Compare" class="action-btn hover-up mt-5" href="compare.php"><i
+                                                            class="fi-rs-shuffle"></i></a>
+                                                </div>
                                             </div>
                                         </div>
                                         <ul class="product-meta font-xs color-grey mt-50">
