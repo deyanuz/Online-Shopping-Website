@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Facade;
+use Hardevine\Shoppingcart\ShoppingcartServiceProvider;
+
 
 return [
 
@@ -125,11 +127,4 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
-    'providers'=> [
-        Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
-    ],
-
-    'aliases'=> Facade::defaultAliases()->merge([
-        'Cart'=> Gloudemans\Shoppingcart\Facades\Cart::class,
-    ])->toArray(),
 ];

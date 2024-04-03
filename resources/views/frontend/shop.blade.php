@@ -118,9 +118,12 @@
                                             {{-- <span class="old-price">$245.8</span> --}}
                                         </div>
                                         <div class="product-action-1 show">
-                                            <a aria-label="Add To Cart" class="action-btn hover-up" href="shop-cart.php"><i
-                                                    class="fi-rs-shopping-bag-add"></i></a>
+                                            <a aria-label="Add To Cart" class="action-btn hover-up" href="{{ route('addToCart', ['product_id' => $product->id, 'product_name' => $product->name, 'product_price' => $product->regular_price]) }}" >
+                                                <i class="fi-rs-shopping-bag-add"></i>
+                                            </a>
                                         </div>
+
+
                                     </div>
                                 </div>
                             </div>
