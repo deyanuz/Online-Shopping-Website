@@ -53,4 +53,9 @@ class CartController extends Controller
 
         return redirect()->route('frontend.cart');
     }
+    public function clear(){
+        Cart::destroy();
+        return redirect()->route('frontend.cart');
+    }
+
 }

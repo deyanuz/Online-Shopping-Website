@@ -74,7 +74,7 @@
                                     @endforeach
                                     <tr>
                                         <td colspan="6" class="text-end">
-                                            <a href="#" class="text-muted"> <i class="fi-rs-cross-small"></i> Clear
+                                            <a href="{{ route('clear.cart')}}" class="text-muted"> <i class="fi-rs-cross-small"></i> Clear
                                                 Cart</a>
                                         </td>
                                     </tr>
@@ -427,11 +427,12 @@
                             </div>
                         </div>
                     @else
-                        <div class="row">
+                        <div class="row mb-5 pb-5">
                             <div class="col-md-12 text-center">
                                 <h2>Your Cart is Empty!</h2>
-                                <h5 class='mt-3'>Add items to it now!</h5>
-                                <a href="{{ route('frontend.shop') }}" class="btn btn-warning mt-5">Shop Now</a>
+                                <h5 class='mt-3 mb-5'>Add items to it now!</h5>
+                                <a href="{{ route('frontend.shop') }}" class="btn btn-warning mt-5 mb-5 pb-5">Shop Now</a>
+                                <p class="mb-5 mt-5 pb-5"> </p>
                             </div>
                         </div>
 

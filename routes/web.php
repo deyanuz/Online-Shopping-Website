@@ -27,6 +27,7 @@ Route::get('/details/store/{id}', [DetailsController::class, 'store'])->name('fr
 Route::get('/cart/quantity/increase/{id}/{qty}', [CartController::class, 'increaseQuantity'])->name('increase.cart');
 Route::get('/cart/quantity/decrease/{id}/{qty}', [CartController::class, 'decreaseQuantity'])->name('decrease.cart');
 Route::get('/cart/remove/{id}', [CartController::class, 'delete'])->name('delete.cart');
+Route::get('/cart/clear', [CartController::class, 'clear'])->name('clear.cart');
 
 route::post('/register', [RegisterController::class, 'registerUser'])->name('auth.register');
 route::post('/login', [LoginController::class, 'loginUser'])->name('auth.login');
