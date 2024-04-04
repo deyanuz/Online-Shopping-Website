@@ -10,18 +10,31 @@ class CartController extends Controller
 {
     public function index()
     {
-        $cartItems = Cart::instance('cart')->content();
+        $cartItems = Cart::content();
         return view("frontend.cart", ["cartItems" => $cartItems]);
     }
     public function store($id)
     {
         $product = Product::where("id", $id)->first();
-        Cart::instance('cart')->add($product->id, $product->name, 1, $product->regular_price)->associate('App\Models\Product');
+        Cart::add($product->id, $product->name, 1, $product->regular_price)->associate('App\Models\Product');
         return redirect()->route('frontend.cart')->with('success', 'Item added successfully');
     }
-    public function updateQuantity(Request $request)
+    public function increaseQuantity($id, $qty)
     {
-        Cart::instance('cart')->update($request->id, $request->quantity);
-        return redirect()->route('frontend.cart')->with('success', 'Item added successfully');
+        $product = Product::where("id", $id)->first();
+        if ($product->quantity > $qty) {
+            Cart::add($product->id, $product->name, 1, $product->regular_price)->associate('App\Models\Product');
+            return redirect()->route('frontend.cart')->with('success', 'Item added successfully');
+        }
+        return redirect()->route('frontend.cart')->with('error', 'Maximum limit reached');
     }
+     public function decreaseQuantity($id, $qty)
+     {
+         $product = Product::where("id", $id)->first();
+         if ($qty > 0) {
+             Cart::add($product->id, $product->name, - 1, $product->regular_price)->associate('App\Models\Product');
+             return redirect()->route('frontend.cart');
+         }
+         return redirect()->route('frontend.cart');
+     }
 }

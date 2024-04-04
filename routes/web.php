@@ -12,11 +12,8 @@ use App\Http\Controllers\ShopController;
 use App\Http\Controllers\UserAdminController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-route::get('/home', [HomeController::class, 'index'])->name('frontend.home');
+route::get('/', [HomeController::class, 'index'])->name('frontend.home');
 route::get('/shop', [ShopController::class, 'index'])->name('frontend.shop');
 route::get('/cart', [CartController::class, 'index'])->name('frontend.cart');
 route::get('/checkout', [CheckoutController::class, 'index'])->name('frontend.checkout');
@@ -29,7 +26,8 @@ Route::get('/store/{id}', [CartController::class, 'store'])->name('addToCart');
 Route::get('/details/store/{id}', [DetailsController::class, 'store'])->name('fromDetails.addToCart');
 
 
-Route::put('/cart/update', [CartController::class, 'updateQuantity'])->name('update.cart');
+Route::get('/cart/quantity/increase/{id}/{qty}', [CartController::class, 'increaseQuantity'])->name('increase.cart');
+Route::get('/cart/quantity/decrease/{id}/{qty}', [CartController::class, 'decreaseQuantity'])->name('decrease.cart');
 
 route::post('/register', [RegisterController::class, 'registerUser'])->name('auth.register');
 route::post('/login', [LoginController::class, 'loginUser'])->name('auth.login');

@@ -24,6 +24,10 @@
                                         <div class="alert alert-success">
                                             <strong>Success! {{Session::get('success')}}</strong>
                                         </div>
+                                    @elseif (Session::has('error'))
+                                    <div class="alert alert-danger">
+                                        <strong>Error! {{Session::get('error')}}</strong>
+                                    </div>
                                     @endif
                                     @if ($cartItems->Count()>0)
                                     <tr class="main-heading">
@@ -49,10 +53,11 @@
                                         <td class="price" data-title="Price"><span>${{$item->model->regular_price}} </span></td>
                                         <td class="text-center" data-title="Stock">
                                             <div class="detail-qty border radius  m-auto">
-                                                <a href="#" class="qty-down"><i
+                                                <a href="{{route('decrease.cart',['id'=>$item->model->id,'qty'=>$item->qty])}}" class="qty-down"><i
                                                         class="fi-rs-angle-small-down"></i></a>
-                                                <span class="qty-val">1</span>
-                                                <a href="#" class="qty-up"><i class="fi-rs-angle-small-up"></i></a>
+                                                <span class="qty-val">{{$item->qty}}</span>
+                                                <a href="{{ route('increase.cart', ['id' => $item->model->id,'qty'=>$item->qty]) }}
+                                                    " class="qty-up"><i class="fi-rs-angle-small-up"></i></a>
                                             </div>
                                         </td>
                                         <td class="text-right" data-title="Cart">
