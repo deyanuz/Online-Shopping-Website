@@ -24,10 +24,9 @@ route::get('/reset', [ResetController::class, 'index'])->name('auth.reset');
 route::get('/product/{slug}', [DetailsController::class, 'index'])->name('product.details');
 Route::get('/store/{id}', [CartController::class, 'store'])->name('addToCart');
 Route::get('/details/store/{id}', [DetailsController::class, 'store'])->name('fromDetails.addToCart');
-
-
 Route::get('/cart/quantity/increase/{id}/{qty}', [CartController::class, 'increaseQuantity'])->name('increase.cart');
 Route::get('/cart/quantity/decrease/{id}/{qty}', [CartController::class, 'decreaseQuantity'])->name('decrease.cart');
+Route::get('/cart/remove/{id}', [CartController::class, 'delete'])->name('delete.cart');
 
 route::post('/register', [RegisterController::class, 'registerUser'])->name('auth.register');
 route::post('/login', [LoginController::class, 'loginUser'])->name('auth.login');

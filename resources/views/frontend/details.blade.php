@@ -167,16 +167,19 @@
                                                 <a href="#" class="qty-up"><i class="fi-rs-angle-small-up"></i></a>
                                             </div>
                                             <div class="product-extra-link2">
-                                                <form action="{{ route('fromDetails.addToCart', ['id' => $product->id]) }}" method="get">
+                                                <form
+                                                    action="{{ route('fromDetails.addToCart', ['id' => $product->id]) }}"
+                                                    method="get">
                                                     @csrf
-                                                <input type="submit" value="Add to Cart" class="button button-add-to-cart"></input>
+                                                    <input type="submit" value="Add to Cart"
+                                                        class="button button-add-to-cart"></input>
                                                 </form>
 
                                                 <div class="mt-5">
                                                     <a aria-label="Add To Wishlist" class="action-btn hover-up mt-5"
                                                         href="wishlist.php"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn hover-up mt-5" href="compare.php"><i
-                                                            class="fi-rs-shuffle"></i></a>
+                                                    <a aria-label="Compare" class="action-btn hover-up mt-5"
+                                                        href="compare.php"><i class="fi-rs-shuffle"></i></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -663,20 +666,21 @@
                                 <div class="bt-1 border-color-1"></div>
                             </div>
                             @foreach ($nproducts as $nproduct)
-
-                            <div class="single-post clearfix">
-                                <div class="image">
-                                    <img src="{{ asset('assets/imgs/shop/thumbnail-') }}{{ $nproduct->id }}.jpg" alt="{{$nproduct->name}}">
-                                </div>
-                                <div class="content pt-10">
-                                    <h5><a href="{{ route('product.details', ['slug' => $nproduct->slug]) }}">{{$nproduct->name}}</a></h5>
-                                    <p class="price mb-0 mt-5">${{$nproduct->regular_price}}</p>
-                                    <div class="product-rate">
-                                        <div class="product-rating" style="width:90%"></div>
+                                <div class="single-post clearfix">
+                                    <div class="image">
+                                        <img src="{{ asset('assets/imgs/shop/thumbnail-') }}{{ $nproduct->id }}.jpg"
+                                            alt="{{ $nproduct->name }}">
+                                    </div>
+                                    <div class="content pt-10">
+                                        <h5><a
+                                                href="{{ route('product.details', ['slug' => $nproduct->slug]) }}">{{ $nproduct->name }}</a>
+                                        </h5>
+                                        <p class="price mb-0 mt-5">${{ $nproduct->regular_price }}</p>
+                                        <div class="product-rate">
+                                            <div class="product-rating" style="width:90%"></div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-
                             @endforeach
                         </div>
                     </div>
