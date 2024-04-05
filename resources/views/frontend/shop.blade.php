@@ -35,7 +35,7 @@
                     <div class="col-lg-9">
                         <div class="shop-product-fillter">
                             <div class="totall-product">
-                                <p> We found <strong class="text-brand">688</strong> items for you!</p>
+                                <p> We found <strong class="text-brand">{{ $products->total() }}</strong> items for you!</p>
                             </div>
                             <div class="sort-by-product-area">
                                 <div class="sort-by-cover mr-10">
@@ -44,16 +44,19 @@
                                             <span><i class="fi-rs-apps"></i>Show:</span>
                                         </div>
                                         <div class="sort-by-dropdown-wrap">
-                                            <span> 50 <i class="fi-rs-angle-small-down"></i></span>
+                                            <span> {{ $size }} <i class="fi-rs-angle-small-down"></i></span>
                                         </div>
                                     </div>
                                     <div class="sort-by-dropdown">
                                         <ul>
-                                            <li><a class="active" href="#">50</a></li>
-                                            <li><a href="#">100</a></li>
-                                            <li><a href="#">150</a></li>
-                                            <li><a href="#">200</a></li>
-                                            <li><a href="#">All</a></li>
+                                            <li><a @if ($size == 12) class="active" @endif
+                                                    href="{{ route('shop.changePageSize', ['size' => 12]) }}">12</a></li>
+                                            <li><a @if ($size == 15) class="active" @endif
+                                                    href="{{ route('shop.changePageSize', ['size' => 15]) }}">15</a></li>
+                                            <li><a @if ($size == 24) class="active" @endif
+                                                    href="{{ route('shop.changePageSize', ['size' => 24]) }}">24</a></li>
+                                            <li><a @if ($size == 30) class="active" @endif
+                                                    href="{{ route('shop.changePageSize', ['size' => 30]) }}">30</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -63,16 +66,15 @@
                                             <span><i class="fi-rs-apps-sort"></i>Sort by:</span>
                                         </div>
                                         <div class="sort-by-dropdown-wrap">
-                                            <span> Featured <i class="fi-rs-angle-small-down"></i></span>
+                                            <span>Default Sorting<i class="fi-rs-angle-small-down"></i></span>
                                         </div>
                                     </div>
                                     <div class="sort-by-dropdown">
                                         <ul>
-                                            <li><a class="active" href="#">Featured</a></li>
-                                            <li><a href="#">Price: Low to High</a></li>
-                                            <li><a href="#">Price: High to Low</a></li>
-                                            <li><a href="#">Release Date</a></li>
-                                            <li><a href="#">Avg. Rating</a></li>
+                                            <li><a href="{{ route('shop.changeOrderBy', ['orderBy' => 'Default Sorting']) }}">Default Sorting</a></li>
+                                            <li><a href="{{ route('shop.changeOrderBy', ['orderBy' => 'Price: Low to High']) }}">Price: Low to High</a></li>
+                                            <li><a href="{{ route('shop.changeOrderBy', ['orderBy' => 'Price: High to Low']) }}">Price: High to Low</a></li>
+                                            <li><a href="{{ route('shop.changeOrderBy', ['orderBy' => 'Newest Arrivals']) }}">Newest Arrivals</a></li>
                                         </ul>
                                     </div>
                                 </div>
