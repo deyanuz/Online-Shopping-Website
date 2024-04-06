@@ -6,6 +6,7 @@ use App\Http\Controllers\DetailsController;
 use App\Http\Controllers\ForgotController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ProductByCategory;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ResetController;
 use App\Http\Controllers\ShopController;
@@ -29,7 +30,14 @@ Route::get('/cart/quantity/decrease/{id}/{qty}', [CartController::class, 'decrea
 Route::get('/cart/remove/{id}', [CartController::class, 'delete'])->name('delete.cart');
 Route::get('/cart/clear', [CartController::class, 'clear'])->name('clear.cart');
 Route::get('/shop/{size}', [ShopController::class, 'changePageSize'])->name('shop.changePageSize');
-Route::get('/shop/{orderBy}', [ShopController::class, 'changeOrderBy'])->name('shop.changeOrderBy');
+Route::get('/shop/sorting/{orderBy}', [ShopController::class, 'changeOrderBy'])->name('shop.changeOrderBy');
+
+
+Route::get('/shop/category/{slug}', [ProductByCategory::class, 'index'])->name('shop.productByCategory');
+Route::get('/shop/category-pagesize/{size}', [ProductByCategory::class, 'changePageSize'])->name('shop.productByCategoryPageSize');
+Route::get('/shop/category-sortorder/{orderBy}', [ProductByCategory::class, 'changeOrderBy'])->name('shop.productByCategoryOrderBy');
+
+
 
 route::post('/register', [RegisterController::class, 'registerUser'])->name('auth.register');
 route::post('/login', [LoginController::class, 'loginUser'])->name('auth.login');
