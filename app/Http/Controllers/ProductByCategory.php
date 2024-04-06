@@ -27,7 +27,7 @@ class ProductByCategory extends Controller
 
         $nproducts = Product::latest()->take(4)->get();
         $categories = Category::orderBy('name', "ASC")->get();
-        return view("frontend.productByCategory", ["products" => $products, "nproducts" => $nproducts, "size" => $pageSize, "orderBy" => $orderBy, "categories" => $categories]);
+        return view("frontend.productByCategory", ["products" => $products, "nproducts" => $nproducts, "size" => $pageSize, "orderBy" => $orderBy, "categories" => $categories,"category"=> $category]);
     }
 
     public function changeOrderBy($orderBy)

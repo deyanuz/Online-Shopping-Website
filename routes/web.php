@@ -9,6 +9,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductByCategory;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ResetController;
+use App\Http\Controllers\SearchResultController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\UserAdminController;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +23,7 @@ route::get('/login', [LoginController::class, 'index'])->name('auth.login');
 route::get('/register', [RegisterController::class, 'index'])->name('auth.register');
 route::get('/forgot', [ForgotController::class, 'index'])->name('auth.forgot');
 route::get('/reset', [ResetController::class, 'index'])->name('auth.reset');
+
 route::get('/product/{slug}', [DetailsController::class, 'index'])->name('product.details');
 Route::get('/store/{id}', [CartController::class, 'store'])->name('addToCart');
 Route::get('/details/store/{id}', [DetailsController::class, 'store'])->name('fromDetails.addToCart');
@@ -29,6 +31,7 @@ Route::get('/cart/quantity/increase/{id}/{qty}', [CartController::class, 'increa
 Route::get('/cart/quantity/decrease/{id}/{qty}', [CartController::class, 'decreaseQuantity'])->name('decrease.cart');
 Route::get('/cart/remove/{id}', [CartController::class, 'delete'])->name('delete.cart');
 Route::get('/cart/clear', [CartController::class, 'clear'])->name('clear.cart');
+
 Route::get('/shop/{size}', [ShopController::class, 'changePageSize'])->name('shop.changePageSize');
 Route::get('/shop/sorting/{orderBy}', [ShopController::class, 'changeOrderBy'])->name('shop.changeOrderBy');
 
@@ -38,6 +41,7 @@ Route::get('/shop/category-pagesize/{size}', [ProductByCategory::class, 'changeP
 Route::get('/shop/category-sortorder/{orderBy}', [ProductByCategory::class, 'changeOrderBy'])->name('shop.productByCategoryOrderBy');
 
 
+route::get('/search', [SearchResultController::class,'index'])->name('search.product');
 
 route::post('/register', [RegisterController::class, 'registerUser'])->name('auth.register');
 route::post('/login', [LoginController::class, 'loginUser'])->name('auth.login');

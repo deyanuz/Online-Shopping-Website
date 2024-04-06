@@ -35,7 +35,7 @@
                     <div class="col-lg-9">
                         <div class="shop-product-fillter">
                             <div class="totall-product">
-                                <p> We found <strong class="text-brand">{{ $products->total() }}</strong> items for you from <strong class="text-brand">{{$category->name}}</strong></p>
+                                <p> We found <strong class="text-brand">{{ $products->total() }}</strong> items for you!</p>
                             </div>
                             <div class="sort-by-product-area">
                                 <div class="sort-by-cover mr-10">
@@ -50,13 +50,13 @@
                                     <div class="sort-by-dropdown">
                                         <ul>
                                             <li><a @if ($size == 12) class="active" @endif
-                                                    href="{{ route('shop.productByCategoryPageSize', ['size' => 12]) }}">12</a></li>
+                                                    href="{{ route('shop.changePageSize', ['size' => 12]) }}">12</a></li>
                                             <li><a @if ($size == 15) class="active" @endif
-                                                    href="{{ route('shop.productByCategoryPageSize', ['size' => 15]) }}">15</a></li>
+                                                    href="{{ route('shop.changePageSize', ['size' => 15]) }}">15</a></li>
                                             <li><a @if ($size == 24) class="active" @endif
-                                                    href="{{ route('shop.productByCategoryPageSize', ['size' => 24]) }}">24</a></li>
+                                                    href="{{ route('shop.changePageSize', ['size' => 24]) }}">24</a></li>
                                             <li><a @if ($size == 30) class="active" @endif
-                                                    href="{{ route('shop.productByCategoryPageSize', ['size' => 30]) }}">30</a></li>
+                                                    href="{{ route('shop.changePageSize', ['size' => 30]) }}">30</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -71,10 +71,10 @@
                                     </div>
                                     <div class="sort-by-dropdown">
                                         <ul>
-                                            <li><a @if ($orderBy == 'Default Sorting') class="active" @endif href="{{ route('shop.productByCategoryOrderBy', ['orderBy' => 'Default Sorting']) }}">Default Sorting</a></li>
-                                            <li><a @if ($orderBy == 'Price: Low to High') class="active" @endif href="{{ route('shop.productByCategoryOrderBy', ['orderBy' => 'Price: Low to High']) }}">Price: Low to High</a></li>
-                                            <li><a @if ($orderBy == 'Price: High to Low') class="active" @endif href="{{ route('shop.productByCategoryOrderBy', ['orderBy' => 'Price: High to Low']) }}">Price: High to Low</a></li>
-                                            <li><a @if ($orderBy == 'Newest Arrivals') class="active" @endif href="{{ route('shop.productByCategoryOrderBy', ['orderBy' => 'Newest Arrivals']) }}">Newest Arrivals</a></li>
+                                            <li><a @if ($orderBy == 'Default Sorting') class="active" @endif href="{{ route('shop.changeOrderBy', ['orderBy' => 'Default Sorting']) }}">Default Sorting</a></li>
+                                            <li><a @if ($orderBy == 'Price: Low to High') class="active" @endif href="{{ route('shop.changeOrderBy', ['orderBy' => 'Price: Low to High']) }}">Price: Low to High</a></li>
+                                            <li><a @if ($orderBy == 'Price: High to Low') class="active" @endif href="{{ route('shop.changeOrderBy', ['orderBy' => 'Price: High to Low']) }}">Price: High to Low</a></li>
+                                            <li><a @if ($orderBy == 'Newest Arrivals') class="active" @endif href="{{ route('shop.changeOrderBy', ['orderBy' => 'Newest Arrivals']) }}">Newest Arrivals</a></li>
                                         </ul>
                                     </div>
                                 </div>
