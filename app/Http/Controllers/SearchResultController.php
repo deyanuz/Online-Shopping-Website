@@ -26,7 +26,7 @@ class SearchResultController extends Controller
 
         $nproducts = Product::latest()->take(4)->get();
         $categories = Category::orderBy('name', "ASC")->get();
-        return view("frontend.searchResult", ["products" => $products, "nproducts" => $nproducts, "size" => $pageSize, "orderBy" => $orderBy, "categories" => $categories]);
+        return view("frontend.searchResult", ["products" => $products, "nproducts" => $nproducts, "size" => $pageSize, "orderBy" => $orderBy, "categories" => $categories,'q'=>$request->input('q')]);
     }
 
     public function changeOrderBy($orderBy)

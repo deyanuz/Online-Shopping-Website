@@ -397,13 +397,13 @@
                                                 <tr>
                                                     <td class="cart_total_label">Cart Subtotal</td>
                                                     <td class="cart_total_amount"><span
-                                                            class="font-lg fw-900 text-brand">${{ Cart::subtotal() }}</span>
+                                                            class="font-lg fw-900 text-brand">${{ Cart::instance('cart')->subtotal() }}</span>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td class="cart_total_label">Tax</td>
                                                     <td class="cart_total_amount"><span
-                                                            class="font-lg fw-900 text-brand">${{ Cart::tax() }}</span>
+                                                            class="font-lg fw-900 text-brand">${{ Cart::instance('cart')->tax() }}</span>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -414,7 +414,7 @@
                                                 <tr>
                                                     <td class="cart_total_label">Total</td>
                                                     <td class="cart_total_amount"><strong><span
-                                                                class="font-xl fw-900 text-brand">${{ Cart::total() }}</span></strong>
+                                                                class="font-xl fw-900 text-brand">${{ Cart::instance('cart')->total() }}</span></strong>
                                                     </td>
                                                 </tr>
                                             </tbody>

@@ -86,20 +86,14 @@
                         <div class="header-right">
 
                             <div class="search-style-1">
-                                <form action="{{route('search.product')}}">
-                                    <input type="text" name='q' placeholder="Search for items...">
+                                <form action="{{ route('search.product') }}">
+                                    <input type="text" name='q' placeholder="Search for items..." @if(isset($q)) value={{$q}} @endif>
                                 </form>
                             </div>
 
                             <div class="header-action-right">
                                 <div class="header-action-2">
-                                    <div class="header-action-icon-2">
-                                        <a href="shop-wishlist.php">
-                                            <img class="svgInject" alt="Surfside Media"
-                                                src="{{ asset('assets/imgs/theme/icons/icon-heart.svg') }}">
-                                            <span class="pro-count blue">4</span>
-                                        </a>
-                                    </div>
+                                    @include('frontend.wishlist')
                                     @include('frontend.cartIcon')
                                 </div>
                             </div>
@@ -454,59 +448,8 @@
                             </p>
                             <div class="header-action-right d-block d-lg-none">
                                 <div class="header-action-2">
-                                    <div class="header-action-icon-2">
-                                        <a href="shop-wishlist.php">
-                                            <img alt="Surfside Media"
-                                                src="{{ asset('assets/imgs/theme/icons/icon-heart.svg') }}">
-                                            <span class="pro-count white">4</span>
-                                        </a>
-                                    </div>
-                                    <div class="header-action-icon-2">
-                                        <a class="mini-cart-icon" href={{ route('frontend.cart') }}>
-                                            <img alt="Surfside Media"
-                                                src="{{ asset('assets/imgs/theme/icons/icon-cart.svg') }}">
-                                            <span class="pro-count white">2</span>
-                                        </a>
-                                        <div class="cart-dropdown-wrap cart-dropdown-hm2">
-                                            <ul>
-                                                <li>
-                                                    <div class="shopping-cart-img">
-                                                        <a href="product-details.html"><img alt="Surfside Media"
-                                                                src="{{ asset('assets/imgs/shop/thumbnail-3.jpg') }}"></a>
-                                                    </div>
-                                                    <div class="shopping-cart-title">
-                                                        <h4><a href="product-details.html">Plain Striola Shirts</a></h4>
-                                                        <h3><span>1 × </span>$800.00</h3>
-                                                    </div>
-                                                    <div class="shopping-cart-delete">
-                                                        <a href="#"><i class="fi-rs-cross-small"></i></a>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="shopping-cart-img">
-                                                        <a href="product-details.html"><img alt="Surfside Media"
-                                                                src="{{ asset('assets/imgs/shop/thumbnail-4.jpg') }}"></a>
-                                                    </div>
-                                                    <div class="shopping-cart-title">
-                                                        <h4><a href="product-details.html">Macbook Pro 2022</a></h4>
-                                                        <h3><span>1 × </span>$3500.00</h3>
-                                                    </div>
-                                                    <div class="shopping-cart-delete">
-                                                        <a href="#"><i class="fi-rs-cross-small"></i></a>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                            <div class="shopping-cart-footer">
-                                                <div class="shopping-cart-total">
-                                                    <h4>Total <span>$383.00</span></h4>
-                                                </div>
-                                                <div class="shopping-cart-button">
-                                                    <a href={{ route('frontend.cart') }}>View cart</a>
-                                                    <a href="shop-checkout.php">Checkout</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    @include('frontend.wishlist')
+                                    @include('frontend.cartIcon')
                                     <div class="header-action-icon-2 d-block d-lg-none">
                                         <div class="burger-icon burger-icon-white">
                                             <span class="burger-icon-top"></span>
@@ -780,6 +723,7 @@
             <!-- Template  JS -->
             <script src="{{ asset('assets/js/main.js?v=3.3') }}"></script>
             <script src="{{ asset('assets/js/shop.js?v=3.3') }}"></script>
+            @stack('script')
         </body>
 
         </html>

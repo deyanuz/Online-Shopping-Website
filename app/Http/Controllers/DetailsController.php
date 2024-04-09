@@ -22,7 +22,7 @@ class DetailsController extends Controller
     public function store($id)
     {
         $product = Product::where("id", $id)->first();
-        Cart::add($product->id, $product->name, 1, $product->regular_price)->associate('App\Models\Product');
+        Cart::instance('cart')->add($product->id, $product->name, 1, $product->regular_price)->associate('App\Models\Product');
         return redirect()->route('frontend.shop')->with('success', 'Item added successfully');
     }
 }

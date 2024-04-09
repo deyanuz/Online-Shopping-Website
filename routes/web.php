@@ -27,6 +27,7 @@ route::get('/reset', [ResetController::class, 'index'])->name('auth.reset');
 route::get('/product/{slug}', [DetailsController::class, 'index'])->name('product.details');
 Route::get('/store/{id}', [CartController::class, 'store'])->name('addToCart');
 Route::get('/details/store/{id}', [DetailsController::class, 'store'])->name('fromDetails.addToCart');
+
 Route::get('/cart/quantity/increase/{id}/{qty}', [CartController::class, 'increaseQuantity'])->name('increase.cart');
 Route::get('/cart/quantity/decrease/{id}/{qty}', [CartController::class, 'decreaseQuantity'])->name('decrease.cart');
 Route::get('/cart/remove/{id}', [CartController::class, 'delete'])->name('delete.cart');
@@ -39,6 +40,9 @@ Route::get('/shop/sorting/{orderBy}', [ShopController::class, 'changeOrderBy'])-
 Route::get('/shop/category/{slug}', [ProductByCategory::class, 'index'])->name('shop.productByCategory');
 Route::get('/shop/category-pagesize/{size}', [ProductByCategory::class, 'changePageSize'])->name('shop.productByCategoryPageSize');
 Route::get('/shop/category-sortorder/{orderBy}', [ProductByCategory::class, 'changeOrderBy'])->name('shop.productByCategoryOrderBy');
+Route::get('/shop/price-range', [ProductByCategory::class, 'setPriceRange'])->name('shop.priceRange');
+
+Route::get('/wishlist/store/{id}', [ShopController::class, 'addToWishlist'])->name('addToWishlist');
 
 
 route::get('/search', [SearchResultController::class,'index'])->name('search.product');
