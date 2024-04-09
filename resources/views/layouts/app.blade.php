@@ -93,7 +93,7 @@
 
                             <div class="header-action-right">
                                 <div class="header-action-2">
-                                    @include('frontend.wishlist')
+                                    @include('frontend.wishlistIcon')
                                     @include('frontend.cartIcon')
                                 </div>
                             </div>
@@ -448,7 +448,7 @@
                             </p>
                             <div class="header-action-right d-block d-lg-none">
                                 <div class="header-action-2">
-                                    @include('frontend.wishlist')
+                                    @include('frontend.wishlistIcon')
                                     @include('frontend.cartIcon')
                                     <div class="header-action-icon-2 d-block d-lg-none">
                                         <div class="burger-icon burger-icon-white">

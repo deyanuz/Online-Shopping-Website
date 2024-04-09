@@ -12,6 +12,7 @@ use App\Http\Controllers\ResetController;
 use App\Http\Controllers\SearchResultController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\UserAdminController;
+use App\Http\Controllers\WishlistController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -23,6 +24,7 @@ route::get('/login', [LoginController::class, 'index'])->name('auth.login');
 route::get('/register', [RegisterController::class, 'index'])->name('auth.register');
 route::get('/forgot', [ForgotController::class, 'index'])->name('auth.forgot');
 route::get('/reset', [ResetController::class, 'index'])->name('auth.reset');
+Route::get('/wishlist', [WishlistController::class, 'index'])->name('frontend.wishlist');
 
 route::get('/product/{slug}', [DetailsController::class, 'index'])->name('product.details');
 Route::get('/store/{id}', [CartController::class, 'store'])->name('addToCart');
@@ -43,6 +45,8 @@ Route::get('/shop/category-sortorder/{orderBy}', [ProductByCategory::class, 'cha
 Route::get('/shop/price-range', [ProductByCategory::class, 'setPriceRange'])->name('shop.priceRange');
 
 Route::get('/wishlist/store/{id}', [ShopController::class, 'addToWishlist'])->name('addToWishlist');
+Route::get('/shop/wishlist/remove/{id}', [ShopController::class, 'remove'])->name('removeFromWishlist');
+Route::get('/wishlist/remove/{id}', [WishlistController::class, 'remove'])->name('wishlist.removeFromWishlist');
 
 
 route::get('/search', [SearchResultController::class,'index'])->name('search.product');

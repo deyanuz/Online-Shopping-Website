@@ -55,4 +55,14 @@ class ShopController extends Controller
         $this->to = $request->input('to');
         return redirect()->route('frontend.shop');
     }
+    public function remove($id)
+    {
+        $cartItem = Cart::instance('wishlist')->content()->where('id', $id)->first();
+        $rowId = $cartItem->rowId;
+        if ($rowId) {
+            Cart::instance('wishlist')->remove($rowId);
+        }
+
+        return redirect()->route('frontend.shop');
+    }
 }
