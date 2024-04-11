@@ -2,20 +2,22 @@
 @section('title', 'Add Category')
 
 @section('content')
-<style>
-    nav svg{
-        height: 20px;
-    }
-    nav .hidden{
-        display: block;
-    }
-    p {
+    <style>
+        nav svg {
+            height: 20px;
+        }
+
+        nav .hidden {
+            display: block;
+        }
+
+        p {
             font-size: 15px !important;
             margin-bottom: 5px !important;
             margin-top: 5px !important;
             padding-left: 3px !important;
         }
-</style>
+    </style>
     <main class="main">
         <div class="page-header breadcrumb-wrap">
             <div class="container">
@@ -36,19 +38,27 @@
                                         <h4>Add New Category</h4>
                                     </div>
                                     <div class="col-md-6">
-                                        <a href="{{route('admin.categories')}}" class='btn btn-success float-end'>All Categories</a>
+                                        <a href="{{ route('admin.categories') }}" class='btn btn-success float-end'>All
+                                            Categories</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="card-body">
-                                <form action="">
+                                @if (Session::has('success'))
+                                    <div class="alert alert-success" role="alert">
+                                        {{ Session::get('success') }}
+                                    </div>
+                                @endif
+                                <form action="{{ route('admin.storeCategory') }}">
                                     <div class="mb-3 mt-3">
                                         <label for="name" class="form-label">Name</label>
-                                        <input type="text" class="form-control" name='name' placeholder="Enter cetegory name"/>
+                                        <input type="text" class="form-control" name='name'
+                                            placeholder="Enter cetegory name" required />
                                     </div>
                                     <div class="mb-3 mt-3">
                                         <label for="slug" class="form-label">Slug</label>
-                                        <input type="text" name="slug" class="form-control" placeholder="Enter cetegory slug"/>
+                                        <input type="text" name="slug" class="form-control"
+                                            placeholder="Enter cetegory slug" required />
                                     </div>
                                     <button class="btn btn-primary float-end" type="submit">Submit</button>
                                 </form>

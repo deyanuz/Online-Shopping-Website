@@ -65,5 +65,6 @@ route::middleware('auth')->group(function () {
     route::get('/admin/dashboard', [UserAdminController::class, 'admin'])->name('admin.dashboard');
     route::get('/admin/categories', [AdminCategoryController::class, 'index'])->name('admin.categories');
     route::get('/admin/add-category', [AddCategoryController::class, 'index'])->name('admin.addCategory');
+    route::get('/admin/store-category', [AddCategoryController::class, 'storeCategory'])->name('admin.storeCategory');
 
 });
