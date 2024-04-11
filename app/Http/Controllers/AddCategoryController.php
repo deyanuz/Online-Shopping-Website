@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use Illuminate\Support\Str;
 
 class AddCategoryController extends Controller
 {
@@ -14,7 +15,7 @@ class AddCategoryController extends Controller
         ]);
         $category = new Category();
         $category->name = $validatedData["name"];
-        $category->slug = $validatedData["slug"];
+        $category->slug = Str::slug($validatedData["slug"]);
         $category->save();
         return redirect()->route("admin.addCategory")->with("success","Category Added Successfully!");
 
