@@ -87,7 +87,8 @@
 
                             <div class="search-style-1">
                                 <form action="{{ route('search.product') }}">
-                                    <input type="text" name='q' placeholder="Search for items..." @if(isset($q)) value={{$q}} @endif>
+                                    <input type="text" name='q' placeholder="Search for items..."
+                                        @if (isset($q)) value={{ $q }} @endif>
                                 </form>
                             </div>
 
@@ -419,13 +420,13 @@
                                         </li>
                                         <li><a href="blog.html">Blog </a></li>
                                         <li><a href="contact.html">Contact</a></li>
-                                        <li><a href="#">My Account<i class="fi-rs-angle-down"></i></a>
-                                            @auth
+                                        @auth
+                                            <li><a href="#">My Account<i class="fi-rs-angle-down"></i></a>
                                                 @if (Auth::user()->utype == 'adm')
                                                     <ul class="sub-menu">
                                                         <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
                                                         <li><a href="#">Products</a></li>
-                                                        <li><a href="#">Categories</a></li>
+                                                        <li><a href="{{ route('admin.categories') }}">Categories</a></li>
                                                         <li><a href="#">Coupons</a></li>
                                                         <li><a href="#">Orders</a></li>
                                                         <li><a href="#">Customers</a></li>
@@ -435,8 +436,8 @@
                                                         <li><a href="{{ route('user.dashboard') }}">Dashboard</a></li>
                                                     </ul>
                                                 @endif
-                                                @endif
                                             </li>
+                                            @endif
                                         </ul>
                                     </nav>
                                 </div>

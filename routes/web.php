@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AddCategoryController;
+use App\Http\Controllers\AdminCategoryController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\DetailsController;
@@ -24,32 +26,32 @@ route::get('/login', [LoginController::class, 'index'])->name('auth.login');
 route::get('/register', [RegisterController::class, 'index'])->name('auth.register');
 route::get('/forgot', [ForgotController::class, 'index'])->name('auth.forgot');
 route::get('/reset', [ResetController::class, 'index'])->name('auth.reset');
-Route::get('/wishlist', [WishlistController::class, 'index'])->name('frontend.wishlist');
+route::get('/wishlist', [WishlistController::class, 'index'])->name('frontend.wishlist');
 
 route::get('/product/{slug}', [DetailsController::class, 'index'])->name('product.details');
-Route::get('/store/{id}', [CartController::class, 'store'])->name('addToCart');
-Route::get('/details/store/{id}', [DetailsController::class, 'store'])->name('fromDetails.addToCart');
+route::get('/store/{id}', [CartController::class, 'store'])->name('addToCart');
+route::get('/details/store/{id}', [DetailsController::class, 'store'])->name('fromDetails.addToCart');
 
-Route::get('/cart/quantity/increase/{id}/{qty}', [CartController::class, 'increaseQuantity'])->name('increase.cart');
-Route::get('/cart/quantity/decrease/{id}/{qty}', [CartController::class, 'decreaseQuantity'])->name('decrease.cart');
-Route::get('/cart/remove/{id}', [CartController::class, 'delete'])->name('delete.cart');
-Route::get('/cart/clear', [CartController::class, 'clear'])->name('clear.cart');
+route::get('/cart/quantity/increase/{id}/{qty}', [CartController::class, 'increaseQuantity'])->name('increase.cart');
+route::get('/cart/quantity/decrease/{id}/{qty}', [CartController::class, 'decreaseQuantity'])->name('decrease.cart');
+route::get('/cart/remove/{id}', [CartController::class, 'delete'])->name('delete.cart');
+route::get('/cart/clear', [CartController::class, 'clear'])->name('clear.cart');
 
-Route::get('/shop/{size}', [ShopController::class, 'changePageSize'])->name('shop.changePageSize');
-Route::get('/shop/sorting/{orderBy}', [ShopController::class, 'changeOrderBy'])->name('shop.changeOrderBy');
-
-
-Route::get('/shop/category/{slug}', [ProductByCategory::class, 'index'])->name('shop.productByCategory');
-Route::get('/shop/category-pagesize/{size}', [ProductByCategory::class, 'changePageSize'])->name('shop.productByCategoryPageSize');
-Route::get('/shop/category-sortorder/{orderBy}', [ProductByCategory::class, 'changeOrderBy'])->name('shop.productByCategoryOrderBy');
-Route::get('/shop/price-range', [ProductByCategory::class, 'setPriceRange'])->name('shop.priceRange');
-
-Route::get('/wishlist/store/{id}', [ShopController::class, 'addToWishlist'])->name('addToWishlist');
-Route::get('/shop/wishlist/remove/{id}', [ShopController::class, 'remove'])->name('removeFromWishlist');
-Route::get('/wishlist/remove/{id}', [WishlistController::class, 'remove'])->name('wishlist.removeFromWishlist');
+route::get('/shop/{size}', [ShopController::class, 'changePageSize'])->name('shop.changePageSize');
+route::get('/shop/sorting/{orderBy}', [ShopController::class, 'changeOrderBy'])->name('shop.changeOrderBy');
 
 
-route::get('/search', [SearchResultController::class,'index'])->name('search.product');
+route::get('/shop/category/{slug}', [ProductByCategory::class, 'index'])->name('shop.productByCategory');
+route::get('/shop/category-pagesize/{size}', [ProductByCategory::class, 'changePageSize'])->name('shop.productByCategoryPageSize');
+route::get('/shop/category-sortorder/{orderBy}', [ProductByCategory::class, 'changeOrderBy'])->name('shop.productByCategoryOrderBy');
+route::get('/shop/price-range', [ProductByCategory::class, 'setPriceRange'])->name('shop.priceRange');
+
+route::get('/wishlist/store/{id}', [ShopController::class, 'addToWishlist'])->name('addToWishlist');
+route::get('/shop/wishlist/remove/{id}', [ShopController::class, 'remove'])->name('removeFromWishlist');
+route::get('/wishlist/remove/{id}', [WishlistController::class, 'remove'])->name('wishlist.removeFromWishlist');
+
+
+route::get('/search', [SearchResultController::class, 'index'])->name('search.product');
 
 route::post('/register', [RegisterController::class, 'registerUser'])->name('auth.register');
 route::post('/login', [LoginController::class, 'loginUser'])->name('auth.login');
@@ -60,5 +62,8 @@ route::middleware('auth')->group(function () {
     route::get('/user/dashboard', [UserAdminController::class, 'user'])->name('user.dashboard');
 });
 route::middleware('auth')->group(function () {
-    Route::get('/admin/dashboard', [UserAdminController::class, 'admin'])->name('admin.dashboard');
+    route::get('/admin/dashboard', [UserAdminController::class, 'admin'])->name('admin.dashboard');
+    route::get('/admin/categories', [AdminCategoryController::class, 'index'])->name('admin.categories');
+    route::get('/admin/add-category', [AddCategoryController::class, 'index'])->name('admin.addCategory');
+
 });

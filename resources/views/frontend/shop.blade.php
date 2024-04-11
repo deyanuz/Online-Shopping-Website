@@ -146,7 +146,8 @@
                                             <div class="product-action-1 show">
                                                 @if ($witems->contains($product->id))
                                                     <a aria-label="Remove From Wishlist"
-                                                        class="action-btn hover-up wishlisted" href="{{ route('removeFromWishlist', ['id' => $product->id]) }}"><i
+                                                        class="action-btn hover-up wishlisted"
+                                                        href="{{ route('removeFromWishlist', ['id' => $product->id]) }}"><i
                                                             class="fi-rs-heart"></i></a>
                                                 @else
                                                     <a aria-label="Add To Wishlist" class="action-btn hover-up"
@@ -299,18 +300,13 @@
                 max: 1000,
                 values: [0, 1000],
                 slide: function(event, ui) {
-                    amountprice.val("$" + ui.values[0] + " - $" + ui.values[1]);
-                    $.ajax({
-                        url: '/shop/price-range',
-                        method: 'POST',
-                        data: {
-                            from: ui.values[0],
-                            to: ui.values[1]
-                        }
-                    });
-
+                    amountprice.val(ui.values[0] + "-" + ui.values[1]);
+                    amountprice.submit();
                 }
             });
+            amountprice.val( sliderrange.slider("values", 0) +
+                " " + sliderrange.slider("values", 1));
         });
     </script>
 @endpush
+

@@ -99,14 +99,14 @@
                                 </div>
                             @endforeach
                         @else
-                        <div class="row mb-5 pb-5">
-                            <div class="col-md-12 text-center">
-                                <h2>Your Wishlist is Empty!</h2>
-                                <h5 class='mt-3 mb-5'>Add items to it now!</h5>
-                                <a href="{{ route('frontend.shop') }}" class="btn btn-warning mt-5 mb-5 pb-5">Shop</a>
-                                <p class="mb-5 mt-5 pb-5"> </p>
+                            <div class="row mb-5 pb-5">
+                                <div class="col-md-12 text-center">
+                                    <h2>Your Wishlist is Empty!</h2>
+                                    <h5 class='mt-3 mb-5'>Add items to it now!</h5>
+                                    <a href="{{ route('frontend.shop') }}" class="btn btn-warning mt-5 mb-5 pb-5">Shop</a>
+                                    <p class="mb-5 mt-5 pb-5"> </p>
+                                </div>
                             </div>
-                        </div>
                         @endif
                     </div>
                 </div>
