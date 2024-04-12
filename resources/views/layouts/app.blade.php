@@ -554,6 +554,25 @@
                                             <li><a href="#">Spanish</a></li>
                                         </ul>
                                     </li>
+                                    @auth
+                                    <li class="menu-item-has-children"><span class="menu-expand"></span><a
+                                        href="#">My Account</a>
+                                                @if (Auth::user()->utype == 'adm')
+                                                    <ul class="dropdown">
+                                                        <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+                                                        <li><a href="#">Products</a></li>
+                                                        <li><a href="{{ route('admin.categories') }}">Categories</a></li>
+                                                        <li><a href="#">Coupons</a></li>
+                                                        <li><a href="#">Orders</a></li>
+                                                        <li><a href="#">Customers</a></li>
+                                                    </ul>
+                                                @else
+                                                    <ul class="sub-menu">
+                                                        <li><a href="{{ route('user.dashboard') }}">Dashboard</a></li>
+                                                    </ul>
+                                                @endif
+                                            </li>
+                                            @endif
                                 </ul>
                             </nav>
                             <!-- mobile menu end -->
@@ -562,12 +581,23 @@
                             <div class="single-mobile-header-info mt-30">
                                 <a href="contact.html"> Our location </a>
                             </div>
+                            @auth
+                            <div class="single-mobile-header-info">
+                                <form method="post" action="{{ route('auth.logout') }}">
+                                    @csrf
+                                    @method('DELETE')
+                                    <a href="{{ route('auth.logout') }}"
+                                        onclick="event.preventDefault(); this.closest('form').submit()">Logout ({{Auth::user()->name}})</a>
+                                </form>
+                            </div>
+                            @else
                             <div class="single-mobile-header-info">
                                 <a href={{ route('auth.login') }}>Log In </a>
                             </div>
                             <div class="single-mobile-header-info">
                                 <a href={{ route('auth.register') }}>Sign Up</a>
                             </div>
+                            @endif
                             <div class="single-mobile-header-info">
                                 <a href="#">(+1) 0000-000-000 </a>
                             </div>
