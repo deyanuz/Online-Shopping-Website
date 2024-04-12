@@ -59,7 +59,11 @@
                                             <td>{{++$i}}</td>
                                             <td>{{$category->name}}</td>
                                             <td>{{$category->slug}}</td>
-                                            <td>-</td>
+                                            <td>
+                                                <a href="{{route('admin.editCategory',['id'=>$category->id])}}" aria-label="Edit" class="text-info">
+                                                    Edit
+                                                </a>
+                                            </td>
                                         </tr>
                                         @endforeach
                                     </tbody>
