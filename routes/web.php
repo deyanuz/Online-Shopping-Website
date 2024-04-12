@@ -69,4 +69,5 @@ route::middleware('auth')->group(function () {
     route::get('/admin/store-category', [AddCategoryController::class, 'storeCategory'])->name('admin.storeCategory');
     route::get('/admin/category/edit/{id}', [EditCategoryController::class, 'index'])->name('admin.editCategory');
     route::get('/admin/edit-category/{id}', [EditCategoryController::class, 'editCategory'])->name('admin.updateCategory');
+    route::get('/admin/delete-category/{id}', [EditCategoryController::class, 'deleteCategory'])->name('admin.deleteCategory');
 });

@@ -19,6 +19,11 @@ class EditCategoryController extends Controller
         $category->save();
         return redirect()->route("admin.addCategory")->with("success","Category Updated Successfully!");
     }
+    public function deleteCategory($id){
+        $category = Category::find($id);
+        $category->delete();
+        return redirect()->route("admin.categories")->with("success","Category Removed Successfully!");
+    }
     public function index($id){
         return view("auth.editCategory",['id'=>$id]);
     }
