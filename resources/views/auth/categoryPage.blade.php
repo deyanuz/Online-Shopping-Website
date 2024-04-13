@@ -2,6 +2,7 @@
 @section('title', 'Cart')
 
 @section('content')
+
 <style>
     nav svg{
         height: 20px;
@@ -49,10 +50,10 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th>#</th>
-                                        <th>Name</th>
-                                        <th>Slug</th>
-                                        <th>Action</th>
+                                        <th class="text-center">#</th>
+                                        <th class="text-center">Name</th>
+                                        <th class="text-center">Slug</th>
+                                        <th class="text-center">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -61,10 +62,10 @@
                                     @endphp
                                     @foreach ($categories as $category)
                                     <tr>
-                                        <td>{{++$i}}</td>
-                                        <td>{{$category->name}}</td>
-                                        <td>{{$category->slug}}</td>
-                                        <td>
+                                        <td class="text-center">{{++$i}}</td>
+                                        <td class="text-center">{{$category->name}}</td>
+                                        <td class="text-center">{{$category->slug}}</td>
+                                        <td class="text-center">
                                             <a href="{{route('admin.editCategory',['id'=>$category->id])}}" class="text-info mr-5 pr-5">
                                                 Edit
                                             </a>
@@ -84,6 +85,7 @@
         </div>
     </section>
 </main>
+
 <div class="modal" id="delete-confirmation">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">

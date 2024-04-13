@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\AddCategoryController;
+use App\Http\Controllers\AdminAddProductController;
 use App\Http\Controllers\AdminCategoryController;
+use App\Http\Controllers\AdminProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\DetailsController;
@@ -63,11 +65,15 @@ route::middleware('auth')->group(function () {
     route::get('/user/dashboard', [UserAdminController::class, 'user'])->name('user.dashboard');
 });
 route::middleware('auth')->group(function () {
+
     route::get('/admin/dashboard', [UserAdminController::class, 'admin'])->name('admin.dashboard');
     route::get('/admin/categories', [AdminCategoryController::class, 'index'])->name('admin.categories');
-    route::get('/admin/add-category', [AddCategoryController::class, 'index'])->name('admin.addCategory');
-    route::get('/admin/store-category', [AddCategoryController::class, 'storeCategory'])->name('admin.storeCategory');
+    route::get('/admin/products', [AdminProductController::class, 'index'])->name('admin.products');
+    route::get('/admin/category/add', [AddCategoryController::class, 'index'])->name('admin.addCategory');
+    route::get('/admin/category/store', [AddCategoryController::class, 'storeCategory'])->name('admin.storeCategory');
     route::get('/admin/category/edit/{id}', [EditCategoryController::class, 'index'])->name('admin.editCategory');
     route::get('/admin/edit-category/{id}', [EditCategoryController::class, 'editCategory'])->name('admin.updateCategory');
     route::get('/admin/delete-category/{id}', [EditCategoryController::class, 'deleteCategory'])->name('admin.deleteCategory');
+    route::get('/admin/product/add', [AdminAddProductController::class, 'index'])->name('admin.addProduct');
+    route::post('/admin/product/store', [AdminAddProductController::class, 'storeProduct'])->name('admin.storeProduct');
 });
