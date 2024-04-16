@@ -13,7 +13,6 @@ class AdminAddProductController extends Controller
 
     public function storeProduct(Request $request)
     {
-        //dd($request->all());
          $validatedData = $request->validate([
             'name' => 'required|string|max:255',
             'slug' => 'required|string|max:255',
@@ -29,14 +28,11 @@ class AdminAddProductController extends Controller
             'category' => 'required',
          ]);
 
-        // // Sanitize slug
         $slug = Str::slug($validatedData['slug']);
 
-        // // Store the image
-        $imageName = Carbon::now()->timestamp . '.' . $request->file('image')->Extension();
-        $request->file('image')->storeAs('products', $imageName);
+        $imageName = Carbon::now()->timestamp . '.' . $request->file('image')->getClientOriginalExtension();
+        $request->file('image')->storeAs('products',$imageName);
 
-        // // Create and save the product
         $product = new Product();
         $product->name = $validatedData['name'];
         $product->regular_price = $validatedData['regular_price'];

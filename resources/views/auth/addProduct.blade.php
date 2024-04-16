@@ -49,7 +49,7 @@
                                         {{ Session::get('success') }}
                                     </div>
                                 @endif
-                                <form action="{{ route('admin.storeProduct') }}" method="POST" >
+                                <form action="{{ route('admin.storeProduct') }}" method="POST"  enctype="multipart/form-data">
                                     @csrf
                                     <div class="mb-3 mt-3">
                                         <label for="name" class="form-label">Name</label>

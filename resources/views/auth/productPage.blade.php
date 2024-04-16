@@ -71,7 +71,7 @@
                                             <tr>
                                                 <td class="text-center">{{ ++$i }}</td>
                                                 <td class="text-center"><img
-                                                        src="{{ asset('assets/imgs/shop/product-') }}{{ $product->id }}-1.jpg"
+                                                        src="{{ asset('assets/imgs/products') }}/{{ $product->image }}"
                                                         alt="{{ $product->name }}" width="60"></td>
                                                 <td class="text-center">{{ $product->name }}</td>
                                                 <td class="text-center">{{ $product->stock_status }}</td>
