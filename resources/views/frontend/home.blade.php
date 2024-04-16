@@ -123,9 +123,9 @@
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
                                             <a href="product-details.html">
-                                                <img class="default-img" src="assets/imgs/shop/product-1-1.jpg"
+                                                <img class="default-img" src="assets/imgs/products/product-1-1.jpg"
                                                     alt="">
-                                                <img class="hover-img" src="assets/imgs/shop/product-1-2.jpg"
+                                                <img class="hover-img" src="assets/imgs/products/product-1-2.jpg"
                                                     alt="">
                                             </a>
                                         </div>
@@ -167,9 +167,9 @@
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
                                             <a href="product-details.html">
-                                                <img class="default-img" src="assets/imgs/shop/product-2-1.jpg"
+                                                <img class="default-img" src="assets/imgs/products/product-2-1.jpg"
                                                     alt="">
-                                                <img class="hover-img" src="assets/imgs/shop/product-2-2.jpg"
+                                                <img class="hover-img" src="assets/imgs/products/product-2-2.jpg"
                                                     alt="">
                                             </a>
                                         </div>
@@ -211,9 +211,9 @@
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
                                             <a href="product-details.html">
-                                                <img class="default-img" src="assets/imgs/shop/product-3-1.jpg"
+                                                <img class="default-img" src="assets/imgs/products/product-3-1.jpg"
                                                     alt="">
-                                                <img class="hover-img" src="assets/imgs/shop/product-3-2.jpg"
+                                                <img class="hover-img" src="assets/imgs/products/product-3-2.jpg"
                                                     alt="">
                                             </a>
                                         </div>
@@ -255,9 +255,9 @@
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
                                             <a href="product-details.html">
-                                                <img class="default-img" src="assets/imgs/shop/product-4-1.jpg"
+                                                <img class="default-img" src="assets/imgs/products/product-4-1.jpg"
                                                     alt="">
-                                                <img class="hover-img" src="assets/imgs/shop/product-4-2.jpg"
+                                                <img class="hover-img" src="assets/imgs/products/product-4-2.jpg"
                                                     alt="">
                                             </a>
                                         </div>
@@ -299,9 +299,9 @@
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
                                             <a href="product-details.html">
-                                                <img class="default-img" src="assets/imgs/shop/product-5-1.jpg"
+                                                <img class="default-img" src="assets/imgs/products/product-5-1.jpg"
                                                     alt="">
-                                                <img class="hover-img" src="assets/imgs/shop/product-5-2.jpg"
+                                                <img class="hover-img" src="assets/imgs/products/product-5-2.jpg"
                                                     alt="">
                                             </a>
                                         </div>
@@ -343,9 +343,9 @@
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
                                             <a href="product-details.html">
-                                                <img class="default-img" src="assets/imgs/shop/product-6-1.jpg"
+                                                <img class="default-img" src="assets/imgs/products/product-6-1.jpg"
                                                     alt="">
-                                                <img class="hover-img" src="assets/imgs/shop/product-6-2.jpg"
+                                                <img class="hover-img" src="assets/imgs/products/product-6-2.jpg"
                                                     alt="">
                                             </a>
                                         </div>
@@ -387,9 +387,9 @@
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
                                             <a href="product-details.html">
-                                                <img class="default-img" src="assets/imgs/shop/product-7-1.jpg"
+                                                <img class="default-img" src="assets/imgs/products/product-7-1.jpg"
                                                     alt="">
-                                                <img class="hover-img" src="assets/imgs/shop/product-7-2.jpg"
+                                                <img class="hover-img" src="assets/imgs/products/product-7-2.jpg"
                                                     alt="">
                                             </a>
                                         </div>
@@ -430,9 +430,9 @@
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
                                             <a href="product-details.html">
-                                                <img class="default-img" src="assets/imgs/shop/product-8-1.jpg"
+                                                <img class="default-img" src="assets/imgs/products/product-8-1.jpg"
                                                     alt="">
-                                                <img class="hover-img" src="assets/imgs/shop/product-8-2.jpg"
+                                                <img class="hover-img" src="assets/imgs/products/product-8-2.jpg"
                                                     alt="">
                                             </a>
                                         </div>
@@ -477,9 +477,9 @@
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
                                             <a href="product-details.html">
-                                                <img class="default-img" src="assets/imgs/shop/product-9-1.jpg"
+                                                <img class="default-img" src="assets/imgs/products/product-9-1.jpg"
                                                     alt="">
-                                                <img class="hover-img" src="assets/imgs/shop/product-9-2.jpg"
+                                                <img class="hover-img" src="assets/imgs/products/product-9-2.jpg"
                                                     alt="">
                                             </a>
                                         </div>
@@ -521,9 +521,9 @@
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
                                             <a href="product-details.html">
-                                                <img class="default-img" src="assets/imgs/shop/product-10-1.jpg"
+                                                <img class="default-img" src="assets/imgs/products/product-10-1.jpg"
                                                     alt="">
-                                                <img class="hover-img" src="assets/imgs/shop/product-10-2.jpg"
+                                                <img class="hover-img" src="assets/imgs/products/product-10-2.jpg"
                                                     alt="">
                                             </a>
                                         </div>
@@ -565,9 +565,9 @@
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
                                             <a href="product-details.html">
-                                                <img class="default-img" src="assets/imgs/shop/product-11-1.jpg"
+                                                <img class="default-img" src="assets/imgs/products/product-11-1.jpg"
                                                     alt="">
-                                                <img class="hover-img" src="assets/imgs/shop/product-11-2.jpg"
+                                                <img class="hover-img" src="assets/imgs/products/product-11-2.jpg"
                                                     alt="">
                                             </a>
                                         </div>
@@ -609,9 +609,9 @@
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
                                             <a href="product-details.html">
-                                                <img class="default-img" src="assets/imgs/shop/product-12-1.jpg"
+                                                <img class="default-img" src="assets/imgs/products/product-12-1.jpg"
                                                     alt="">
-                                                <img class="hover-img" src="assets/imgs/shop/product-12-2.jpg"
+                                                <img class="hover-img" src="assets/imgs/products/product-12-2.jpg"
                                                     alt="">
                                             </a>
                                         </div>
@@ -653,9 +653,9 @@
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
                                             <a href="product-details.html">
-                                                <img class="default-img" src="assets/imgs/shop/product-13-1.jpg"
+                                                <img class="default-img" src="assets/imgs/products/product-13-1.jpg"
                                                     alt="">
-                                                <img class="hover-img" src="assets/imgs/shop/product-13-2.jpg"
+                                                <img class="hover-img" src="assets/imgs/products/product-13-2.jpg"
                                                     alt="">
                                             </a>
                                         </div>
@@ -697,9 +697,9 @@
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
                                             <a href="product-details.html">
-                                                <img class="default-img" src="assets/imgs/shop/product-14-1.jpg"
+                                                <img class="default-img" src="assets/imgs/products/product-14-1.jpg"
                                                     alt="">
-                                                <img class="hover-img" src="assets/imgs/shop/product-14-2.jpg"
+                                                <img class="hover-img" src="assets/imgs/products/product-14-2.jpg"
                                                     alt="">
                                             </a>
                                         </div>
@@ -741,9 +741,9 @@
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
                                             <a href="product-details.html">
-                                                <img class="default-img" src="assets/imgs/shop/product-15-1.jpg"
+                                                <img class="default-img" src="assets/imgs/products/product-15-1.jpg"
                                                     alt="">
-                                                <img class="hover-img" src="assets/imgs/shop/product-15-2.jpg"
+                                                <img class="hover-img" src="assets/imgs/products/product-15-2.jpg"
                                                     alt="">
                                             </a>
                                         </div>
@@ -784,9 +784,9 @@
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
                                             <a href="product-details.html">
-                                                <img class="default-img" src="assets/imgs/shop/product-1-1.jpg"
+                                                <img class="default-img" src="assets/imgs/products/product-1-1.jpg"
                                                     alt="">
-                                                <img class="hover-img" src="assets/imgs/shop/product-1-2.jpg"
+                                                <img class="hover-img" src="assets/imgs/products/product-1-2.jpg"
                                                     alt="">
                                             </a>
                                         </div>
@@ -831,9 +831,9 @@
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
                                             <a href="product-details.html">
-                                                <img class="default-img" src="assets/imgs/shop/product-2-1.jpg"
+                                                <img class="default-img" src="assets/imgs/products/product-2-1.jpg"
                                                     alt="">
-                                                <img class="hover-img" src="assets/imgs/shop/product-2-2.jpg"
+                                                <img class="hover-img" src="assets/imgs/products/product-2-2.jpg"
                                                     alt="">
                                             </a>
                                         </div>
@@ -875,9 +875,9 @@
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
                                             <a href="product-details.html">
-                                                <img class="hover-img" src="assets/imgs/shop/product-3-1.jpg"
+                                                <img class="hover-img" src="assets/imgs/products/product-3-1.jpg"
                                                     alt="">
-                                                <img class="default-img" src="assets/imgs/shop/product-3-2.jpg"
+                                                <img class="default-img" src="assets/imgs/products/product-3-2.jpg"
                                                     alt="">
                                             </a>
                                         </div>
@@ -919,9 +919,9 @@
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
                                             <a href="product-details.html">
-                                                <img class="hover-img" src="assets/imgs/shop/product-4-1.jpg"
+                                                <img class="hover-img" src="assets/imgs/products/product-4-1.jpg"
                                                     alt="">
-                                                <img class="default-img" src="assets/imgs/shop/product-4-2.jpg"
+                                                <img class="default-img" src="assets/imgs/products/product-4-2.jpg"
                                                     alt="">
                                             </a>
                                         </div>
@@ -963,9 +963,9 @@
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
                                             <a href="product-details.html">
-                                                <img class="hover-img" src="assets/imgs/shop/product-5-1.jpg"
+                                                <img class="hover-img" src="assets/imgs/products/product-5-1.jpg"
                                                     alt="">
-                                                <img class="default-img" src="assets/imgs/shop/product-5-2.jpg"
+                                                <img class="default-img" src="assets/imgs/products/product-5-2.jpg"
                                                     alt="">
                                             </a>
                                         </div>
@@ -1007,9 +1007,9 @@
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
                                             <a href="product-details.html">
-                                                <img class="hover-img" src="assets/imgs/shop/product-6-1.jpg"
+                                                <img class="hover-img" src="assets/imgs/products/product-6-1.jpg"
                                                     alt="">
-                                                <img class="default-img" src="assets/imgs/shop/product-6-2.jpg"
+                                                <img class="default-img" src="assets/imgs/products/product-6-2.jpg"
                                                     alt="">
                                             </a>
                                         </div>
@@ -1051,9 +1051,9 @@
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
                                             <a href="product-details.html">
-                                                <img class="hover-img" src="assets/imgs/shop/product-7-1.jpg"
+                                                <img class="hover-img" src="assets/imgs/products/product-7-1.jpg"
                                                     alt="">
-                                                <img class="default-img" src="assets/imgs/shop/product-7-2.jpg"
+                                                <img class="default-img" src="assets/imgs/products/product-7-2.jpg"
                                                     alt="">
                                             </a>
                                         </div>
@@ -1095,9 +1095,9 @@
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
                                             <a href="product-details.html">
-                                                <img class="hover-img" src="assets/imgs/shop/product-8-1.jpg"
+                                                <img class="hover-img" src="assets/imgs/products/product-8-1.jpg"
                                                     alt="">
-                                                <img class="default-img" src="assets/imgs/shop/product-8-2.jpg"
+                                                <img class="default-img" src="assets/imgs/products/product-8-2.jpg"
                                                     alt="">
                                             </a>
                                         </div>
@@ -1139,9 +1139,9 @@
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
                                             <a href="product-details.html">
-                                                <img class="hover-img" src="assets/imgs/shop/product-9-1.jpg"
+                                                <img class="hover-img" src="assets/imgs/products/product-9-1.jpg"
                                                     alt="">
-                                                <img class="default-img" src="assets/imgs/shop/product-9-2.jpg"
+                                                <img class="default-img" src="assets/imgs/products/product-9-2.jpg"
                                                     alt="">
                                             </a>
                                         </div>
@@ -1205,56 +1205,56 @@
                     <div class="carausel-6-columns" id="carausel-6-columns">
                         <div class="card-1">
                             <figure class=" img-hover-scale overflow-hidden">
-                                <a href={{route('frontend.shop')}}><img src="assets/imgs/shop/category-thumb-1.jpg"
+                                <a href={{route('frontend.shop')}}><img src="assets/imgs/products/category-thumb-1.jpg"
                                         alt=""></a>
                             </figure>
                             <h5><a href={{route('frontend.shop')}}>T-Shirt</a></h5>
                         </div>
                         <div class="card-1">
                             <figure class=" img-hover-scale overflow-hidden">
-                                <a href={{route('frontend.shop')}}> <img src="assets/imgs/shop/category-thumb-2.jpg"
+                                <a href={{route('frontend.shop')}}> <img src="assets/imgs/products/category-thumb-2.jpg"
                                         alt=""></a>
                             </figure>
                             <h5><a href={{route('frontend.shop')}}>Bags</a></h5>
                         </div>
                         <div class="card-1">
                             <figure class=" img-hover-scale overflow-hidden">
-                                <a href={{route('frontend.shop')}}><img src="assets/imgs/shop/category-thumb-3.jpg"
+                                <a href={{route('frontend.shop')}}><img src="assets/imgs/products/category-thumb-3.jpg"
                                         alt=""></a>
                             </figure>
                             <h5><a href={{route('frontend.shop')}}>Sandan</a></h5>
                         </div>
                         <div class="card-1">
                             <figure class=" img-hover-scale overflow-hidden">
-                                <a href={{route('frontend.shop')}}><img src="assets/imgs/shop/category-thumb-4.jpg"
+                                <a href={{route('frontend.shop')}}><img src="assets/imgs/products/category-thumb-4.jpg"
                                         alt=""></a>
                             </figure>
                             <h5><a href={{route('frontend.shop')}}>Scarf Cap</a></h5>
                         </div>
                         <div class="card-1">
                             <figure class=" img-hover-scale overflow-hidden">
-                                <a href={{route('frontend.shop')}}><img src="assets/imgs/shop/category-thumb-5.jpg"
+                                <a href={{route('frontend.shop')}}><img src="assets/imgs/products/category-thumb-5.jpg"
                                         alt=""></a>
                             </figure>
                             <h5><a href={{route('frontend.shop')}}>Shoes</a></h5>
                         </div>
                         <div class="card-1">
                             <figure class=" img-hover-scale overflow-hidden">
-                                <a href={{route('frontend.shop')}}><img src="assets/imgs/shop/category-thumb-6.jpg"
+                                <a href={{route('frontend.shop')}}><img src="assets/imgs/products/category-thumb-6.jpg"
                                         alt=""></a>
                             </figure>
                             <h5><a href={{route('frontend.shop')}}>Pillowcase</a></h5>
                         </div>
                         <div class="card-1">
                             <figure class=" img-hover-scale overflow-hidden">
-                                <a href={{route('frontend.shop')}}><img src="assets/imgs/shop/category-thumb-7.jpg"
+                                <a href={{route('frontend.shop')}}><img src="assets/imgs/products/category-thumb-7.jpg"
                                         alt=""></a>
                             </figure>
                             <h5><a href={{route('frontend.shop')}}>Jumpsuits</a></h5>
                         </div>
                         <div class="card-1">
                             <figure class=" img-hover-scale overflow-hidden">
-                                <a href={{route('frontend.shop')}}><img src="assets/imgs/shop/category-thumb-8.jpg"
+                                <a href={{route('frontend.shop')}}><img src="assets/imgs/products/category-thumb-8.jpg"
                                         alt=""></a>
                             </figure>
                             <h5><a href={{route('frontend.shop')}}>Hats</a></h5>
@@ -1310,9 +1310,9 @@
                             <div class="product-img-action-wrap">
                                 <div class="product-img product-img-zoom">
                                     <a href="product-details.html">
-                                        <img class="default-img" src="assets/imgs/shop/product-2-1.jpg"
+                                        <img class="default-img" src="assets/imgs/products/product-2-1.jpg"
                                             alt="">
-                                        <img class="hover-img" src="assets/imgs/shop/product-2-2.jpg" alt="">
+                                        <img class="hover-img" src="assets/imgs/products/product-2-2.jpg" alt="">
                                     </a>
                                 </div>
                                 <div class="product-action-1">
@@ -1345,9 +1345,9 @@
                             <div class="product-img-action-wrap">
                                 <div class="product-img product-img-zoom">
                                     <a href="product-details.html">
-                                        <img class="default-img" src="assets/imgs/shop/product-4-1.jpg"
+                                        <img class="default-img" src="assets/imgs/products/product-4-1.jpg"
                                             alt="">
-                                        <img class="hover-img" src="assets/imgs/shop/product-4-2.jpg" alt="">
+                                        <img class="hover-img" src="assets/imgs/products/product-4-2.jpg" alt="">
                                     </a>
                                 </div>
                                 <div class="product-action-1">
@@ -1380,9 +1380,9 @@
                             <div class="product-img-action-wrap">
                                 <div class="product-img product-img-zoom">
                                     <a href="product-details.html">
-                                        <img class="default-img" src="assets/imgs/shop/product-15-1.jpg"
+                                        <img class="default-img" src="assets/imgs/products/product-15-1.jpg"
                                             alt="">
-                                        <img class="hover-img" src="assets/imgs/shop/product-15-2.jpg" alt="">
+                                        <img class="hover-img" src="assets/imgs/products/product-15-2.jpg" alt="">
                                     </a>
                                 </div>
                                 <div class="product-action-1">
@@ -1415,9 +1415,9 @@
                             <div class="product-img-action-wrap">
                                 <div class="product-img product-img-zoom">
                                     <a href="product-details.html">
-                                        <img class="default-img" src="assets/imgs/shop/product-3-1.jpg"
+                                        <img class="default-img" src="assets/imgs/products/product-3-1.jpg"
                                             alt="">
-                                        <img class="hover-img" src="assets/imgs/shop/product-3-2.jpg" alt="">
+                                        <img class="hover-img" src="assets/imgs/products/product-3-2.jpg" alt="">
                                     </a>
                                 </div>
                                 <div class="product-action-1">
@@ -1450,9 +1450,9 @@
                             <div class="product-img-action-wrap">
                                 <div class="product-img product-img-zoom">
                                     <a href="product-details.html">
-                                        <img class="default-img" src="assets/imgs/shop/product-9-1.jpg"
+                                        <img class="default-img" src="assets/imgs/products/product-9-1.jpg"
                                             alt="">
-                                        <img class="hover-img" src="assets/imgs/shop/product-9-2.jpg" alt="">
+                                        <img class="hover-img" src="assets/imgs/products/product-9-2.jpg" alt="">
                                     </a>
                                 </div>
                                 <div class="product-action-1">
@@ -1485,9 +1485,9 @@
                             <div class="product-img-action-wrap">
                                 <div class="product-img product-img-zoom">
                                     <a href="product-details.html">
-                                        <img class="default-img" src="assets/imgs/shop/product-7-1.jpg"
+                                        <img class="default-img" src="assets/imgs/products/product-7-1.jpg"
                                             alt="">
-                                        <img class="hover-img" src="assets/imgs/shop/product-7-2.jpg" alt="">
+                                        <img class="hover-img" src="assets/imgs/products/product-7-2.jpg" alt="">
                                     </a>
                                 </div>
                                 <div class="product-action-1">
@@ -1520,9 +1520,9 @@
                             <div class="product-img-action-wrap">
                                 <div class="product-img product-img-zoom">
                                     <a href="product-details.html">
-                                        <img class="default-img" src="assets/imgs/shop/product-1-1.jpg"
+                                        <img class="default-img" src="assets/imgs/products/product-1-1.jpg"
                                             alt="">
-                                        <img class="hover-img" src="assets/imgs/shop/product-1-2.jpg" alt="">
+                                        <img class="hover-img" src="assets/imgs/products/product-1-2.jpg" alt="">
                                     </a>
                                 </div>
                                 <div class="product-action-1">

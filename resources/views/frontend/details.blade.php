@@ -25,49 +25,49 @@
                                         <!-- MAIN SLIDES -->
                                         <div class="product-image-slider">
                                             <figure class="border-radius-10">
-                                                <img src="{{ asset('assets/imgs/shop/product-') }}{{ $product->id }}-2.jpg"
+                                                <img src="{{ asset('assets/imgs/products') }}/{{ $product->image }}"
                                                     alt="product image">
                                             </figure>
                                             <figure class="border-radius-10">
-                                                <img src="{{ asset('assets/imgs/shop/product-16-1.jpg') }}"
+                                                <img src="{{ asset('assets/imgs/products/product-16-1.jpg') }}"
                                                     alt="product image">
                                             </figure>
                                             <figure class="border-radius-10">
-                                                <img src="{{ asset('assets/imgs/shop/product-16-3.jpg') }}"
+                                                <img src="{{ asset('assets/imgs/products/product-16-3.jpg') }}"
                                                     alt="product image">
                                             </figure>
                                             <figure class="border-radius-10">
-                                                <img src="{{ asset('assets/imgs/shop/product-16-4.jpg') }}"
+                                                <img src="{{ asset('assets/imgs/products/product-16-4.jpg') }}"
                                                     alt="product image">
                                             </figure>
                                             <figure class="border-radius-10">
-                                                <img src="{{ asset('assets/imgs/shop/product-16-5.jpg') }}"
+                                                <img src="{{ asset('assets/imgs/products/product-16-5.jpg') }}"
                                                     alt="product image">
                                             </figure>
                                             <figure class="border-radius-10">
-                                                <img src="{{ asset('assets/imgs/shop/product-16-6.jpg') }}"
+                                                <img src="{{ asset('assets/imgs/products/product-16-6.jpg') }}"
                                                     alt="product image">
                                             </figure>
                                             <figure class="border-radius-10">
-                                                <img src="{{ asset('assets/imgs/shop/product-16-7.jpg') }}"
+                                                <img src="{{ asset('assets/imgs/products/product-16-7.jpg') }}"
                                                     alt="product image">
                                             </figure>
                                         </div>
                                         <!-- THUMBNAILS -->
                                         <div class="slider-nav-thumbnails pl-15 pr-15">
-                                            <div><img src="{{ asset('assets/imgs/shop/thumbnail-3.jpg') }}"
+                                            <div><img src="{{ asset('assets/imgs/products/thumbnail-3.jpg') }}"
                                                     alt="product image"></div>
-                                            <div><img src="{{ asset('assets/imgs/shop/thumbnail-4.jpg') }}"
+                                            <div><img src="{{ asset('assets/imgs/products/thumbnail-4.jpg') }}"
                                                     alt="product image"></div>
-                                            <div><img src="{{ asset('assets/imgs/shop/thumbnail-5.jpg') }}"
+                                            <div><img src="{{ asset('assets/imgs/products/thumbnail-5.jpg') }}"
                                                     alt="product image"></div>
-                                            <div><img src="{{ asset('assets/imgs/shop/thumbnail-6.jpg') }}"
+                                            <div><img src="{{ asset('assets/imgs/products/thumbnail-6.jpg') }}"
                                                     alt="product image"></div>
-                                            <div><img src="{{ asset('assets/imgs/shop/thumbnail-7.jpg') }}"
+                                            <div><img src="{{ asset('assets/imgs/products/thumbnail-7.jpg') }}"
                                                     alt="product image"></div>
-                                            <div><img src="{{ asset('assets/imgs/shop/thumbnail-8.jpg') }}"
+                                            <div><img src="{{ asset('assets/imgs/products/thumbnail-8.jpg') }}"
                                                     alt="product image"></div>
-                                            <div><img src="{{ asset('assets/imgs/shop/thumbnail-9.jpg') }}"
+                                            <div><img src="{{ asset('assets/imgs/products/thumbnail-9.jpg') }}"
                                                     alt="product image"></div>
                                         </div>
                                     </div>
@@ -99,7 +99,7 @@
                                         <h2 class="title-detail">{{ $product->name }}</h2>
                                         <div class="product-detail-rating">
                                             <div class="pro-details-brand">
-                                                <span> Category: <a href="shop.html">{{$product->category}}</a></span>
+                                                <span> Category: <a href="shop.html">{{$product->category->name}}</a></span>
                                             </div>
                                             <div class="product-rate-cover text-end">
                                                 <div class="product-rate d-inline-block">
@@ -505,10 +505,10 @@
                                                             <a href="{{ route('product.details', ['slug' => $rproduct->slug]) }}"
                                                                 tabindex="0">
                                                                 <img class="default-img"
-                                                                    src="{{ asset('assets/imgs/shop/product-') }}{{ $rproduct->id }}-1.jpg"
+                                                                    src="{{ asset('assets/imgs/products/product-') }}{{ $rproduct->id }}-1.jpg"
                                                                     alt="{{ $rproduct->name }}">
                                                                 <img class="hover-img"
-                                                                    src="{{ asset('assets/imgs/shop/product-') }}{{ $rproduct->id }}-2.jpg"
+                                                                    src="{{ asset('assets/imgs/products/product-') }}{{ $rproduct->id }}-2.jpg"
                                                                     alt="{{ $rproduct->name }}">
                                                             </a>
                                                         </div>
@@ -628,7 +628,7 @@
                             @foreach ($nproducts as $nproduct)
                                 <div class="single-post clearfix">
                                     <div class="image">
-                                        <img src="{{ asset('assets/imgs/shop/thumbnail-') }}{{ $nproduct->id }}.jpg"
+                                        <img src="{{ asset('assets/imgs/products') }}/{{ $nproduct->image }}"
                                             alt="{{ $nproduct->name }}">
                                     </div>
                                     <div class="content pt-10">

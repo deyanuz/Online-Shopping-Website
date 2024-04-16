@@ -18,6 +18,15 @@
             margin-top: 5px !important;
             padding-left: 3px !important;
         }
+
+        .wishlisted {
+            background-color: rgb(151, 79, 203) !important;
+            border: 1px solid transparent !important;
+        }
+
+        .wishlisted i {
+            color: #fff !important;
+        }
     </style>
 
     <main class="main">
@@ -35,7 +44,8 @@
                     <div class="col-lg-9">
                         <div class="shop-product-fillter">
                             <div class="totall-product">
-                                <p> We found <strong class="text-brand">{{ $products->total() }}</strong> items for you from <strong class="text-brand">{{$category->name}}</strong></p>
+                                <p> We found <strong class="text-brand">{{ $products->total() }}</strong> items for you from
+                                    <strong class="text-brand">{{ $category->name }}</strong></p>
                             </div>
                             <div class="sort-by-product-area">
                                 <div class="sort-by-cover mr-10">
@@ -50,13 +60,17 @@
                                     <div class="sort-by-dropdown">
                                         <ul>
                                             <li><a @if ($size == 12) class="active" @endif
-                                                    href="{{ route('shop.productByCategoryPageSize', ['size' => 12]) }}">12</a></li>
+                                                    href="{{ route('shop.productByCategoryPageSize', ['size' => 12]) }}">12</a>
+                                            </li>
                                             <li><a @if ($size == 15) class="active" @endif
-                                                    href="{{ route('shop.productByCategoryPageSize', ['size' => 15]) }}">15</a></li>
+                                                    href="{{ route('shop.productByCategoryPageSize', ['size' => 15]) }}">15</a>
+                                            </li>
                                             <li><a @if ($size == 24) class="active" @endif
-                                                    href="{{ route('shop.productByCategoryPageSize', ['size' => 24]) }}">24</a></li>
+                                                    href="{{ route('shop.productByCategoryPageSize', ['size' => 24]) }}">24</a>
+                                            </li>
                                             <li><a @if ($size == 30) class="active" @endif
-                                                    href="{{ route('shop.productByCategoryPageSize', ['size' => 30]) }}">30</a></li>
+                                                    href="{{ route('shop.productByCategoryPageSize', ['size' => 30]) }}">30</a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -66,21 +80,32 @@
                                             <span><i class="fi-rs-apps-sort"></i>Sort by:</span>
                                         </div>
                                         <div class="sort-by-dropdown-wrap">
-                                            <span>{{$orderBy}}<i class="fi-rs-angle-small-down"></i></span>
+                                            <span>{{ $orderBy }}<i class="fi-rs-angle-small-down"></i></span>
                                         </div>
                                     </div>
                                     <div class="sort-by-dropdown">
                                         <ul>
-                                            <li><a @if ($orderBy == 'Default Sorting') class="active" @endif href="{{ route('shop.productByCategoryOrderBy', ['orderBy' => 'Default Sorting']) }}">Default Sorting</a></li>
-                                            <li><a @if ($orderBy == 'Price: Low to High') class="active" @endif href="{{ route('shop.productByCategoryOrderBy', ['orderBy' => 'Price: Low to High']) }}">Price: Low to High</a></li>
-                                            <li><a @if ($orderBy == 'Price: High to Low') class="active" @endif href="{{ route('shop.productByCategoryOrderBy', ['orderBy' => 'Price: High to Low']) }}">Price: High to Low</a></li>
-                                            <li><a @if ($orderBy == 'Newest Arrivals') class="active" @endif href="{{ route('shop.productByCategoryOrderBy', ['orderBy' => 'Newest Arrivals']) }}">Newest Arrivals</a></li>
+                                            <li><a @if ($orderBy == 'Default Sorting') class="active" @endif
+                                                    href="{{ route('shop.productByCategoryOrderBy', ['orderBy' => 'Default Sorting']) }}">Default
+                                                    Sorting</a></li>
+                                            <li><a @if ($orderBy == 'Price: Low to High') class="active" @endif
+                                                    href="{{ route('shop.productByCategoryOrderBy', ['orderBy' => 'Price: Low to High']) }}">Price:
+                                                    Low to High</a></li>
+                                            <li><a @if ($orderBy == 'Price: High to Low') class="active" @endif
+                                                    href="{{ route('shop.productByCategoryOrderBy', ['orderBy' => 'Price: High to Low']) }}">Price:
+                                                    High to Low</a></li>
+                                            <li><a @if ($orderBy == 'Newest Arrivals') class="active" @endif
+                                                    href="{{ route('shop.productByCategoryOrderBy', ['orderBy' => 'Newest Arrivals']) }}">Newest
+                                                    Arrivals</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="row product-grid-3">
+                            @php
+                                $witems = Cart::instance('wishlist')->content()->pluck('id');
+                            @endphp
                             @foreach ($products as $product)
                                 <div class="col-lg-4 col-md-4 col-6 col-sm-6">
                                     <div class="product-cart-wrap mb-30">
@@ -88,10 +113,10 @@
                                             <div class="product-img product-img-zoom">
                                                 <a href="{{ route('product.details', ['slug' => $product->slug]) }}">
                                                     <img class="default-img"
-                                                        src="{{ asset('assets/imgs/shop/product-') }}{{ $product->id }}-1.jpg"
+                                                        src="{{ asset('assets/imgs/products') }}/{{ $product->image }}"
                                                         alt="{{ $product->name }}">
                                                     <img class="hover-img"
-                                                        src="{{ asset('assets/imgs/shop/product-') }}{{ $product->id }}-2.jpg"
+                                                        src="{{ asset('assets/imgs/products') }}/{{ $product->image }}"
                                                         alt="{{ $product->name }}">
                                                 </a>
                                             </div>
@@ -122,9 +147,18 @@
                                             </div>
                                             <div class="product-price">
                                                 <span>${{ $product->regular_price }} </span>
-                                                {{-- <span class="old-price">$245.8</span> --}}
                                             </div>
                                             <div class="product-action-1 show">
+                                                @if ($witems->contains($product->id))
+                                                    <a aria-label="Remove From Wishlist"
+                                                        class="action-btn hover-up wishlisted"
+                                                        href="{{ route('removeFromWishlist', ['id' => $product->id]) }}"><i
+                                                            class="fi-rs-heart"></i></a>
+                                                @else
+                                                    <a aria-label="Add To Wishlist" class="action-btn hover-up"
+                                                        href="{{ route('addToWishlist', ['id' => $product->id]) }}"><i
+                                                            class="fi-rs-heart"></i></a>
+                                                @endif
                                                 <a aria-label="Add To Cart" class="action-btn hover-up"
                                                     href="{{ route('addToCart', ['id' => $product->id]) }}">
                                                     <i class="fi-rs-shopping-bag-add"></i>
@@ -162,7 +196,9 @@
                             <h5 class="section-title style-1 mb-30 wow fadeIn animated">Category</h5>
                             <ul class="categories">
                                 @foreach ($categories as $category)
-                                <li><a href={{ route('shop.productByCategory',['slug'=>$category->slug]) }}>{{$category->name}}</a></li>
+                                    <li><a
+                                            href={{ route('shop.productByCategory', ['slug' => $category->slug]) }}>{{ $category->name }}</a>
+                                    </li>
                                 @endforeach
 
                             </ul>
@@ -235,7 +271,7 @@
                             @foreach ($nproducts as $nproduct)
                                 <div class="single-post clearfix">
                                     <div class="image">
-                                        <img src="{{ asset('assets/imgs/shop/thumbnail-') }}{{ $nproduct->id }}.jpg"
+                                        <img src="{{ asset('assets/imgs/products') }}/{{ $nproduct->image }}"
                                             alt="{{ $nproduct->name }}">
                                     </div>
                                     <div class="content pt-10">
