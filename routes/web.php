@@ -3,6 +3,7 @@
 use App\Http\Controllers\AddCategoryController;
 use App\Http\Controllers\AdminAddProductController;
 use App\Http\Controllers\AdminCategoryController;
+use App\Http\Controllers\AdminEditProductController;
 use App\Http\Controllers\AdminProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
@@ -76,4 +77,5 @@ route::middleware('auth')->group(function () {
     route::get('/admin/delete-category/{id}', [EditCategoryController::class, 'deleteCategory'])->name('admin.deleteCategory');
     route::get('/admin/product/add', [AdminAddProductController::class, 'index'])->name('admin.addProduct');
     route::post('/admin/product/store', [AdminAddProductController::class, 'storeProduct'])->name('admin.storeProduct');
+    route::get('/admin/product/edit/{id}', [AdminEditProductController::class, 'index'])->name('admin.editProduct');
 });

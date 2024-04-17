@@ -79,14 +79,14 @@
                                                 <td class="text-center">{{ $product->category->name }}</td>
                                                 <td class="text-center">{{ $product->created_at }}</td>
                                                 <td class="text-center">
-                                                    <a href="{{ route('admin.editCategory', ['id' => $product->id]) }}"
+                                                    <a href="{{ route('admin.editProduct', ['id' => $product->id]) }}"
                                                         class="text-info mr-5 pr-5">
                                                         Edit
                                                     </a>
-                                                    <a href="#" onclick="deleteConfirmation({{ $product->id }})"
+                                                    {{-- <a href="#" onclick="deleteConfirmation({{ $product->id }})"
                                                         class="text-danger ml-5 pl-5">
                                                         Delete
-                                                    </a>
+                                                    </a> --}}
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -100,4 +100,38 @@
             </div>
         </section>
     </main>
+
+<div class="modal" id="delete-confirmation">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="col-md-12 text-center text-danger">WARNING!</h3>
+            </div>
+            <div class="modal-body pb-30">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h4 class="pb-3">Do you want to delete this record?</h4>
+                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#delete-confirmation">Cancel</button>
+                        <button type="button" id="deleteButton" class="btn btn-danger" >Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 @endsection
+
+@push('script')
+<script>
+    function deleteConfirmation(id){
+        $('#delete-confirmation').modal('show');
+        document.getElementById("deleteButton").addEventListener("click", function() {
+        window.location.href = '/admin/delete-category/' + id;
+    });
+    }
+
+</script>
+
+@endpush
