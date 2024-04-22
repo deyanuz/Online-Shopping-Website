@@ -78,4 +78,5 @@ route::middleware('auth')->group(function () {
     route::get('/admin/product/add', [AdminAddProductController::class, 'index'])->name('admin.addProduct');
     route::post('/admin/product/store', [AdminAddProductController::class, 'storeProduct'])->name('admin.storeProduct');
     route::get('/admin/product/edit/{id}', [AdminEditProductController::class, 'index'])->name('admin.editProduct');
+    route::post('/admin/product/update/{id}', [AdminEditProductController::class, 'updateProduct'])->name('admin.updateProduct');
 });

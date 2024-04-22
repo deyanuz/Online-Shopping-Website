@@ -28,10 +28,15 @@ class AdminEditProductController extends Controller
 
         $slug = Str::slug($validatedData['slug']);
 
-        $imageName = Carbon::now()->timestamp . '.' . $request->file('image')->getClientOriginalExtension();
-        $request->file('image')->storeAs('products',$imageName);
 
         $product = Product::find($id);
+
+        if($request->hasFile('image')) {
+            unlink(public_path("assets/imgs/products/". $product->image ));
+            $imageName = Carbon::now()->timestamp . '.' . $request->file('image')->getClientOriginalExtension();
+            $request->file('image')->storeAs('products',$imageName);
+            }
+
         $product->name = $validatedData['name'];
         $product->regular_price = $validatedData['regular_price'];
         $product->sku = $validatedData['sku'];
@@ -51,6 +56,6 @@ class AdminEditProductController extends Controller
     public function index($id){
         $product = Product::find($id);
         $categories = Category::orderBy("name", "asc")->get();
-        return view("auth.editProduct", ["categories" => $categories,"product"=> $product]);
+        return view("auth.editProduct", ["categories" => $categories,"product"=> $product,"id"=> $id]);
     }
 }
