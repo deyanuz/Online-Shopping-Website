@@ -58,4 +58,12 @@ class AdminEditProductController extends Controller
         $categories = Category::orderBy("name", "asc")->get();
         return view("auth.editProduct", ["categories" => $categories,"product"=> $product,"id"=> $id]);
     }
+
+    public function deleteProduct($id){
+        $product = Product::find($id);
+        unlink(public_path("assets/imgs/products/". $product->image ));
+        $product->delete();
+        return redirect()->route("admin.products")->with("success","Product Removed Successfully!");
+    }
 }
+

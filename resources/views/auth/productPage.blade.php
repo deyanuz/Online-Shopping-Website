@@ -83,10 +83,10 @@
                                                         class="text-info mr-5 pr-5">
                                                         Edit
                                                     </a>
-                                                    {{-- <a href="#" onclick="deleteConfirmation({{ $product->id }})"
+                                                    <a href="#" onclick="deleteConfirmation({{ $product->id }})"
                                                         class="text-danger ml-5 pl-5">
                                                         Delete
-                                                    </a> --}}
+                                                    </a>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -101,37 +101,36 @@
         </section>
     </main>
 
-<div class="modal" id="delete-confirmation">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="col-md-12 text-center text-danger">WARNING!</h3>
-            </div>
-            <div class="modal-body pb-30">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <h4 class="pb-3">Do you want to delete this record?</h4>
-                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#delete-confirmation">Cancel</button>
-                        <button type="button" id="deleteButton" class="btn btn-danger" >Delete</button>
+    <div class="modal" id="delete-confirmation">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="col-md-12 text-center text-danger">WARNING!</h3>
+                </div>
+                <div class="modal-body pb-30">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <h4 class="pb-3">Do you want to delete this record?</h4>
+                            <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
+                                data-bs-target="#delete-confirmation">Cancel</button>
+                            <button type="button" id="deleteButton" class="btn btn-danger">Delete</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 
 @endsection
 
 @push('script')
-<script>
-    function deleteConfirmation(id){
-        $('#delete-confirmation').modal('show');
-        document.getElementById("deleteButton").addEventListener("click", function() {
-        window.location.href = '/admin/delete-category/' + id;
-    });
-    }
-
-</script>
-
+    <script>
+        function deleteConfirmation(id) {
+            $('#delete-confirmation').modal('show');
+            document.getElementById("deleteButton").addEventListener("click", function() {
+                window.location.href = '/admin/delete-product/' + id;
+            });
+        }
+    </script>
 @endpush
