@@ -2,8 +2,11 @@
 
 use App\Http\Controllers\AddCategoryController;
 use App\Http\Controllers\AdminAddProductController;
+use App\Http\Controllers\AdminAddSlideController;
 use App\Http\Controllers\AdminCategoryController;
 use App\Http\Controllers\AdminEditProductController;
+use App\Http\Controllers\AdminEditSlideController;
+use App\Http\Controllers\AdminHomeSliderController;
 use App\Http\Controllers\AdminProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
@@ -70,14 +73,24 @@ route::middleware('auth')->group(function () {
     route::get('/admin/dashboard', [UserAdminController::class, 'admin'])->name('admin.dashboard');
     route::get('/admin/categories', [AdminCategoryController::class, 'index'])->name('admin.categories');
     route::get('/admin/products', [AdminProductController::class, 'index'])->name('admin.products');
+
     route::get('/admin/category/add', [AddCategoryController::class, 'index'])->name('admin.addCategory');
     route::get('/admin/category/store', [AddCategoryController::class, 'storeCategory'])->name('admin.storeCategory');
     route::get('/admin/category/edit/{id}', [EditCategoryController::class, 'index'])->name('admin.editCategory');
     route::get('/admin/edit-category/{id}', [EditCategoryController::class, 'editCategory'])->name('admin.updateCategory');
     route::get('/admin/delete-category/{id}', [EditCategoryController::class, 'deleteCategory'])->name('admin.deleteCategory');
+
     route::get('/admin/product/add', [AdminAddProductController::class, 'index'])->name('admin.addProduct');
     route::post('/admin/product/store', [AdminAddProductController::class, 'storeProduct'])->name('admin.storeProduct');
     route::get('/admin/product/edit/{id}', [AdminEditProductController::class, 'index'])->name('admin.editProduct');
     route::post('/admin/product/update/{id}', [AdminEditProductController::class, 'updateProduct'])->name('admin.updateProduct');
     route::get('/admin/delete-product/{id}', [AdminEditProductController::class, 'deleteProduct'])->name('admin.deleteProduct');
+
+    route::get('admin/slider', [AdminHomeSliderController::class,'index'])->name('admin.homeSlider');
+    route::get('admin/slider/add', [AdminAddSlideController::class,'index'])->name('admin.addSlide');
+    route::get('admin/slider/edit/{id}', [AdminEditSlideController::class,'index'])->name('admin.editSlide');
+
+    route::post('/admin/slide/store', [AdminAddSlideController::class, 'storeSlide'])->name('admin.storeSlide');
+    route::post('/admin/slide/update/{id}', [AdminEditSlideController::class, 'updateSlide'])->name('admin.updateSlide');
+    route::get('/admin/delete-slide/{id}', [AdminEditSlideController::class, 'deleteSlide'])->name('admin.deleteSlide');
 });

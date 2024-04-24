@@ -7,11 +7,12 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
+
 class AdminEditProductController extends Controller
 {
     public function updateProduct(Request $request, $id)
     {
-         $validatedData = $request->validate([
+        $validatedData = $request->validate([
             'name' => 'required|string|max:255',
             'slug' => 'required|string|max:255',
             'short_description' => 'required|string',
@@ -22,20 +23,20 @@ class AdminEditProductController extends Controller
             'stock_status' => 'required|string',
             'featured' => 'required',
             'quantity' => 'required|integer|min:0',
-            'image' => 'required',
+            'image' => '',
             'category' => 'required',
-         ]);
+        ]);
 
         $slug = Str::slug($validatedData['slug']);
 
 
         $product = Product::find($id);
 
-        if($request->hasFile('image')) {
-            unlink(public_path("assets/imgs/products/". $product->image ));
+        if ($request->hasFile('image')) {
+            unlink(public_path("assets/imgs/products/" . $product->image));
             $imageName = Carbon::now()->timestamp . '.' . $request->file('image')->getClientOriginalExtension();
-            $request->file('image')->storeAs('products',$imageName);
-            }
+            $request->file('image')->storeAs('products', $imageName);
+        }
 
         $product->name = $validatedData['name'];
         $product->regular_price = $validatedData['regular_price'];
@@ -48,22 +49,26 @@ class AdminEditProductController extends Controller
         $product->quantity = $validatedData['quantity'];
         $product->category_id = $validatedData['category'];
         $product->slug = $slug;
-        $product->image = $imageName;
+        if ($request->hasFile('image')) {
+            $product->image = $imageName;
+        }
         $product->save();
 
-        return redirect()->route("admin.addProduct")->with("success", "Product Added Successfully!");
+        return redirect()->route("admin.products")->with("success", "Product Updated Successfully!");
     }
-    public function index($id){
+    public function index($id)
+    {
         $product = Product::find($id);
         $categories = Category::orderBy("name", "asc")->get();
-        return view("auth.editProduct", ["categories" => $categories,"product"=> $product,"id"=> $id]);
+        return view("auth.editProduct", ["categories" => $categories, "product" => $product, "id" => $id]);
     }
 
-    public function deleteProduct($id){
+    public function deleteProduct($id)
+    {
         $product = Product::find($id);
-        unlink(public_path("assets/imgs/products/". $product->image ));
+        unlink(public_path("assets/imgs/products/" . $product->image));
         $product->delete();
-        return redirect()->route("admin.products")->with("success","Product Removed Successfully!");
+        return redirect()->route("admin.products")->with("success", "Product Removed Successfully!");
     }
 }
 

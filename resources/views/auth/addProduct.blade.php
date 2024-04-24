@@ -100,7 +100,7 @@
 
                                     <div class="mb-3 mt-3">
                                         <label for="featured" class="form-label" required>Featured</label>
-                                        <select name="featured" class="form-control">
+                                        <select name="featured" class="form-select">
                                             <option value="1">Yes</option>
                                             <option value="0">No</option>
                                         </select>
@@ -121,7 +121,7 @@
 
                                     <div class="mb-3 mt-3">
                                         <label for="category" class="form-label" required>Category</label>
-                                        <select name="category" class="form-control">
+                                        <select name="category" class="form-select">
                                             <option value="">Select Category</option>
                                             @foreach ($categories as $category)
                                                 <option value="{{ $category->id }}">{{ $category->name }}</option>

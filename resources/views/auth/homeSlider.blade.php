@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Cart')
+@section('title', 'Home Slider')
 
 @section('content')
 
@@ -24,7 +24,7 @@
             <div class="container">
                 <div class="breadcrumb">
                     <a href={{ route('frontend.home') }} rel="nofollow">Home</a>
-                    <span></span> All Categories
+                    <span></span> All Slides
                 </div>
             </div>
         </div>
@@ -36,11 +36,11 @@
                             <div class="card-header">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <h4>All Categories</h4>
+                                        <h4>All Slides</h4>
                                     </div>
                                     <div class="col-md-6">
-                                        <a href="{{ route('admin.addCategory') }}" class='btn btn-success float-end'>Add New
-                                            Category</a>
+                                        <a href="{{ route('admin.addSlide') }}" class='btn btn-success float-end'>Add New
+                                            Slide</a>
                                     </div>
                                 </div>
                             </div>
@@ -55,25 +55,35 @@
                                         <tr>
                                             <th class="text-center">#</th>
                                             <th class="text-center">Name</th>
-                                            <th class="text-center">Slug</th>
+                                            <th class="text-center">Top Title</th>
+                                            <th class="text-center">Title</th>
+                                            <th class="text-center">Sub-Title</th>
+                                            <th class="text-center">Offer</th>
+                                            <th class="text-center">Link</th>
+                                            <th class="text-center">Status</th>
                                             <th class="text-center">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @php
-                                            $i = ($categories->currentPage() - 1) * $categories->perpage();
+                                            $i = 0;
                                         @endphp
-                                        @foreach ($categories as $category)
+                                        @foreach ($slides as $slide)
                                             <tr>
                                                 <td class="text-center">{{ ++$i }}</td>
-                                                <td class="text-center">{{ $category->name }}</td>
-                                                <td class="text-center">{{ $category->slug }}</td>
+                                                <td class="text-center"><img src="{{asset('assets/imgs/slider')}}/{{ $slide->image }}" width="80"/></td>
+                                                <td class="text-center">{{ $slide->top_title }}</td>
+                                                <td class="text-center">{{ $slide->title }}</td>
+                                                <td class="text-center">{{ $slide->sub_title }}</td>
+                                                <td class="text-center">{{ $slide->offer }}</td>
+                                                <td class="text-center">{{ $slide->link }}</td>
+                                                <td class="text-center">{{ $slide->status == 1? 'Active':'Inacctive' }}</td>
                                                 <td class="text-center">
-                                                    <a href="{{ route('admin.editCategory', ['id' => $category->id]) }}"
+                                                    <a href="{{ route('admin.editSlide', ['id' => $slide->id]) }}"
                                                         class="text-info mr-5 pr-5">
                                                         Edit
                                                     </a>
-                                                    <a href="#" onclick="deleteConfirmation({{ $category->id }})"
+                                                    <a href="#" onclick="deleteConfirmation({{ $slide->id }})"
                                                         class="text-danger ml-5 pl-5">
                                                         Delete
                                                     </a>
@@ -82,7 +92,6 @@
                                         @endforeach
                                     </tbody>
                                 </table>
-                                {{ $categories->links() }}
                             </div>
                         </div>
                     </div>
@@ -119,7 +128,7 @@
         function deleteConfirmation(id) {
             $('#delete-confirmation').modal('show');
             document.getElementById("deleteButton").addEventListener("click", function() {
-                window.location.href = '/admin/delete-category/' + id;
+                window.location.href = '/admin/delete-slide/' + id;
             });
         }
     </script>
