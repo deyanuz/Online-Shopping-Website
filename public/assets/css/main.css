@@ -9971,3 +9971,7 @@ span.fi-rs-apps {
     height: 100% ;
     background-color: #974FCB ;
 }
+.slider-img{
+    height: 1000px !important;
+    width: 615px !important;
+}
