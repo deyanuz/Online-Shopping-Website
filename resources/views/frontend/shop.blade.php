@@ -304,9 +304,8 @@
                     amountprice.submit();
                 }
             });
-            amountprice.val( sliderrange.slider("values", 0) +
+            amountprice.val(sliderrange.slider("values", 0) +
                 " " + sliderrange.slider("values", 1));
         });
     </script>
 @endpush
-
