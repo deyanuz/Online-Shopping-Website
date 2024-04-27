@@ -114,7 +114,7 @@
 
                                     <div class="mb-3 mt-3">
                                         <label for="image" class="form-label" required>Image</label>
-                                        <input type="file" id="image-input" name="image" class="form-control" />
+                                        <input type="file" id="image-input" name="image" class="form-control" required/>
                                         <img id="image-preview" class="mt-20" src="#" alt="Preview"
                                             style="display: none; width: 120px; height: 120px;" />
                                     </div>

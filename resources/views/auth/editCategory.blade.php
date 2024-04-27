@@ -49,16 +49,35 @@
                                         {{ Session::get('success') }}
                                     </div>
                                 @endif
-                                <form action="{{ route('admin.updateCategory',['id'=>$id]) }}">
+                                <form action="{{ route('admin.updateCategory',['id'=>$id]) }}" method="POST"
+                                    enctype="multipart/form-data">
+                                    @csrf
                                     <div class="mb-3 mt-3">
                                         <label for="name" class="form-label">Name</label>
                                         <input type="text" class="form-control" name='name'
-                                            placeholder="Enter cetegory name" required />
+                                            placeholder="Enter cetegory name" value="{{ $category->name }}" required />
                                     </div>
                                     <div class="mb-3 mt-3">
                                         <label for="slug" class="form-label">Slug</label>
                                         <input type="text" name="slug" class="form-control"
-                                            placeholder="Enter cetegory slug" required />
+                                            placeholder="Enter cetegory slug" value="{{ $category->slug }}" required />
+                                    </div>
+                                    <div class="mb-3 mt-3">
+                                        <label for="is_popular" class="form-label" required>Popular</label>
+                                        <select name="is_popular" class="form-control">
+                                            <option value="1" @if ($category->is_popular == '1') selected @endif>Yes
+                                            </option>
+                                            <option value="0" @if ($category->is_popular == '0') selected @endif>No
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3 mt-3">
+                                        <label for="image" class="form-label" required>Image</label>
+                                        <input type="file" id="image-input" name="image" class="form-control" />
+                                        <img id="image-preview"
+                                            src="{{ asset('assets/imgs/categories') }}/{{ $category->image }}"
+                                            class="mt-20" alt="Preview"
+                                            style="display: block; width: 120px; height: 120px;" />
                                     </div>
                                     <button class="btn btn-primary float-end" type="submit">Submit</button>
                                 </form>
@@ -74,7 +93,18 @@
 
 @endsection
 
-@section('script')
-
-
-@endsection
+@push('script')
+    <script>
+        document.getElementById('image-input').addEventListener('change', function() {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('image-preview').src = e.target.result;
+                    document.getElementById('image-preview').style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+@endpush

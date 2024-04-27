@@ -54,8 +54,10 @@
                                     <thead>
                                         <tr>
                                             <th class="text-center">#</th>
+                                            <th class="text-center">Image</th>
                                             <th class="text-center">Name</th>
                                             <th class="text-center">Slug</th>
+                                            <th class="text-center">Is_Popular</th>
                                             <th class="text-center">Action</th>
                                         </tr>
                                     </thead>
@@ -66,8 +68,12 @@
                                         @foreach ($categories as $category)
                                             <tr>
                                                 <td class="text-center">{{ ++$i }}</td>
+                                                <td class="text-center"><img
+                                                    src="{{ asset('assets/imgs/categories') }}/{{ $category->image }}"
+                                                    alt="{{ $category->name }}" width="60px"></td>
                                                 <td class="text-center">{{ $category->name }}</td>
                                                 <td class="text-center">{{ $category->slug }}</td>
+                                                <td class="text-center">{{ $category->is_popular? 'Yes':'No' }}</td>
                                                 <td class="text-center">
                                                     <a href="{{ route('admin.editCategory', ['id' => $category->id]) }}"
                                                         class="text-info mr-5 pr-5">

@@ -49,7 +49,7 @@
                                         {{ Session::get('success') }}
                                     </div>
                                 @endif
-                                <form action="{{ route('admin.storeCategory') }}">
+                                <form action="{{ route('admin.storeCategory') }}" method="POST"  enctype="multipart/form-data">
                                     @csrf
                                     <div class="mb-3 mt-3">
                                         <label for="name" class="form-label">Name</label>
@@ -60,6 +60,19 @@
                                         <label for="slug" class="form-label">Slug</label>
                                         <input type="text" name="slug" class="form-control"
                                             placeholder="Enter cetegory slug" required />
+                                    </div>
+                                    <div class="mb-3 mt-3">
+                                        <label for="is_popular" class="form-label" required>Popular</label>
+                                        <select name="is_popular" class="form-select">
+                                            <option value="1">Yes</option>
+                                            <option value="0">No</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3 mt-3">
+                                        <label for="image" class="form-label" required>Image</label>
+                                        <input type="file" id="image-input" name="image" class="form-control" required/>
+                                        <img id="image-preview" class="mt-20" src="#" alt="Preview"
+                                            style="display: none; width: 120px; height: 120px;" />
                                     </div>
                                     <button class="btn btn-primary float-end" type="submit">Submit</button>
                                 </form>
@@ -75,7 +88,18 @@
 
 @endsection
 
-@section('script')
-
-
-@endsection
+@push('script')
+    <script>
+        document.getElementById('image-input').addEventListener('change', function() {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('image-preview').src = e.target.result;
+                    document.getElementById('image-preview').style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+@endpush

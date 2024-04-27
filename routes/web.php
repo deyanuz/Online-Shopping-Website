@@ -75,9 +75,9 @@ route::middleware('auth')->group(function () {
     route::get('/admin/products', [AdminProductController::class, 'index'])->name('admin.products');
 
     route::get('/admin/category/add', [AddCategoryController::class, 'index'])->name('admin.addCategory');
-    route::get('/admin/category/store', [AddCategoryController::class, 'storeCategory'])->name('admin.storeCategory');
+    route::post('/admin/category/store', [AddCategoryController::class, 'storeCategory'])->name('admin.storeCategory');
     route::get('/admin/category/edit/{id}', [EditCategoryController::class, 'index'])->name('admin.editCategory');
-    route::get('/admin/edit-category/{id}', [EditCategoryController::class, 'editCategory'])->name('admin.updateCategory');
+    route::post('/admin/edit-category/{id}', [EditCategoryController::class, 'editCategory'])->name('admin.updateCategory');
     route::get('/admin/delete-category/{id}', [EditCategoryController::class, 'deleteCategory'])->name('admin.deleteCategory');
 
     route::get('/admin/product/add', [AdminAddProductController::class, 'index'])->name('admin.addProduct');

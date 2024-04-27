@@ -105,7 +105,7 @@
 
                                     <div class="mb-3 mt-3">
                                         <label for="featured" class="form-label" required>Featured</label>
-                                        <select name="featured" class="form-control" value="{{ $product->featured }}">
+                                        <select name="featured" class="form-control" >
                                             <option value="1" @if ($product->featured == '1') selected @endif>Yes
                                             </option>
                                             <option value="0" @if ($product->featured == '0') selected @endif>No
