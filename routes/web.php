@@ -60,6 +60,7 @@ route::get('/wishlist/remove/{id}', [WishlistController::class, 'remove'])->name
 
 //blog related routes
 route::get('/blogs/{query}', [BlogsController::class, 'index'])->name('frontend.blogs');
+route::get('/blog-search', [BlogsController::class, 'searchIndex'])->name('frontend.searchBlogs');
 
 //search related routes
 route::get('/search', [SearchResultController::class, 'index'])->name('search.product');
