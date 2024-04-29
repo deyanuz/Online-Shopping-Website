@@ -421,7 +421,7 @@
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li><a href="blog.html">Blog </a></li>
+                                        <li><a href={{route('frontend.blogs',['query'=>'technology'])}}>Blog </a></li>
                                         <li><a href="contact.html">Contact</a></li>
                                         @auth
                                             <li><a href="#">My Account<i class="fi-rs-angle-down"></i></a>
@@ -548,7 +548,7 @@
                                         </ul>
                                     </li>
                                     <li class="menu-item-has-children"><span class="menu-expand"></span><a
-                                            href="blog.html">Blog</a></li>
+                                            href={{ route('frontend.blogs', ['query' => 'technology']) }}>Blog</a></li>
                                     <li class="menu-item-has-children"><span class="menu-expand"></span><a
                                             href="#">Language</a>
                                         <ul class="dropdown">

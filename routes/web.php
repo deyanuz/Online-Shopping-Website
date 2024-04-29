@@ -8,6 +8,7 @@ use App\Http\Controllers\AdminEditProductController;
 use App\Http\Controllers\AdminEditSlideController;
 use App\Http\Controllers\AdminHomeSliderController;
 use App\Http\Controllers\AdminProductController;
+use App\Http\Controllers\BlogsController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\DetailsController;
@@ -57,7 +58,10 @@ route::get('/wishlist/store/{id}', [ShopController::class, 'addToWishlist'])->na
 route::get('/shop/wishlist/remove/{id}', [ShopController::class, 'remove'])->name('removeFromWishlist');
 route::get('/wishlist/remove/{id}', [WishlistController::class, 'remove'])->name('wishlist.removeFromWishlist');
 
+//blog related routes
+route::get('/blogs/{query}', [BlogsController::class, 'index'])->name('frontend.blogs');
 
+//search related routes
 route::get('/search', [SearchResultController::class, 'index'])->name('search.product');
 
 route::post('/register', [RegisterController::class, 'registerUser'])->name('auth.register');
