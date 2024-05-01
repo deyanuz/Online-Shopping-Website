@@ -18,7 +18,7 @@
                 <div class="breadcrumb">
                     <a href="index.html" rel="nofollow">Home</a>
                     <span></span> Blog
-                    <span></span> Technology
+                    <span></span> {{$query}}
                 </div>
             </div>
         </div>
@@ -146,6 +146,7 @@
                             <div class="sidebar-widget widget_search mb-50">
                                 <div class="search-form">
                                     <form action="{{route('frontend.searchBlogs')}}">
+                                        @csrf
                                         <input type="text" name="query" @if(isset($searchQuery)) value="{{$searchQuery}}" @else placeholder="Search…" @endif>
                                         <button type="submit"> <i class="fi-rs-search"></i> </button>
                                     </form>
@@ -174,6 +175,9 @@
                                         </li>
                                         <li class="cat-item cat-item-7"><a
                                                 href="{{ route('frontend.blogs', ['query' => 'travel']) }}">Travel</a>
+                                        </li>
+                                        <li class="cat-item cat-item-7"><a
+                                                href="{{ route('frontend.blogs', ['query' => 'anime']) }}">Anime</a>
                                         </li>
                                     </ul>
                                 </div>

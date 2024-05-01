@@ -42,6 +42,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-9">
+                        @if (Session::has('success'))
+                            <div class="alert alert-success">
+                                <strong>Success! {{ Session::get('success') }}</strong>
+                            </div>
+                        @endif
                         <div class="shop-product-fillter">
                             <div class="totall-product">
                                 <p> We found <strong class="text-brand">{{ $products->total() }}</strong> items for you!</p>
@@ -201,8 +206,8 @@
                                         <div class="label-input">
                                             <span>Range:</span>
                                             <form id="pform" method="get">
-                                                <input type="text" class="js-range-slider" id="amount"
-                                                    name="price" placeholder="Add Your Price">
+                                                <input type="text" class="js-range-slider" id="amount" name="price"
+                                                    placeholder="Add Your Price">
                                             </form>
                                         </div>
                                     </div>

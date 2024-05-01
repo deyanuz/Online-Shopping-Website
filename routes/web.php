@@ -54,6 +54,7 @@ route::get('/shop/category-pagesize/{size}', [ProductByCategory::class, 'changeP
 route::get('/shop/category-sortorder/{orderBy}', [ProductByCategory::class, 'changeOrderBy'])->name('shop.productByCategoryOrderBy');
 route::get('/shop/price-range', [ProductByCategory::class, 'setPriceRange'])->name('shop.priceRange');
 
+//wishlist related routes
 route::get('/wishlist/store/{id}', [ShopController::class, 'addToWishlist'])->name('addToWishlist');
 route::get('/shop/wishlist/remove/{id}', [ShopController::class, 'remove'])->name('removeFromWishlist');
 route::get('/wishlist/remove/{id}', [WishlistController::class, 'remove'])->name('wishlist.removeFromWishlist');
@@ -64,6 +65,11 @@ route::get('/blog-search', [BlogsController::class, 'searchIndex'])->name('front
 
 //search related routes
 route::get('/search', [SearchResultController::class, 'index'])->name('search.product');
+
+//checkout related routes
+route::post('/checkout/payment', [CheckoutController::class, 'payment'])->name('checkout.payment');
+Route::get('/success', [CheckoutController::class, 'success'])->name('checkout.success');
+Route::get('/cancel', [CheckoutController::class, 'cancel'])->name('checkout.cancel');
 
 route::post('/register', [RegisterController::class, 'registerUser'])->name('auth.register');
 route::post('/login', [LoginController::class, 'loginUser'])->name('auth.login');

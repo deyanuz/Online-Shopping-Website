@@ -629,7 +629,7 @@
                     <footer class="main">
                         <section class="newsletter p-30 text-white wow fadeIn animated">
                             <div class="container">
-                                <div class="row align-items-center">
+                                {{-- <div class="row align-items-center">
                                     <div class="col-lg-7 mb-md-3 mb-lg-0">
                                         <div class="row align-items-center">
                                             <div class="col flex-horizontal-center">
@@ -652,12 +652,12 @@
                                         </form>
                                         <!-- End Subscribe Form -->
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </section>
                         <section class="section-padding footer-mid">
-                            <div class="container pt-15 pb-20">
-                                <div class="row">
+                            <div class="container  pt-15 pb-20">
+                                <div class="row  d-flex justify-content-around">
                                     <div class="col-lg-4 col-md-6">
                                         <div class="widget-about font-md mb-md-5 mb-lg-0">
                                             <div class="logo logo-width-1 wow fadeIn animated">
@@ -701,7 +701,7 @@
                                             <li><a href="#">Contact Us</a></li>
                                         </ul>
                                     </div>
-                                    <div class="col-lg-2  col-md-3">
+                                    {{-- <div class="col-lg-2  col-md-3">
                                         <h5 class="widget-title wow fadeIn animated">My Account</h5>
                                         <ul class="footer-list wow fadeIn animated">
                                             <li><a href="my-account.html">My Account</a></li>
@@ -710,7 +710,7 @@
                                             <li><a href="#">Track My Order</a></li>
                                             <li><a href="#">Order</a></li>
                                         </ul>
-                                    </div>
+                                    </div> --}}
                                     <div class="col-lg-4 mob-center">
                                         <h5 class="widget-title wow fadeIn animated">Install App</h5>
                                         <div class="row">
