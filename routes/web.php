@@ -22,6 +22,7 @@ use App\Http\Controllers\ResetController;
 use App\Http\Controllers\SearchResultController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\UserAdminController;
+use App\Http\Controllers\UsersController;
 use App\Http\Controllers\WishlistController;
 use Illuminate\Support\Facades\Route;
 
@@ -91,13 +92,13 @@ route::middleware('auth')->group(function () {
     route::get('/admin/category/edit/{id}', [EditCategoryController::class, 'index'])->name('admin.editCategory');
     route::post('/admin/edit-category/{id}', [EditCategoryController::class, 'editCategory'])->name('admin.updateCategory');
     route::get('/admin/delete-category/{id}', [EditCategoryController::class, 'deleteCategory'])->name('admin.deleteCategory');
-
+    //product related routes
     route::get('/admin/product/add', [AdminAddProductController::class, 'index'])->name('admin.addProduct');
     route::post('/admin/product/store', [AdminAddProductController::class, 'storeProduct'])->name('admin.storeProduct');
     route::get('/admin/product/edit/{id}', [AdminEditProductController::class, 'index'])->name('admin.editProduct');
     route::post('/admin/product/update/{id}', [AdminEditProductController::class, 'updateProduct'])->name('admin.updateProduct');
     route::get('/admin/delete-product/{id}', [AdminEditProductController::class, 'deleteProduct'])->name('admin.deleteProduct');
-
+    //slider related routes
     route::get('admin/slider', [AdminHomeSliderController::class, 'index'])->name('admin.homeSlider');
     route::get('admin/slider/add', [AdminAddSlideController::class, 'index'])->name('admin.addSlide');
     route::get('admin/slider/edit/{id}', [AdminEditSlideController::class, 'index'])->name('admin.editSlide');
@@ -105,4 +106,7 @@ route::middleware('auth')->group(function () {
     route::post('/admin/slide/store', [AdminAddSlideController::class, 'storeSlide'])->name('admin.storeSlide');
     route::post('/admin/slide/update/{id}', [AdminEditSlideController::class, 'updateSlide'])->name('admin.updateSlide');
     route::get('/admin/delete-slide/{id}', [AdminEditSlideController::class, 'deleteSlide'])->name('admin.deleteSlide');
+    //user list related routes
+    route::get('/admin/users', [UsersController::class, 'index'])->name('admin.users');
+    route::get('/admin/grant-privilege/{id}', [UsersController::class, 'grantPrivilege'])->name('admin.grantPrivilege');
 });

@@ -433,7 +433,7 @@
                                                         <li><a href="{{ route('admin.homeSlider') }}">Manage Slider</a></li>
                                                         <li><a href="#">Coupons</a></li>
                                                         <li><a href="#">Orders</a></li>
-                                                        <li><a href="#">Customers</a></li>
+                                                        <li><a href="{{ route('admin.users') }}">Users</a></li>
                                                     </ul>
                                                 @else
                                                     <ul class="sub-menu">
@@ -568,7 +568,7 @@
                                                     <li><a href="{{ route('admin.categories') }}">Categories</a></li>
                                                     <li><a href="#">Coupons</a></li>
                                                     <li><a href="#">Orders</a></li>
-                                                    <li><a href="#">Customers</a></li>
+                                                    <li><a href="{{ route('admin.users') }}">Users</a></li>
                                                 </ul>
                                             @else
                                                 <ul class="dropdown">

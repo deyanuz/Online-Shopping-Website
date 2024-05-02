@@ -11,6 +11,20 @@
         .border-bottom {
             border-bottom: 3px solid rgb(151, 79, 203, 0.25) !important;
         }
+        nav svg {
+            height: 20px;
+        }
+
+        nav .hidden {
+            display: block;
+        }
+
+        p {
+            font-size: 15px !important;
+            margin-bottom: 5px !important;
+            margin-top: 5px !important;
+            padding-left: 3px !important;
+        }
     </style>
     <main class="main">
         <div class="page-header breadcrumb-wrap">
