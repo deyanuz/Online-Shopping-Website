@@ -109,4 +109,5 @@ route::middleware('auth')->group(function () {
     //user list related routes
     route::get('/admin/users', [UsersController::class, 'index'])->name('admin.users');
     route::get('/admin/grant-privilege/{id}', [UsersController::class, 'grantPrivilege'])->name('admin.grantPrivilege');
+    route::post('/admin/update-user', [UserAdminController::class, 'updateUser'])->name('admin.updateUser');
 });

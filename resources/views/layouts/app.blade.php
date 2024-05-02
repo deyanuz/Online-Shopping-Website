@@ -427,7 +427,7 @@
                                             <li><a href="#">My Account<i class="fi-rs-angle-down"></i></a>
                                                 @if (Auth::user()->utype == 'adm')
                                                     <ul class="sub-menu">
-                                                        <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+                                                        <li><a href="{{ route('admin.dashboard') }}">Profile</a></li>
                                                         <li><a href="{{ route('admin.products') }}">Products</a></li>
                                                         <li><a href="{{ route('admin.categories') }}">Categories</a></li>
                                                         <li><a href="{{ route('admin.homeSlider') }}">Manage Slider</a></li>
@@ -437,7 +437,7 @@
                                                     </ul>
                                                 @else
                                                     <ul class="sub-menu">
-                                                        <li><a href="{{ route('user.dashboard') }}">Dashboard</a></li>
+                                                        <li><a href="{{ route('user.dashboard') }}">Profile</a></li>
                                                     </ul>
                                                 @endif
                                             </li>
@@ -563,7 +563,7 @@
                                                 Account</a>
                                             @if (Auth::user()->utype == 'adm')
                                                 <ul class="dropdown">
-                                                    <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+                                                    <li><a href="{{ route('admin.dashboard') }}">Profile</a></li>
                                                     <li><a href="{{ route('admin.products') }}">Products</a></li>
                                                     <li><a href="{{ route('admin.categories') }}">Categories</a></li>
                                                     <li><a href="#">Coupons</a></li>
@@ -572,7 +572,7 @@
                                                 </ul>
                                             @else
                                                 <ul class="dropdown">
-                                                    <li><a href="{{ route('user.dashboard') }}">Dashboard</a></li>
+                                                    <li><a href="{{ route('user.dashboard') }}">Prodile</a></li>
                                                 </ul>
                                             @endif
                                         </li>

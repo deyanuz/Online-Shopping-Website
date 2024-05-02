@@ -6,13 +6,17 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Facades\Session;
 
 class BlogsController extends Controller
 {
     public function searchIndex(Request $request)
     {
         $apiKey = 'a0f93a75b93b4b27a6b2d59ae7e430ab'; // Replace with your NewsAPI.org API key
-        $query = $request->input('query'); // Your search query
+        if (Paginator::resolveCurrentPage('page') <= 1) {
+            Session::put('searchQuery', $request->input('query'));
+        }
+        $query = Session::get('searchQuery'); // Your search query
         $perPage = 9;
 
         try {
