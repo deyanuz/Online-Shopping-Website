@@ -113,13 +113,11 @@ class CheckoutController extends Controller
                 if ($order && $order->status === 'unpaid') {
                     $order->status = 'paid';
                     $order->save();
-                    Cart::instance('cart')->destroy();
                 }
-
             default:
                 echo 'Received unknown event type ' . $event->type;
         }
-
+        Cart::instance('cart')->destroy();
         return response('');
     }
 }
