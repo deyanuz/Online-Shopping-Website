@@ -25,7 +25,6 @@ use App\Http\Controllers\UserAdminController;
 use App\Http\Controllers\WishlistController;
 use Illuminate\Support\Facades\Route;
 
-
 route::get('/', [HomeController::class, 'index'])->name('frontend.home');
 route::get('/shop', [ShopController::class, 'index'])->name('frontend.shop');
 route::get('/cart', [CartController::class, 'index'])->name('frontend.cart');
@@ -68,8 +67,10 @@ route::get('/search', [SearchResultController::class, 'index'])->name('search.pr
 
 //checkout related routes
 route::post('/checkout/payment', [CheckoutController::class, 'payment'])->name('checkout.payment');
-Route::get('/success', [CheckoutController::class, 'success'])->name('checkout.success');
-Route::get('/cancel', [CheckoutController::class, 'cancel'])->name('checkout.cancel');
+route::get('/success', [CheckoutController::class, 'success'])->name('checkout.success');
+route::get('/cancel', [CheckoutController::class, 'cancel'])->name('checkout.cancel');
+route::post('/webhook', [CheckoutController::class, 'webhook'])->name('checkout.webhook');
+
 
 route::post('/register', [RegisterController::class, 'registerUser'])->name('auth.register');
 route::post('/login', [LoginController::class, 'loginUser'])->name('auth.login');
@@ -97,9 +98,9 @@ route::middleware('auth')->group(function () {
     route::post('/admin/product/update/{id}', [AdminEditProductController::class, 'updateProduct'])->name('admin.updateProduct');
     route::get('/admin/delete-product/{id}', [AdminEditProductController::class, 'deleteProduct'])->name('admin.deleteProduct');
 
-    route::get('admin/slider', [AdminHomeSliderController::class,'index'])->name('admin.homeSlider');
-    route::get('admin/slider/add', [AdminAddSlideController::class,'index'])->name('admin.addSlide');
-    route::get('admin/slider/edit/{id}', [AdminEditSlideController::class,'index'])->name('admin.editSlide');
+    route::get('admin/slider', [AdminHomeSliderController::class, 'index'])->name('admin.homeSlider');
+    route::get('admin/slider/add', [AdminAddSlideController::class, 'index'])->name('admin.addSlide');
+    route::get('admin/slider/edit/{id}', [AdminEditSlideController::class, 'index'])->name('admin.editSlide');
 
     route::post('/admin/slide/store', [AdminAddSlideController::class, 'storeSlide'])->name('admin.storeSlide');
     route::post('/admin/slide/update/{id}', [AdminEditSlideController::class, 'updateSlide'])->name('admin.updateSlide');
