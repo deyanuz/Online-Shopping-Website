@@ -20,10 +20,12 @@ class UserAdminController extends Controller
     public function admin()
     {
         $orders = Order::where('user_id', auth()->id())->get();
-        return view("auth.adminDashboard", ['orders' => $orders]);
+        $admins = User::where('utype', 'adm')->pluck('id')->count();
+        return view("auth.adminDashboard", ['orders' => $orders, 'admins' => $admins]);
     }
     public function updateUser(Request $request)
     {
+        $userType = Auth::user()->utype == 'adm' ? 'admin' : 'user';
         //new and confirm password matching condition
         if ($request->input('npassword') == $request->input('cpassword')) {
             $credetials = [
@@ -36,7 +38,7 @@ class UserAdminController extends Controller
                 $emailExists = User::where('email', $request->input('email'))->first();
                 //availablity of email
                 if ($emailExists->id != auth()->id()) {
-                    return redirect()->route('admin.dashboard')->with('error', 'Email Already Exists!');
+                    return redirect()->route($userType . '.dashboard')->with('error', 'Email Already Exists!');
                 }
                 if ($user) {
                     $user->name = $request->input('name');
@@ -47,12 +49,12 @@ class UserAdminController extends Controller
                     $user->updated_at = now(); // Update the 'updated_at' timestamp
                     $user->save();
                 }
-                return redirect()->route('admin.dashboard')->with('success', 'Account Updated Successfully!');
+                return redirect()->route($userType . '.dashboard')->with('success', 'Account Updated Successfully!');
             } else {
-                return redirect()->route('admin.dashboard')->with('error', 'Wrong Email Or Password!');
+                return redirect()->route($userType . '.dashboard')->with('error', 'Wrong Email Or Password!');
             }
         } else {
-            return redirect()->route('admin.dashboard')->with('error', 'Password Does not match!');
+            return redirect()->route($userType . '.dashboard')->with('error', 'Password Does not match!');
         }
     }
 }

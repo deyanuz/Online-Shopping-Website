@@ -46,8 +46,13 @@
                                                 aria-selected="true"><i class="fi fi-rs-pencil mr-10"></i>Edit Profile</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="login.html"><i
-                                                    class="fi-rs-sign-out mr-10"></i>Logout</a>
+                                            <form method="post" action="{{ route('auth.logout') }}">
+                                                @csrf
+                                                @method('DELETE')
+                                                <a href="{{ route('auth.logout') }}"
+                                                    onclick="event.preventDefault(); this.closest('form').submit()"
+                                                    class="nav-link"><i class="fi-rs-sign-out mr-10"></i>Logout</a>
+                                            </form>
                                         </li>
                                     </ul>
                                 </div>
@@ -82,7 +87,17 @@
                                                         </name><br>
                                                         <name class='mt-10 '><strong class="mr-10"> Registration Time
                                                                 :</strong>{{ $time }}
-                                                        </name>
+                                                        </name><br>
+                                                        @if ($admins < 2)
+                                                            <a href='#'
+                                                                onclick="deleteConfirmation({{ Auth::user()->id }})"
+                                                                class="btn btn-secondary btn-sm mt-10">Switch User
+                                                                Type</a>
+                                                        @else
+                                                            <a href='#'
+                                                                onclick="deleteConfirmation({{ Auth::user()->id }})"
+                                                                class="btn hover-up btn-sm mt-10">Switch User Type</a>
+                                                        @endif
                                                     </div>
                                                 </div>
                                             </div>
@@ -148,8 +163,8 @@
                                                     <div class="row">
                                                         <div class="form-group col-md-12">
                                                             <label>Name <span class="required">*</span></label>
-                                                            <input required="" class="form-control square" name="name"
-                                                                type="text">
+                                                            <input required="" class="form-control square"
+                                                                name="name" type="text">
                                                         </div>
                                                         <div class="form-group col-md-12">
                                                             <label>Email Address <span class="required">*</span></label>
@@ -190,9 +205,34 @@
             </div>
         </section>
     </main>
+    <div class="modal" id="delete-confirmation">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="col-md-12 text-center text-danger">WARNING!</h3>
+                </div>
+                <div class="modal-body pb-30">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <h4 class="pb-3">Do you want to relinquish admin privileges?</h4>
+                            <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
+                                data-bs-target="#delete-confirmation">Cancel</button>
+                            <button type="button" id="deleteButton" class="btn btn-danger">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
 
-@section('script')
-
-
-@endsection
+@push('script')
+    <script>
+        function deleteConfirmation(id) {
+            $('#delete-confirmation').modal('show');
+            document.getElementById("deleteButton").addEventListener("click", function() {
+                window.location.href = '/admin/revoke-privilege/' + id;
+            });
+        }
+    </script>
+@endpush

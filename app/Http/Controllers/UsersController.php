@@ -22,4 +22,14 @@ class UsersController extends Controller
         }
         return redirect()->route('admin.users')->with('success','Admin Added Successfully');
     }
+    public function revokePrivilege($id){
+        $user = User::find($id);
+
+        if ($user) {
+            $user->utype = 'usr';
+            $user->updated_at = now();
+            $user->save();
+        }
+        return redirect()->route('user.dashboard')->with('success','Admin Removed Successfully');
+    }
 }

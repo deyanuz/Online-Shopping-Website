@@ -80,6 +80,7 @@ route::delete('/logout', [LoginController::class, 'logoutUser'])->name('auth.log
 
 route::middleware('auth')->group(function () {
     route::get('/user/dashboard', [UserAdminController::class, 'user'])->name('user.dashboard');
+    route::post('/user/update-user', [UserAdminController::class, 'updateUser'])->name('user.updateUser');
 });
 route::middleware('auth')->group(function () {
 
@@ -109,5 +110,6 @@ route::middleware('auth')->group(function () {
     //user list related routes
     route::get('/admin/users', [UsersController::class, 'index'])->name('admin.users');
     route::get('/admin/grant-privilege/{id}', [UsersController::class, 'grantPrivilege'])->name('admin.grantPrivilege');
+    route::get('/admin/revoke-privilege/{id}', [UsersController::class, 'revokePrivilege'])->name('admin.revokePrivilege');
     route::post('/admin/update-user', [UserAdminController::class, 'updateUser'])->name('admin.updateUser');
 });
