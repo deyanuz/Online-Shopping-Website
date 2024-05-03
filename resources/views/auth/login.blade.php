@@ -29,6 +29,11 @@
                                                 {{ Session::get('error') }}
                                             </div>
                                         @endif
+                                        @if (Session::has('success'))
+                                            <div class="alert alert-success" role="alert">
+                                                {{ Session::get('success') }}
+                                            </div>
+                                        @endif
                                         <form method="post" action="{{ route('auth.login') }}">
                                             @csrf
                                             <div class="form-group">
@@ -48,7 +53,7 @@
                                                             for="rememberCheckbox"><span>Remember me</span></label>
                                                     </div>
                                                 </div>
-                                                <a class="text-muted" href="{{route('auth.forgot')}}">Forgot password?</a>
+                                                <a class="text-muted" href="{{route('auth.forgotPage')}}">Forgot password?</a>
                                             </div>
                                             <div class="form-group">
                                                 <button type="submit" class="btn btn-fill-out btn-block hover-up"

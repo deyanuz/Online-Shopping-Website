@@ -32,9 +32,14 @@ route::get('/cart', [CartController::class, 'index'])->name('frontend.cart');
 route::get('/checkout', [CheckoutController::class, 'index'])->name('frontend.checkout');
 route::get('/login', [LoginController::class, 'index'])->name('auth.login');
 route::get('/register', [RegisterController::class, 'index'])->name('auth.register');
-route::get('/forgot', [ForgotController::class, 'index'])->name('auth.forgot');
 route::get('/reset', [ResetController::class, 'index'])->name('auth.reset');
 route::get('/wishlist', [WishlistController::class, 'index'])->name('frontend.wishlist');
+//forget password related routes
+route::get('/forgot', [ForgotController::class, 'index'])->name('auth.forgotPage');
+route::post('/forgot', [ForgotController::class, 'forgotPassword'])->name('auth.forgotPassword');
+route::get('/reset-password/{token}', [ForgotController::class, 'resetPassword'])->name('auth.resetPassword');
+route::post('/update-password', [ForgotController::class, 'updatePassword'])->name('auth.updatePassword');
+
 
 route::get('/product/{slug}', [DetailsController::class, 'index'])->name('product.details');
 route::get('/store/{id}', [CartController::class, 'store'])->name('addToCart');
