@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Cart;
 use DB;
-
+use Illuminate\Support\Facades\Cache;
 class LoginController extends Controller
 {
     public function index()
@@ -19,8 +19,13 @@ class LoginController extends Controller
             'email' => $request->email,
             'password' => $request->password,
         ];
-
         if (Auth::attempt($credetials)) {
+            //remember-me option
+            if(isset($request->remember)){
+                Cache::put('userEmail',$request->email,360);
+                Cache::put('userPassword',$request->password,360);
+            }
+
             $cart = DB::table('carts')
                 ->where('user_id', Auth::id())
                 ->where('type', 'cart')

@@ -38,22 +38,27 @@
                                             @csrf
                                             <div class="form-group">
                                                 <input type="text" required="" name="email"
-                                                    placeholder="Your Email" :value="old('email')" required autofocus>
+                                                    @if (Cache::has('userEmail') && Cache::has('userPassword')) value="{{ Cache::get('userEmail') }}"@else
+                                                    placeholder="Your Email" @endif
+                                                    required autofocus>
                                             </div>
                                             <div class="form-group">
                                                 <input required="" type="password" name="password"
-                                                    placeholder="Password" required autocomplete="current-password">
+                                                    @if (Cache::has('userEmail') && Cache::has('userPassword')) value="{{ Cache::get('userPassword') }}"@else
+                                                    placeholder="Password" @endif
+                                                    required autocomplete="current-password">
                                             </div>
                                             <div class="login_footer form-group">
                                                 <div class="chek-form">
                                                     <div class="custome-checkbox">
                                                         <input class="form-check-input" type="checkbox" name="remember"
-                                                            id="rememberCheckbox" value="">
+                                                            id="rememberCheckbox">
                                                         <label class="form-check-label"
                                                             for="rememberCheckbox"><span>Remember me</span></label>
                                                     </div>
                                                 </div>
-                                                <a class="text-muted" href="{{route('auth.forgotPage')}}">Forgot password?</a>
+                                                <a class="text-muted" href="{{ route('auth.forgotPage') }}">Forgot
+                                                    password?</a>
                                             </div>
                                             <div class="form-group">
                                                 <button type="submit" class="btn btn-fill-out btn-block hover-up"
