@@ -13,7 +13,7 @@
                     <div class="shopping-cart-img">
                         <a href="{{ route('product.details', ['slug' => $item->model->slug]) }}"><img
                                 alt="{{ $item->model->name }}"
-                                src="{{ asset('assets/imgs/products') }}/{{ $item->image }}"></a>
+                                src="{{ asset('assets/imgs/products') }}/{{  \App\Models\Product::where('slug',$item->model->slug)->first()->image }}"></a>
                     </div>
                     <div class="shopping-cart-title">
                         <h4><a

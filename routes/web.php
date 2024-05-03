@@ -32,7 +32,6 @@ route::get('/cart', [CartController::class, 'index'])->name('frontend.cart');
 route::get('/checkout', [CheckoutController::class, 'index'])->name('frontend.checkout');
 route::get('/login', [LoginController::class, 'index'])->name('auth.login');
 route::get('/register', [RegisterController::class, 'index'])->name('auth.register');
-route::get('/reset', [ResetController::class, 'index'])->name('auth.reset');
 route::get('/wishlist', [WishlistController::class, 'index'])->name('frontend.wishlist');
 //forget password related routes
 route::get('/forgot', [ForgotController::class, 'index'])->name('auth.forgotPage');

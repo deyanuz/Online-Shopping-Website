@@ -28,6 +28,11 @@
                                                 {{ Session::get('success') }}
                                             </div>
                                         @endif
+                                        @if (Session::has('error'))
+                                            <div class="alert alert-danger" role="alert">
+                                                {{ Session::get('error') }}
+                                            </div>
+                                        @endif
                                         <form method="post" action="{{ route('auth.register') }}">
                                             @csrf
                                             <div class="form-group">
@@ -46,20 +51,8 @@
                                                 <input required="" type="password" name="cpassword"
                                                     placeholder="Confirm password" required autocomplete="new-password">
                                             </div>
-                                            <div class="login_footer form-group">
-                                                <div class="chek-form">
-                                                    <div class="custome-checkbox">
-                                                        <input class="form-check-input" type="checkbox" name="checkbox"
-                                                            id="exampleCheckbox12" value="">
-                                                        <label class="form-check-label" for="exampleCheckbox12"><span>I
-                                                                agree to terms &amp; Policy.</span></label>
-                                                    </div>
-                                                </div>
-                                                <a href="privacy-policy.html"><i
-                                                        class="fi-rs-book-alt mr-5 text-muted"></i>Lean more</a>
-                                            </div>
                                             <div class="form-group">
-                                                <button type="submit" class="btn btn-fill-out btn-block hover-up"
+                                                <button type="submit" class="btn btn-fill-out btn-sm btn-block hover-up"
                                                     name="login">Submit &amp; Register</button>
                                             </div>
                                         </form>

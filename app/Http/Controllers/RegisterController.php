@@ -8,12 +8,21 @@ use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return view("auth.register");
     }
 
     public function registerUser(Request $request)
     {
+        $emailExists = User::where('email', $request->input('email'))->first();
+        //availablity of email
+        if ($emailExists) {
+            return redirect()->route('auth.register')->with('error', 'Email Already Exists!');
+        }
+        if ($request->input('password') != $request->input('cpassword')) {
+            return redirect()->route('auth.register')->with('error', 'Password Does not match!');
+        }
         $user = new User();
 
         $user->name = $request->name;

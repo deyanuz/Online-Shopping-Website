@@ -53,10 +53,10 @@
                                             <div class="product-img product-img-zoom">
                                                 <a href="{{ route('product.details', ['slug' => $item->model->slug]) }}">
                                                     <img class="default-img"
-                                                        src="{{ asset('assets/imgs/shop/product-') }}{{ $item->model->id }}-1.jpg"
+                                                        src="{{ asset('assets/imgs/products') }}/{{ $item->model->image }}"
                                                         alt="{{ $item->model->name }}">
                                                     <img class="hover-img"
-                                                        src="{{ asset('assets/imgs/shop/product-') }}{{ $item->model->id }}-2.jpg"
+                                                        src="{{ asset('assets/imgs/products') }}/{{ $item->model->image }}"
                                                         alt="{{ $item->model->name }}">
                                                 </a>
                                             </div>
