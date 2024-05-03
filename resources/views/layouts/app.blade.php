@@ -92,6 +92,7 @@
                                 <form action="{{ route('search.product') }}">
                                     <input type="text" name='q' placeholder="Search for items..."
                                         @if (isset($q)) value={{ $q }} @endif>
+                                    <button class="rounded-circle" type="submit"> <i class="fi-rs-search"></i> </button>
                                 </form>
                             </div>
 
@@ -421,7 +422,7 @@
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li><a href={{route('frontend.blogs',['query'=>'technology'])}}>Blog </a></li>
+                                        <li><a href={{ route('frontend.blogs', ['query' => 'technology']) }}>Blog </a></li>
                                         <li><a href="contact.html">Contact</a></li>
                                         @auth
                                             <li><a href="#">My Account<i class="fi-rs-angle-down"></i></a>

@@ -201,59 +201,19 @@
                             </div>
                             <div class="price-filter">
                                 <div class="price-filter-inner">
-                                    <div id="slider-range"></div>
-                                    <div class="price_slider_amount">
-                                        <div class="label-input">
-                                            <span>Range:</span>
-                                            <form id="pform" method="get">
-                                                <input type="text" class="js-range-slider" id="amount" name="price"
-                                                    placeholder="Add Your Price">
-                                            </form>
-                                        </div>
+                                    <div class="label-input">
+                                        <span>Range:</span>
+                                        <form id="pform" method="get" method="{{ route('frontend.shop') }}">
+                                            <input type="text" class="form-control border-bottom mt-5" id="amount"
+                                                name="price1" placeholder="Enter minimum price">
+                                            <input type="text" class="form-control border-bottom mt-5" id="amount"
+                                                name="price2" placeholder="Enter maximum price">
+                                            <button type="submit" class="btn btn-sm btn-default mt-10"><i
+                                                    class="fi-rs-filter mr-5"></i>Filter</button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
-                            <div class="list-group">
-                                <div class="list-group-item mb-10 mt-10">
-                                    <label class="fw-900">Color</label>
-                                    <div class="custome-checkbox">
-                                        <input class="form-check-input" type="checkbox" name="checkbox"
-                                            id="exampleCheckbox1" value="">
-                                        <label class="form-check-label" for="exampleCheckbox1"><span>Red
-                                                (56)</span></label>
-                                        <br>
-                                        <input class="form-check-input" type="checkbox" name="checkbox"
-                                            id="exampleCheckbox2" value="">
-                                        <label class="form-check-label" for="exampleCheckbox2"><span>Green
-                                                (78)</span></label>
-                                        <br>
-                                        <input class="form-check-input" type="checkbox" name="checkbox"
-                                            id="exampleCheckbox3" value="">
-                                        <label class="form-check-label" for="exampleCheckbox3"><span>Blue
-                                                (54)</span></label>
-                                    </div>
-                                    <label class="fw-900 mt-15">Item Condition</label>
-                                    <div class="custome-checkbox">
-                                        <input class="form-check-input" type="checkbox" name="checkbox"
-                                            id="exampleCheckbox11" value="">
-                                        <label class="form-check-label" for="exampleCheckbox11"><span>New
-                                                (1506)</span></label>
-                                        <br>
-                                        <input class="form-check-input" type="checkbox" name="checkbox"
-                                            id="exampleCheckbox21" value="">
-                                        <label class="form-check-label" for="exampleCheckbox21"><span>Refurbished
-                                                (27)</span></label>
-                                        <br>
-                                        <input class="form-check-input" type="checkbox" name="checkbox"
-                                            id="exampleCheckbox31" value="">
-                                        <label class="form-check-label" for="exampleCheckbox31"><span>Used
-                                                (45)</span></label>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href={{ route('frontend.shop') }} class="btn btn-sm btn-default"><i
-                                    class="fi-rs-filter mr-5"></i>
-                                Fillter</a>
                         </div>
                         <!-- Product sidebar Widget -->
                         <div class="sidebar-widget product-sidebar  mb-30 p-30 bg-grey border-radius-10">
@@ -279,14 +239,6 @@
                                 </div>
                             @endforeach
                         </div>
-                        <div class="banner-img wow fadeIn mb-45 animated d-lg-block d-none">
-                            <img src="assets/imgs/banner/banner-11.jpg" alt="">
-                            <div class="banner-text">
-                                <span>Women Zone</span>
-                                <h4>Save 17% on <br>Office Dress</h4>
-                                <a href={{ route('frontend.shop') }}>Shop Now <i class="fi-rs-arrow-right"></i></a>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -295,22 +247,4 @@
 
 @endsection
 @push('script')
-    <script>
-        var sliderrange = $('#slider-range');
-        var amountprice = $('#amount');
-        $(function() {
-            sliderrange.slider({
-                range: true,
-                min: 0,
-                max: 1000,
-                values: [0, 1000],
-                slide: function(event, ui) {
-                    amountprice.val(ui.values[0] + "-" + ui.values[1]);
-                    amountprice.submit();
-                }
-            });
-            amountprice.val(sliderrange.slider("values", 0) +
-                " " + sliderrange.slider("values", 1));
-        });
-    </script>
 @endpush

@@ -15,11 +15,9 @@ class ShopController extends Controller
     {
         $orderBy = Session::get('orderBy', 'Default Sorting');
         $pageSize = Session::get('pageSize', 12);
-        $prange = $request->query("prange");
-        if (!$prange)
-            $prange = "0-500";
-        $from  = explode("-", $prange)[0];
-        $to  = explode("-", $prange)[1];
+        $from  =$request->price1? $request->price1:0;
+        $max=Product::max('regular_price');
+        $to  = $request->price2? $request->price2:$max;
         if ($orderBy === 'Price: Low to High') {
             $products = Product::whereBetween('regular_price', [$from, $to])->with('category')->orderBy('regular_price', "ASC")->paginate((int)$pageSize);
         } else if ($orderBy === 'Price: High to Low') {
