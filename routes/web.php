@@ -16,6 +16,7 @@ use App\Http\Controllers\EditCategoryController;
 use App\Http\Controllers\ForgotController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ProductByCategory;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ResetController;
@@ -81,6 +82,9 @@ route::post('/register', [RegisterController::class, 'registerUser'])->name('aut
 route::post('/login', [LoginController::class, 'loginUser'])->name('auth.login');
 
 route::delete('/logout', [LoginController::class, 'logoutUser'])->name('auth.logout');
+//utility links
+route::get('/contact', [MessageController::class, 'index'])->name('frontend.contact');
+route::post('/contact', [MessageController::class, 'sendMessage'])->name('frontend.sendMessage');
 
 route::middleware('auth')->group(function () {
     route::get('/user/dashboard', [UserAdminController::class, 'user'])->name('user.dashboard');
@@ -116,4 +120,6 @@ route::middleware('auth')->group(function () {
     route::get('/admin/grant-privilege/{id}', [UsersController::class, 'grantPrivilege'])->name('admin.grantPrivilege');
     route::get('/admin/revoke-privilege/{id}', [UsersController::class, 'revokePrivilege'])->name('admin.revokePrivilege');
     route::post('/admin/update-user', [UserAdminController::class, 'updateUser'])->name('admin.updateUser');
+    //view messages route
+    route::get('/admin/messages', [MessageController::class, 'viewMessages'])->name('admin.messages');
 });
