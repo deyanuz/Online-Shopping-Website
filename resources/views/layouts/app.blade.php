@@ -113,6 +113,9 @@
                                         <li><a href="about.html">About</a></li>
                                         <li><a href={{ route('frontend.shop') }}>Shop</a></li>
                                         <li><a href={{ route('frontend.blogs', ['query' => 'technology']) }}>Blog </a></li>
+                                        @if(!Auth::check())
+                                        <li><a href="{{ route('frontend.contact') }}">Contact</a></li>
+                                        @endif
                                         @auth
                                             @if (Auth::user()->utype != 'adm')
                                                 <li><a href="{{ route('frontend.contact') }}">Contact</a></li>
