@@ -95,7 +95,7 @@ route::middleware('auth')->group(function () {
     route::get('/admin/dashboard', [UserAdminController::class, 'admin'])->name('admin.dashboard');
     route::get('/admin/categories', [AdminCategoryController::class, 'index'])->name('admin.categories');
     route::get('/admin/products', [AdminProductController::class, 'index'])->name('admin.products');
-
+    //category related routes
     route::get('/admin/category/add', [AddCategoryController::class, 'index'])->name('admin.addCategory');
     route::post('/admin/category/store', [AddCategoryController::class, 'storeCategory'])->name('admin.storeCategory');
     route::get('/admin/category/edit/{id}', [EditCategoryController::class, 'index'])->name('admin.editCategory');
@@ -117,9 +117,11 @@ route::middleware('auth')->group(function () {
     route::get('/admin/delete-slide/{id}', [AdminEditSlideController::class, 'deleteSlide'])->name('admin.deleteSlide');
     //user list related routes
     route::get('/admin/users', [UsersController::class, 'index'])->name('admin.users');
+    route::get('/admin/user-search', [UsersController::class, 'searchUser'])->name('search.user');
     route::get('/admin/grant-privilege/{id}', [UsersController::class, 'grantPrivilege'])->name('admin.grantPrivilege');
     route::get('/admin/revoke-privilege/{id}', [UsersController::class, 'revokePrivilege'])->name('admin.revokePrivilege');
     route::post('/admin/update-user', [UserAdminController::class, 'updateUser'])->name('admin.updateUser');
     //view messages route
     route::get('/admin/messages', [MessageController::class, 'viewMessages'])->name('admin.messages');
+    route::get('/admin/delete-message/{id}', [MessageController::class, 'deleteMessages'])->name('admin.deleteMessages');
 });

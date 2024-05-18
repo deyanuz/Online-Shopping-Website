@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Message;
 use Illuminate\Http\Request;
 use DB;
 class MessageController extends Controller
@@ -24,5 +25,10 @@ class MessageController extends Controller
     public function viewMessages(){
         $messages = DB::table('messages')->orderBy("created_at","desc")->paginate(5);
         return view('auth.viewMessages',['messages'=>$messages]);
+    }
+    public function deleteMessages($id){
+        $msg = Message::find($id);
+        $msg->delete();
+        return redirect()->route("admin.messages")->with("success","Category Removed Successfully!");
     }
 }

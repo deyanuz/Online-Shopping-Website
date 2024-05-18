@@ -57,6 +57,7 @@
                                                 <th class="text-center">Phone</th>
                                                 <th class="text-center">Subject</th>
                                                 <th class="text-center">Message</th>
+                                                <th class="text-center">Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -72,6 +73,12 @@
                                                     <td class="text-center">{{ $msg->phone }}</td>
                                                     <td class="text-center">{{ $msg->subject }}</td>
                                                     <td class="text-center">{{ $msg->message }}</td>
+                                                    <td class="text-center">
+                                                        <a href="#" onclick="deleteConfirmation({{ $msg->id }})"
+                                                            class="text-danger ml-5 pl-5">
+                                                            Delete
+                                                        </a>
+                                                    </td>
                                                 </tr>
                                             @endforeach
                                 @endif
@@ -86,4 +93,35 @@
         </section>
     </main>
 
+    <div class="modal" id="delete-confirmation">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="col-md-12 text-center text-danger">WARNING!</h3>
+                </div>
+                <div class="modal-body pb-30">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <h4 class="pb-3">Do you want to delete this message?</h4>
+                            <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
+                                data-bs-target="#delete-confirmation">Cancel</button>
+                            <button type="button" id="deleteButton" class="btn btn-danger">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 @endsection
+
+@push('script')
+    <script>
+        function deleteConfirmation(id) {
+            $('#delete-confirmation').modal('show');
+            document.getElementById("deleteButton").addEventListener("click", function() {
+                window.location.href = '/admin/delete-message/' + id;
+            });
+        }
+    </script>
+@endpush

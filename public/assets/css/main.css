@@ -9784,11 +9784,13 @@ span.fi-rs-apps {
     .categori-dropdown-wrap ul li a {
         padding: 5px 12px;
     }
-    .col-md-6 {
+    .col-md-6,.search-style-1 {
         text-align: center !important;
         margin-bottom: 10px;
         display: flex;
         justify-content: center;
+        margin-right: 0% !important;
+        margin-left: 0% !important;
     }
     .search-popup-wrap .search-popup-content form input {
         width: 270px;

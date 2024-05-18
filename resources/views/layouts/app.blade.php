@@ -113,14 +113,14 @@
                                         <li><a href="about.html">About</a></li>
                                         <li><a href={{ route('frontend.shop') }}>Shop</a></li>
                                         <li><a href={{ route('frontend.blogs', ['query' => 'technology']) }}>Blog </a></li>
-                                        @if(!Auth::check())
-                                        <li><a href="{{ route('frontend.contact') }}">Contact</a></li>
+                                        @if (!Auth::check())
+                                            <li><a href="{{ route('frontend.contact') }}">Contact</a></li>
                                         @endif
                                         @auth
                                             @if (Auth::user()->utype != 'adm')
                                                 <li><a href="{{ route('frontend.contact') }}">Contact</a></li>
                                             @endif
-                                        @endif
+                                            @endif
                                             @auth
                                                 <li><a href="#">My Account<i class="fi-rs-angle-down"></i></a>
                                                     @if (Auth::user()->utype == 'adm')
@@ -130,7 +130,11 @@
                                                             <li><a href="{{ route('admin.categories') }}">Categories</a></li>
                                                             <li><a href="{{ route('admin.homeSlider') }}">Manage Slider</a></li>
                                                             <li><a href="{{ route('admin.users') }}">Users</a></li>
-                                                            <li><a href="{{ route('admin.messages') }}">Messages</a></li>
+                                                            <li><a href="{{ route('admin.messages') }}">Messages <span
+                                                                        class="badge rounded-pill ml-5"
+                                                                        style="background:  rgb(151, 79, 203);">
+                                                                        {{ App\Models\Message::count() }}</span></a>
+                                                            </li>
                                                         </ul>
                                                     @else
                                                         <ul class="sub-menu">
@@ -138,7 +142,7 @@
                                                         </ul>
                                                     @endif
                                                 </li>
-                                            @endif
+                                                @endif
                                             </ul>
                                         </nav>
                                     </div>
@@ -251,7 +255,7 @@
                                                 <li class="menu-item-has-children"><span class="menu-expand"></span><a
                                                         href={{ route('frontend.contact') }}>Contact</a></li>
                                             @endif
-                                        @endif
+                                            @endif
                                             <li class="menu-item-has-children"><span class="menu-expand"></span><a
                                                     href="#">Language</a>
                                                 <ul class="dropdown">
@@ -271,7 +275,10 @@
                                                             <li><a href="{{ route('admin.categories') }}">Categories</a></li>
                                                             <li><a href="{{ route('admin.homeSlider') }}">Manage Slider</a></li>
                                                             <li><a href="{{ route('admin.users') }}">Users</a></li>
-                                                            <li><a href="{{ route('admin.messages') }}">Messages</a></li>
+                                                            <li><a href="{{ route('admin.messages') }}">Messages <span
+                                                                        class="badge rounded-pill"
+                                                                        style="background: rgb(151, 79, 203)">{{ App\Models\Message::count() }}</span></a>
+                                                            </li>
                                                         </ul>
                                                     @else
                                                         <ul class="dropdown">
