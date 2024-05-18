@@ -46,14 +46,12 @@
                                         <h4>All Users</h4>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="search-style-3">
-                                            <form action="{{ route('search.user') }}" class="float-end form-control-sm">
+                                        <div class="search-form">
+                                            <form action="{{ route('search.user') }}" class="float-end ">
                                                 <input type="text" name='q' placeholder="Search for users..."
                                                     @if (isset($q)) value={{ $q }} @endif
                                                     class="bg-white border border-primary">
-                                                <button class="btn btn-sm user-search" type="submit"> <i
-                                                        class="fi-rs-search"></i>
-                                                </button>
+                                                    <button type="submit"> <i class="fi-rs-search"></i> </button>
                                             </form>
                                         </div>
                                     </div>
