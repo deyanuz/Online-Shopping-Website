@@ -39,6 +39,10 @@ route::get('/forgot', [ForgotController::class, 'index'])->name('auth.forgotPage
 route::post('/forgot', [ForgotController::class, 'forgotPassword'])->name('auth.forgotPassword');
 route::get('/reset-password/{token}', [ForgotController::class, 'resetPassword'])->name('auth.resetPassword');
 route::post('/update-password', [ForgotController::class, 'updatePassword'])->name('auth.updatePassword');
+//utility pages
+route::get('/privacy-policy', [HomeController::class, 'privacyPolicy'])->name('frontend.privacyPolicy');
+route::get('/terms-conditions', [HomeController::class, 'termsAndConditions'])->name('frontend.termsAndConditions');
+route::get('/about', [HomeController::class, 'about'])->name('frontend.about');
 
 
 route::get('/product/{slug}', [DetailsController::class, 'index'])->name('product.details');
@@ -124,4 +128,6 @@ route::middleware('auth')->group(function () {
     //view messages route
     route::get('/admin/messages', [MessageController::class, 'viewMessages'])->name('admin.messages');
     route::get('/admin/delete-message/{id}', [MessageController::class, 'deleteMessages'])->name('admin.deleteMessages');
+    //delete account
+    route::delete('/admin/delete-account', [UsersController::class, 'deleteAccount'])->name('delete.account');
 });

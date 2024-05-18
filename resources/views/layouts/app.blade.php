@@ -110,7 +110,7 @@
                                 <nav>
                                     <ul>
                                         <li><a class="active" href={{ route('frontend.home') }}>Home </a></li>
-                                        <li><a href="about.html">About</a></li>
+                                        <li><a href="{{ route('frontend.about') }}">About</a></li>
                                         <li><a href={{ route('frontend.shop') }}>Shop</a></li>
                                         <li><a href={{ route('frontend.blogs', ['query' => 'technology']) }}>Blog </a></li>
                                         @if (!Auth::check())
@@ -191,24 +191,6 @@
                                 </form>
                             </div>
                             <div class="mobile-menu-wrap mobile-header-border">
-                                <div class="main-categori-wrap mobile-header-border">
-                                    <a class="categori-button-active-2" href="#">
-                                        <span class="fi-rs-apps"></span> Browse Categories
-                                    </a>
-                                    <div class="categori-dropdown-wrap categori-dropdown-active-small">
-                                        <ul>
-                                            <li><a href={{ route('frontend.shop') }}>Women's Clothing</a></li>
-                                            <li><a href={{ route('frontend.shop') }}>Men's Clothing</a></li>
-                                            <li> <a href={{ route('frontend.shop') }}>Cellphones</a></li>
-                                            <li><a href={{ route('frontend.shop') }}>Computer & Office</a></li>
-                                            <li><a href={{ route('frontend.shop') }}>Consumer Electronics</a></li>
-                                            <li><a href={{ route('frontend.shop') }}>Home & Garden</a></li>
-                                            <li><a href={{ route('frontend.shop') }}>Shoes</a></li>
-                                            <li><a href={{ route('frontend.shop') }}>Mother & Kids</a></li>
-                                            <li><a href={{ route('frontend.shop') }}>Outdoor fun</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
                                 <!-- mobile menu start -->
                                 <nav>
                                     <ul class="mobile-menu">
@@ -216,38 +198,6 @@
                                                 href={{ route('frontend.home') }}>Home</a></li>
                                         <li class="menu-item-has-children"><span class="menu-expand"></span><a
                                                 href={{ route('frontend.shop') }}>shop</a></li>
-                                        <li class="menu-item-has-children"><span class="menu-expand"></span><a href="#">Our
-                                                Collections</a>
-                                            <ul class="dropdown">
-                                                <li class="menu-item-has-children"><span class="menu-expand"></span><a
-                                                        href="#">Women's Fashion</a>
-                                                    <ul class="dropdown">
-                                                        <li><a href="product-details.html">Dresses</a></li>
-                                                        <li><a href="product-details.html">Blouses & Shirts</a></li>
-                                                        <li><a href="product-details.html">Hoodies & Sweatshirts</a></li>
-                                                        <li><a href="product-details.html">Women's Sets</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="menu-item-has-children"><span class="menu-expand"></span><a
-                                                        href="#">Men's Fashion</a>
-                                                    <ul class="dropdown">
-                                                        <li><a href="product-details.html">Jackets</a></li>
-                                                        <li><a href="product-details.html">Casual Faux Leather</a></li>
-                                                        <li><a href="product-details.html">Genuine Leather</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="menu-item-has-children"><span class="menu-expand"></span><a
-                                                        href="#">Technology</a>
-                                                    <ul class="dropdown">
-                                                        <li><a href="product-details.html">Gaming Laptops</a></li>
-                                                        <li><a href="product-details.html">Ultraslim Laptops</a></li>
-                                                        <li><a href="product-details.html">Tablets</a></li>
-                                                        <li><a href="product-details.html">Laptop Accessories</a></li>
-                                                        <li><a href="product-details.html">Tablet Accessories</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
                                         <li class="menu-item-has-children"><span class="menu-expand"></span><a
                                                 href={{ route('frontend.blogs', ['query' => 'technology']) }}>Blog</a></li>
                                         @auth
@@ -260,9 +210,6 @@
                                                     href="#">Language</a>
                                                 <ul class="dropdown">
                                                     <li><a href="#">English</a></li>
-                                                    {{-- <li><a href="#">French</a></li>
-                                            <li><a href="#">German</a></li>
-                                            <li><a href="#">Spanish</a></li> --}}
                                                 </ul>
                                             </li>
                                             @auth
@@ -339,30 +286,6 @@
                             <footer class="main">
                                 <section class="newsletter p-30 text-white wow fadeIn animated">
                                     <div class="container">
-                                        {{-- <div class="row align-items-center">
-                                    <div class="col-lg-7 mb-md-3 mb-lg-0">
-                                        <div class="row align-items-center">
-                                            <div class="col flex-horizontal-center">
-                                                <img class="icon-email" src="{{ asset('assets/imgs/theme/icons/icon-email.svg') }}"
-                                                    alt="">
-                                                <h4 class="font-size-20 mb-0 ml-3">Sign up to Newsletter</h4>
-                                            </div>
-                                            <div class="col my-4 my-md-0 des">
-                                                <h5 class="font-size-15 ml-4 mb-0">...and receive <strong>$25 coupon for first
-                                                        shopping.</strong></h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-5">
-                                        <!-- Subscribe Form -->
-                                        <form class="form-subcriber d-flex wow fadeIn animated">
-                                            <input type="email" class="form-control bg-white font-small"
-                                                placeholder="Enter your email">
-                                            <button class="btn bg-dark text-white" type="submit">Subscribe</button>
-                                        </form>
-                                        <!-- End Subscribe Form -->
-                                    </div>
-                                </div> --}}
                                     </div>
                                 </section>
                                 <section class="section-padding footer-mid">
@@ -386,17 +309,17 @@
                                                     </p>
                                                     <h5 class="mb-10 mt-30 fw-600 text-grey-4 wow fadeIn animated">Follow Us</h5>
                                                     <div class="mobile-social-icon wow fadeIn animated mb-sm-5 mb-md-0">
-                                                        <a href="#"><img src="{{ asset('assets/imgs/theme/icons/icon-facebook.svg') }}"
+                                                        <a href="https://www.facebook.com/" target="blank"><img src="{{ asset('assets/imgs/theme/icons/icon-facebook.svg') }}"
                                                                 alt=""></a>
-                                                        <a href="#"><img src="{{ asset('assets/imgs/theme/icons/icon-twitter.svg') }}"
+                                                        <a href="https://x.com/?lang=en" target="blank"><img src="{{ asset('assets/imgs/theme/icons/icon-twitter.svg') }}"
                                                                 alt=""></a>
-                                                        <a href="#"><img
+                                                        <a href="https://www.instagram.com/" target="blank"><img
                                                                 src="{{ asset('assets/imgs/theme/icons/icon-instagram.svg') }}"
                                                                 alt=""></a>
-                                                        <a href="#"><img
+                                                        <a href="https://www.pinterest.com/" target="blank"><img
                                                                 src="{{ asset('assets/imgs/theme/icons/icon-pinterest.svg') }}"
                                                                 alt=""></a>
-                                                        <a href="#"><img src="{{ asset('assets/imgs/theme/icons/icon-youtube.svg') }}"
+                                                        <a href="https://www.youtube.com/" target="blank"><img src="{{ asset('assets/imgs/theme/icons/icon-youtube.svg') }}"
                                                                 alt=""></a>
                                                     </div>
                                                 </div>
@@ -404,23 +327,12 @@
                                             <div class="col-lg-2 col-md-3">
                                                 <h5 class="widget-title wow fadeIn animated">About</h5>
                                                 <ul class="footer-list wow fadeIn animated mb-sm-5 mb-md-0">
-                                                    <li><a href="#">About Us</a></li>
-                                                    <li><a href="#">Delivery Information</a></li>
-                                                    <li><a href="#">Privacy Policy</a></li>
-                                                    <li><a href="#">Terms &amp; Conditions</a></li>
-                                                    <li><a href="#">Contact Us</a></li>
+                                                    <li><a href="{{ route('frontend.about') }}">About Us</a></li>
+                                                    <li><a href="{{ route('frontend.privacyPolicy') }}">Privacy Policy</a></li>
+                                                    <li><a href="{{ route('frontend.termsAndConditions') }}">Terms &amp; Conditions</a></li>
+                                                    <li><a href="{{ route('frontend.contact') }}">Contact Us</a></li>
                                                 </ul>
                                             </div>
-                                            {{-- <div class="col-lg-2  col-md-3">
-                                        <h5 class="widget-title wow fadeIn animated">My Account</h5>
-                                        <ul class="footer-list wow fadeIn animated">
-                                            <li><a href="my-account.html">My Account</a></li>
-                                            <li><a href="#">View Cart</a></li>
-                                            <li><a href="#">My Wishlist</a></li>
-                                            <li><a href="#">Track My Order</a></li>
-                                            <li><a href="#">Order</a></li>
-                                        </ul>
-                                    </div> --}}
                                             <div class="col-lg-4 mob-center">
                                                 <h5 class="widget-title wow fadeIn animated">Install App</h5>
                                                 <div class="row">

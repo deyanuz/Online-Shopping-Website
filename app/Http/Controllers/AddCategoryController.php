@@ -18,7 +18,12 @@ class AddCategoryController extends Controller
         ]);
         $category = new Category();
         $category->name = $validatedData["name"];
-        $category->slug = Str::slug($validatedData["slug"]);
+        $slug = Str::slug($validatedData['slug']);
+        $categoryExists = Category::where("slug", $slug)->first();
+        if($categoryExists){
+            return redirect()->back()->with("error", "Category Slug Already Exists!");
+        }
+        $category->slug = $slug;
         $category->is_popular = $validatedData["is_popular"];
 
         $imageName = Carbon::now()->timestamp . '.' . $request->file('image')->getClientOriginalExtension();

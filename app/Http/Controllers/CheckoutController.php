@@ -12,6 +12,7 @@ use Stripe\Webhook;
 use Exception;
 use UnexpectedValueException;
 use Stripe\Exception\SignatureVerificationException;
+use Illuminate\Support\Facades\Auth;
 
 class CheckoutController extends Controller
 {
@@ -22,7 +23,10 @@ class CheckoutController extends Controller
     }
     public function payment()
     {
-        Stripe::setApiKey(env('STRIPE_SECRET_KEY'));
+        if(!Auth::check()){
+            return redirect()->route('auth.login');
+        }
+        Stripe::setApiKey('sk_test_51PBkIVLaUcADbFrFT4lclsHZeyOFQDH5CDbFmI6aOFQwEPdU5Nt74cvT5oWaGSwwwL8N9ccwrN51tKkSdb8HwAwK003qGNHjgQ');
 
         $products = Cart::instance('cart')->content();
         $lineItems = [];
@@ -56,7 +60,7 @@ class CheckoutController extends Controller
     }
     public function success(Request $request)
     {
-        Stripe::setApiKey(env('STRIPE_SECRET_KEY'));
+        Stripe::setApiKey('sk_test_51PBkIVLaUcADbFrFT4lclsHZeyOFQDH5CDbFmI6aOFQwEPdU5Nt74cvT5oWaGSwwwL8N9ccwrN51tKkSdb8HwAwK003qGNHjgQ');
         $sessionId = $request->get('session_id');
 
         try {
@@ -84,7 +88,7 @@ class CheckoutController extends Controller
     public function webhook()
     {
         // This is your Stripe CLI webhook secret for testing your endpoint locally.
-        $endpoint_secret = env('STRIPE_WEBHOOK_SECRET');
+        $endpoint_secret = 'whsec_9830bb03a415280492719cb1494da488d16412d4f815e7d5242a904925180848';
 
         $payload = @file_get_contents('php://input');
         $sig_header = $_SERVER['HTTP_STRIPE_SIGNATURE'];

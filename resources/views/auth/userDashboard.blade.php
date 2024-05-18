@@ -46,8 +46,13 @@
                                                 aria-selected="true"><i class="fi fi-rs-pencil mr-10"></i>Edit Profile</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{route('auth.logout')}}"><i
-                                                    class="fi-rs-sign-out mr-10"></i>Logout</a>
+                                            <form method="post" action="{{ route('auth.logout') }}">
+                                                @csrf
+                                                @method('DELETE')
+                                                <a href="{{ route('auth.logout') }}"
+                                                    onclick="event.preventDefault(); this.closest('form').submit()"
+                                                    class="nav-link"><i class="fi-rs-sign-out mr-10"></i>Logout</a>
+                                            </form>
                                         </li>
                                     </ul>
                                 </div>
@@ -148,8 +153,8 @@
                                                     <div class="row">
                                                         <div class="form-group col-md-12">
                                                             <label>Name <span class="required">*</span></label>
-                                                            <input required="" class="form-control square" name="name"
-                                                                type="text">
+                                                            <input required="" class="form-control square"
+                                                                name="name" type="text">
                                                         </div>
                                                         <div class="form-group col-md-12">
                                                             <label>Email Address <span class="required">*</span></label>
@@ -176,11 +181,16 @@
                                                         <div class="col-md-12">
                                                             <button type="submit" class="btn btn-fill-out submit"
                                                                 name="submit" value="Submit">Update</button>
-                                                        </div>
-                                                    </div>
+                                                </form>
+                                                    <a href="#" onclick="deleteConfirmation()"
+                                                        class="btn btn-danger float-end"
+                                                        style="background-color: rgb(236, 103, 32)">
+                                                        Delete Account
+                                                    </a>
                                                 </form>
                                             </div>
                                         </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -188,12 +198,46 @@
                     </div>
                 </div>
             </div>
+            </div>
+            </div>
         </section>
     </main>
+    <div class="modal" id="delete-confirmation">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="col-md-12 text-center text-danger">WARNING!</h3>
+                </div>
+                <div class="modal-body pb-30">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <h4 class="pb-3">Do you want to delete this account?</h4>
+
+                                <form id="delete-account-form" method="post"
+                                action="{{ route('delete.account') }}">
+                                <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
+                                data-bs-target="#delete-confirmation">Cancel</button>
+                                @csrf
+                                @method('DELETE')
+                                <button href="{{ route('delete.account') }}"
+                                    class="btn btn-danger"
+                                    style="background-color: rgb(236, 103, 32)">
+                                    Delete
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 @endsection
 
-@section('script')
-
-
-@endsection
+@push('script')
+<script>
+    function deleteConfirmation() {
+        $('#delete-confirmation').modal('show');
+    }
+</script>
+@endpush

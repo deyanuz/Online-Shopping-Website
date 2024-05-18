@@ -16,4 +16,14 @@ class HomeController extends Controller
         $pcategories=Category::where('is_popular',1)->inRandomOrder()->take(8)->get();
         return view("frontend.home", ["slides" => $slides, "lproducts" => $lproducts,"fproducts"=> $fproducts,"pcategories"=> $pcategories]);
     }
+
+    public function privacyPolicy(){
+        return view('frontend.privacyPolicy');
+    }
+    public function termsAndConditions(){
+        return view('frontend.termsAndConditions');
+    }
+    public function about(){
+        return view('frontend.about');
+    }
 }

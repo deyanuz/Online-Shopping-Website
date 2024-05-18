@@ -18,6 +18,15 @@
             margin-top: 5px !important;
             padding-left: 3px !important;
         }
+
+        .wishlisted {
+            background-color: rgb(151, 79, 203) !important;
+            border: 1px solid transparent !important;
+        }
+
+        .wishlisted i {
+            color: #fff !important;
+        }
     </style>
 
     <main class="main">
@@ -66,21 +75,32 @@
                                             <span><i class="fi-rs-apps-sort"></i>Sort by:</span>
                                         </div>
                                         <div class="sort-by-dropdown-wrap">
-                                            <span>{{$orderBy}}<i class="fi-rs-angle-small-down"></i></span>
+                                            <span>{{ $orderBy }}<i class="fi-rs-angle-small-down"></i></span>
                                         </div>
                                     </div>
                                     <div class="sort-by-dropdown">
                                         <ul>
-                                            <li><a @if ($orderBy == 'Default Sorting') class="active" @endif href="{{ route('shop.changeOrderBy', ['orderBy' => 'Default Sorting']) }}">Default Sorting</a></li>
-                                            <li><a @if ($orderBy == 'Price: Low to High') class="active" @endif href="{{ route('shop.changeOrderBy', ['orderBy' => 'Price: Low to High']) }}">Price: Low to High</a></li>
-                                            <li><a @if ($orderBy == 'Price: High to Low') class="active" @endif href="{{ route('shop.changeOrderBy', ['orderBy' => 'Price: High to Low']) }}">Price: High to Low</a></li>
-                                            <li><a @if ($orderBy == 'Newest Arrivals') class="active" @endif href="{{ route('shop.changeOrderBy', ['orderBy' => 'Newest Arrivals']) }}">Newest Arrivals</a></li>
+                                            <li><a @if ($orderBy == 'Default Sorting') class="active" @endif
+                                                    href="{{ route('shop.changeOrderBy', ['orderBy' => 'Default Sorting']) }}">Default
+                                                    Sorting</a></li>
+                                            <li><a @if ($orderBy == 'Price: Low to High') class="active" @endif
+                                                    href="{{ route('shop.changeOrderBy', ['orderBy' => 'Price: Low to High']) }}">Price:
+                                                    Low to High</a></li>
+                                            <li><a @if ($orderBy == 'Price: High to Low') class="active" @endif
+                                                    href="{{ route('shop.changeOrderBy', ['orderBy' => 'Price: High to Low']) }}">Price:
+                                                    High to Low</a></li>
+                                            <li><a @if ($orderBy == 'Newest Arrivals') class="active" @endif
+                                                    href="{{ route('shop.changeOrderBy', ['orderBy' => 'Newest Arrivals']) }}">Newest
+                                                    Arrivals</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="row product-grid-3">
+                            @php
+                                $witems = Cart::instance('wishlist')->content()->pluck('id');
+                            @endphp
                             @foreach ($products as $product)
                                 <div class="col-lg-4 col-md-4 col-6 col-sm-6">
                                     <div class="product-cart-wrap mb-30">
@@ -125,13 +145,21 @@
                                                 {{-- <span class="old-price">$245.8</span> --}}
                                             </div>
                                             <div class="product-action-1 show">
+                                                @if ($witems->contains($product->id))
+                                                    <a aria-label="Remove From Wishlist"
+                                                        class="action-btn hover-up wishlisted"
+                                                        href="{{ route('removeFromWishlist', ['id' => $product->id]) }}"><i
+                                                            class="fi-rs-heart"></i></a>
+                                                @else
+                                                    <a aria-label="Add To Wishlist" class="action-btn hover-up"
+                                                        href="{{ route('addToWishlist', ['id' => $product->id]) }}"><i
+                                                            class="fi-rs-heart"></i></a>
+                                                @endif
                                                 <a aria-label="Add To Cart" class="action-btn hover-up"
                                                     href="{{ route('addToCart', ['id' => $product->id]) }}">
                                                     <i class="fi-rs-shopping-bag-add"></i>
                                                 </a>
                                             </div>
-
-
                                         </div>
                                     </div>
                                 </div>
@@ -162,7 +190,9 @@
                             <h5 class="section-title style-1 mb-30 wow fadeIn animated">Category</h5>
                             <ul class="categories">
                                 @foreach ($categories as $category)
-                                <li><a href={{ route('shop.productByCategory',['slug'=>$category->slug]) }}>{{$category->name}}</a></li>
+                                    <li><a
+                                            href={{ route('shop.productByCategory', ['slug' => $category->slug]) }}>{{ $category->name }}</a>
+                                    </li>
                                 @endforeach
 
                             </ul>
@@ -178,7 +208,7 @@
                                     <div class="label-input">
                                         <span>Range:</span>
                                         <form id="pform" method="get" method="{{ route('search.product') }}">
-                                            <input type="text" name="q" hidden value="{{$q}}">
+                                            <input type="text" name="q" hidden value="{{ $q }}">
                                             <input type="text" class="form-control border-bottom mt-5" id="amount"
                                                 name="price1" placeholder="Enter minimum price">
                                             <input type="text" class="form-control border-bottom mt-5" id="amount"
@@ -219,7 +249,6 @@
             </div>
         </section>
     </main>
-
 @endsection
 @section('script')
 

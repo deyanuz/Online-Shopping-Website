@@ -64,6 +64,9 @@
                                                 <button type="submit" class="btn btn-fill-out btn-block hover-up"
                                                     name="login">Log in</button>
                                             </div>
+                                            <div class="text-muted text-center">New to this website? <a
+                                                href="{{ route('auth.register') }}">Sign
+                                                up now</a></div>
                                         </form>
                                     </div>
                                 </div>

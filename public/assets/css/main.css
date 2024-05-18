@@ -9784,7 +9784,8 @@ span.fi-rs-apps {
     .categori-dropdown-wrap ul li a {
         padding: 5px 12px;
     }
-    .col-md-6,.search-style-1 {
+    .col-md-6,
+    .search-style-1 {
         text-align: center !important;
         margin-bottom: 10px;
         display: flex;
@@ -10558,6 +10559,10 @@ span.fi-rs-apps {
 @media (max-width: 404px) {
     .mob-app {
         padding-left: 10%;
+    }
+    .download-app {
+        display: flex;
+        justify-content: center;
     }
 }
 

@@ -29,7 +29,10 @@ class AdminAddProductController extends Controller
          ]);
 
         $slug = Str::slug($validatedData['slug']);
-
+        $productExists = Product::where("slug", $slug)->first();
+        if($productExists){
+            return redirect()->back()->with("error", "Product Slug Already Exists!");
+        }
         $imageName = Carbon::now()->timestamp . '.' . $request->file('image')->getClientOriginalExtension();
         $request->file('image')->storeAs('products',$imageName);
 

@@ -49,6 +49,11 @@
                                         {{ Session::get('success') }}
                                     </div>
                                 @endif
+                                @if (Session::has('error'))
+                                    <div class="alert alert-danger" role="alert">
+                                        {{ Session::get('error') }}
+                                    </div>
+                                @endif
                                 <form action="{{ route('admin.storeCategory') }}" method="POST"  enctype="multipart/form-data">
                                     @csrf
                                     <div class="mb-3 mt-3">

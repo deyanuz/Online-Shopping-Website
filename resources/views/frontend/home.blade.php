@@ -984,19 +984,8 @@
                                             <img class="default-img"
                                                 src="{{ asset('assets/imgs/products') }}/{{ $product->image }}"
                                                 alt="">
-                                            {{-- <img class="hover-img" src="assets/imgs/products/product-2-2.jpg"
-                                            alt=""> --}}
                                         </a>
                                     </div>
-                                    {{-- <div class="product-action-1">
-                                    <a aria-label="Quick view" class="action-btn small hover-up"
-                                        data-bs-toggle="modal" data-bs-target="#quickViewModal">
-                                        <i class="fi-rs-eye"></i></a>
-                                    <a aria-label="Add To Wishlist" class="action-btn small hover-up"
-                                        href="wishlist.php" tabindex="0"><i class="fi-rs-heart"></i></a>
-                                    <a aria-label="Compare" class="action-btn small hover-up" href="compare.php"
-                                        tabindex="0"><i class="fi-rs-shuffle"></i></a>
-                                </div> --}}
                                     <div class="product-badges product-badges-position product-badges-mrg">
                                         <span class="new">New</span>
                                     </div>

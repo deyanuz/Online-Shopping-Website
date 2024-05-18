@@ -89,8 +89,7 @@
                                                                 :</strong>{{ $time }}
                                                         </name><br>
                                                         @if ($admins < 2)
-                                                            <a href='#'
-                                                                onclick="deleteConfirmation({{ Auth::user()->id }})"
+                                                            <a href='#' aria-label="You are the only admin"
                                                                 class="btn btn-secondary btn-sm mt-10">Switch User
                                                                 Type</a>
                                                         @else

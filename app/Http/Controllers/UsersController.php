@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-
+use App\Models\Order;
+use Illuminate\Support\Facades\Auth;
 class UsersController extends Controller
 {
     public function index()
@@ -43,5 +44,12 @@ class UsersController extends Controller
             ->paginate(5);
         $admins = User::where('utype', 'adm')->pluck('id');
         return view('auth.searchUser', ['users' => $users, 'admins' => $admins, 'q' => $q]);
+    }
+    public function deleteAccount(){
+        $user = Auth::user();
+        // Delete the user
+        $user->delete();
+        Auth::logout();
+        return redirect()->route("auth.register")->with("success", "Account Removed Successfully!");
     }
 }
