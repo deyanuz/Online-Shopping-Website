@@ -663,19 +663,19 @@
                 <!--End tab-content-->
             </div>
         </section>
-        {{-- <section class="banner-2 section-padding pb-0">
+        <section class="banner-2 section-padding pb-0">
             <div class="container">
                 <div class="banner-img banner-big wow fadeIn animated f-none">
-                    <img src="assets/imgs/banner/banner-4.png" alt="">
+                    <img src="assets/imgs/banner/banner-4.jpg" alt="">
                     <div class="banner-text d-md-block d-none">
-                        <h4 class="mb-15 mt-40 text-brand">Repair Services</h4>
-                        <h1 class="fw-600 mb-20">We're an Apple <br>Authorised Service Provider</h1>
+                        <h4 class="mb-15 mt-40 text-brand">Services</h4>
+                        <h1 class="fw-600 mb-20">We're an <br>Authorised Service Provider</h1>
                         <a href={{ route('frontend.shop') }} class="btn">Learn More <i
                                 class="fi-rs-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
-        </section> --}}
+        </section>
         <section class="popular-categories section-padding mt-15 mb-25">
             <div class="container wow fadeIn animated">
                 <h3 class="section-title mb-20"><span>Popular</span> Categories</h3>
@@ -699,32 +699,32 @@
                 </div>
             </div>
         </section>
-        {{-- <section class="banners mb-15">
+        <section class="banners mb-15">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4 col-md-6">
                         <div class="banner-img wow fadeIn animated">
-                            <img src="assets/imgs/banner/banner-1.png" alt="">
+                            <img src="assets/imgs/banner/banner-1.jpg" alt="">
                             <div class="banner-text">
                                 <span>Smart Offer</span>
-                                <h4>Save 20% on <br>Woman Bag</h4>
+                                <h4>Save 20% on <br>Laptops</h4>
                                 <a href={{ route('frontend.shop') }}>Shop Now <i class="fi-rs-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="banner-img wow fadeIn animated">
-                            <img src="assets/imgs/banner/banner-2.png" alt="">
+                            <img src="assets/imgs/banner/banner-2.jpg" alt="">
                             <div class="banner-text">
                                 <span>Sale off</span>
-                                <h4>Great Summer <br>Collection</h4>
+                                <h4>Great  <br>Collection</h4>
                                 <a href={{ route('frontend.shop') }}>Shop Now <i class="fi-rs-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 d-md-none d-lg-flex">
                         <div class="banner-img wow fadeIn animated  mb-sm-0">
-                            <img src="assets/imgs/banner/banner-3.png" alt="">
+                            <img src="assets/imgs/banner/banner-3.jpg" alt="">
                             <div class="banner-text">
                                 <span>New Arrivals</span>
                                 <h4>Shop Today’s <br>Deals & Offers</h4>
@@ -734,7 +734,7 @@
                     </div>
                 </div>
             </div>
-        </section> --}}
+        </section>
         <section class="section-padding">
             <div class="container wow fadeIn animated">
                 <h3 class="section-title mb-20"><span>New</span> Arrivals</h3>

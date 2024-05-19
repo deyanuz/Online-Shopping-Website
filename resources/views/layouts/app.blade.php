@@ -185,10 +185,11 @@
                         </div>
                         <div class="mobile-header-content-area">
                             <div class="mobile-search search-style-3 mobile-header-border">
-                                <form action="#">
-                                    <input type="text" placeholder="Search for items…">
-                                    <button type="submit"><i class="fi-rs-search"></i></button>
-                                </form>
+                                    <form action="{{ route('search.product') }}">
+                                        <input type="text" name='q' placeholder="Search for items..."
+                                            @if (isset($q)) value={{ $q }} @endif>
+                                        <button class="rounded-circle" type="submit"> <i class="fi-rs-search"></i> </button>
+                                    </form>
                             </div>
                             <div class="mobile-menu-wrap mobile-header-border">
                                 <!-- mobile menu start -->
