@@ -53,7 +53,7 @@ class CheckoutController extends Controller
         $order->status = 'unpaid';
         $order->total_price = Cart::instance('cart')->total();
         $order->session_id = $session->id;
-        $order->user_id = 1;
+        $order->user_id = Auth::user()->id;
         $order->save();
 
         return redirect($session->url);
@@ -115,13 +115,15 @@ class CheckoutController extends Controller
 
                 $order = Order::where('session_id', $session->id)->first();
                 if ($order && $order->status === 'unpaid') {
+                    Cart::instance('cart')->destroy();
                     $order->status = 'paid';
                     $order->save();
+
                 }
             default:
                 echo 'Received unknown event type ' . $event->type;
         }
-        Cart::instance('cart')->destroy();
+
         return response('');
     }
 }

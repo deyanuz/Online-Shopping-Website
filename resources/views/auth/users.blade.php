@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Reset Password')
+@section('title', 'Users')
 
 @section('content')
     <style>

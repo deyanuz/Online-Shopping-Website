@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Home Slider')
+@section('title', 'Edit Slider')
 
 @section('content')
     <style>
