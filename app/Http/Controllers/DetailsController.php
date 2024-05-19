@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Cart;
@@ -15,9 +15,10 @@ class DetailsController extends Controller
     }
     public function index(){
         $product = Product::where("slug", $this->slug)->first();
+        $categories = Category::orderBy('name', "ASC")->get();
         $rproduct=Product::where("category_id", $product->category_id)->inRandomOrder()->limit(4)->get();
         $nproducts=Product::latest()->take(4)->get();
-        return view("frontend.details", ["product" => $product,"rproducts"=> $rproduct,"nproducts"=> $nproducts]);
+        return view("frontend.details", ["product" => $product,"rproducts"=> $rproduct,"nproducts"=> $nproducts, "categories" => $categories]);
     }
     public function store($id)
     {
